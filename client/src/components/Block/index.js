@@ -1,9 +1,10 @@
 import {Divider, Grid} from "@material-ui/core";
 import glass from "../../App.css";
 import {Button} from "@material-ui/core";
+import {useState} from "react";
 
 function Block(props){
-
+    const [count,setcount]=useState(0);
     return(
         <Grid container className="">
                 {/*Row 1*/}
@@ -20,9 +21,9 @@ function Block(props){
                     justify="space-evenly"
                     alignItems="center">
                         <Grid item direction="column">
-                            <div className="">click: click value</div>
+                            <div className="">click: {count}</div>
                             <div className="">
-                                <Button  color="secondary" variant="outlined" aria-label="outlined secondary">Do Click</Button>
+                                <Button  color="secondary" variant="outlined" aria-label="outlined secondary" onClick={()=>{setcount(count+1)}}>Do Click</Button>
                             </div>
                             <div className="">
                                 <Button color="secondary" variant="outlined" aria-label="outlined secondary">Upgrade</Button>
