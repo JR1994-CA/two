@@ -3,8 +3,8 @@ import Block, {Block_foo} from "./components/Block";
 import Board from "./components/Board";
 import {Grid} from "@material-ui/core";
 import NavBar from "./components/NavBar";
-import Footer from './components/Footer';
-import test from "./components/test";
+import Data from './util';
+
 function App() {
 
     const chips = new Data();
@@ -32,7 +32,7 @@ function App() {
 
                   <Block data={boards}/>
 
-
+                  <Block data={trans}/>
               </Grid>
           </Grid>
 {/*<Footer/>*/}

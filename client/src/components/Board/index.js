@@ -3,7 +3,10 @@ import glass from '../../App.css';
 import {Grid} from "@material-ui/core";
 import {Button} from "@material-ui/core";
 import drawer from './drawer';
+import data from '../../util';
+
 function Board(){
+
     return(
         <drawer>
         <Grid container className="" direction="column" justify="space-between" alignItems="center">

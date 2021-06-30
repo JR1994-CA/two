@@ -1,5 +1,5 @@
 import React from "react";
-import {Divider, Grid} from "@material-ui/core";
+import {Divider, Grid, Tooltip} from "@material-ui/core";
 import {Button} from "@material-ui/core";
 import {useState} from "react";
 
@@ -19,7 +19,7 @@ function Block(props) {
                   direction="row"
                   justify="space-evenly"
                   alignItems="center">
-                <h3>{props.curr_block}<span className=""> {chips.qty}</span></h3>
+                <h3>{data.name}<span className=""> {data.qty}</span></h3>
             </Grid>
             <Divider/>
             {/*Row 2*/}
@@ -28,7 +28,7 @@ function Block(props) {
                   justify="space-evenly"
                   alignItems="center">
                 <Grid item direction="column">
-                    <div className="">click: {count}</div>
+                    <div className="">click: {data.qty}</div>
                     <div className="">
                         <Button color="secondary" variant="outlined" aria-label="outlined secondary" onClick={() => {
                             data.changeQty(1);
@@ -37,15 +37,18 @@ function Block(props) {
                         }}>Do Click</Button>
                     </div>
                     <div className="">
+                        <Tooltip title={disp}>
                         <Button color="secondary" variant="outlined" aria-label="outlined secondary" onClick={() =>
                         {
-                            if (data.chips.qty > cost())
+                            if (data.qty > data.costs.chips())
                             {
-                                setUpgrade(currUpgrade+1);
-                                changeQty(-fCost());
+                                data.addLvl();
+                                data.changeQty(-data.costs.chips());
                                 setFoo(0);
+                                console.log(data.upgrade);
                             }
                         }}>Upgrade</Button>
+                        </Tooltip>
                     </div>
                 </Grid>
 
