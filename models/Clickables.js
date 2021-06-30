@@ -1,9 +1,10 @@
 const { Schema, model, Types } = require('mongoose');
 const stats = require('./Stats');
 
-const Chip = new Schema(
+const Clickable = new Schema(
     {
         count: { type: Integer, default: 0 },
+        clickModifier: { type: Integer, default: 1 },
         cost: {
             board:{ type: Integer, default: 0 },
             comp: { type: Integer, default: 0 },
@@ -30,18 +31,15 @@ const Chip = new Schema(
     }
 );
 
-Chip.virtual('getStats').get(function() {
-    return this.currStats;
-});
 
-Chip.virtual('getPerSecMod').get(function() {
+Clickable.virtual('getPerSecMod').get(function() {
     return this.mod.per;
 });
 
-Chip.virtual('getClickMod').get(function() {
+Clickable.virtual('getClickMod').get(function() {
     return this.mod.click;
 });
 
-const Chip = model('Chip', Chip);
+const Clickable = model('Clickable', Clickable);
 
-module.exports = Chip;
+module.exports = Clickable;
