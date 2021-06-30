@@ -48,7 +48,6 @@ This application was completed by:
                                   Shelby Jordan(Scrum-Master)
                                   Jesus Ramirez Arroyo(Driver)
                                   Cynthia Mohan(Driver)
-                                  Senait Gerezgiher(Driver)
 for the interactive full-stack project for UC Berkeley's Full Stack web-developer Bootcamp.
 
 Dependencies for this project include the node modules:
@@ -70,7 +69,6 @@ sqlite3 -  allows the user to manually enter and execute SQL statements against 
     				Copyright (C) 2021  Shelby-Jordan
                                         Cynthia-Mohan
                                         Jesus-Ramirez-Arroyo
-                                        Senait-Gerezgiher
 
 	This program is free software; you can redistribute it and/or
 	modify it under the terms of the GNU General Public License
@@ -101,4 +99,3 @@ N/A
 -   Please use this link to access our Github Profile: [GitHub-Shelby-Jordan](https://github.com/Kingly77)
                                                        [GitHub-Cynthia](https://github.com/CynthiaMohan)
                                                        [GitHub-Jesus-Ramirez-Arroyo](https://github.com/JR1994-CA)
-                                                       [GitHub-Senait-Gerezgiher](https://github.com/senait77)
