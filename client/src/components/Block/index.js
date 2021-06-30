@@ -2,18 +2,7 @@ import React from "react";
 import {Divider, Grid} from "@material-ui/core";
 import {Button} from "@material-ui/core";
 import {useState} from "react";
-import data from "../../util"
 
-export class Block_foo extends React.Component {
-
-    render(){
-        return(
-            <>
-                {data.chips};
-            </>
-        )
-    }
-}
 
 function Block(props) {
 
@@ -23,9 +12,8 @@ function Block(props) {
     let [foo,setFoo] = useState(0);
     let [count, setcount] = useState(props.curr_count);
     let [currUpgrade, setUpgrade] = useState(0); //temp 0
+    let {qty,cost,changeQty} = props.data;
 
-    let {qty,cost} = props.data;
-    let {chips, boards, transisters}=data;
     return (
 
         <Grid container className="">
@@ -46,7 +34,7 @@ function Block(props) {
                     <div className="">click: {count}</div>
                     <div className="">
                         <Button color="secondary" variant="outlined" aria-label="outlined secondary" onClick={() => {
-                            data.chips.changeQty(1);
+                            changeQty(1);
                             setFoo(++foo);//forcing update
                             console.log(qty)
                         }}>Do Click</Button>
@@ -57,7 +45,7 @@ function Block(props) {
                             if (data.chips.qty > cost())
                             {
                                 setUpgrade(currUpgrade+1);
-                                qty -= fCost();
+                                changeQty(-fCost());
                                 setFoo(0);
                             }
                         }}>Upgrade</Button>

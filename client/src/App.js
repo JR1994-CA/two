@@ -6,10 +6,13 @@ import NavBar from "./components/NavBar";
 import Footer from './components/Footer';
 import test from "./components/test";
 function App() {
-    // const block_count=0;
-    const objodata=150;
 
-  return (
+    const chips = new Data();
+    const boards = new Data();
+    const trans = new Data();
+
+
+    return (
       <>
           <NavBar/>
           <Grid container>
@@ -23,14 +26,13 @@ function App() {
                   {/*Dynamically input blocks?*/}
                   {/*<Block curr_block={"Transistor"} costFun={(upgrade) => (upgrade + 20) * 2} curr_count={objodata}/>*/}
                   {/*<Block curr_block={"Boards"} costFun={(upgrade) => (upgrade + 20) * 2} curr_count={objodata}/>*/}
-                    <Block_foo/>
-                  <Block items={  } curr_block={"Chips"} costFun={
-                      {
-                            Trans:(upgrade)=> (upgrade + 20) * 2,
-                            Chips:(upgrade)=> (20 + upgrade) * 45
-                        }
 
-                  } data={data.chips}/>
+                  <Block data={chips}/>
+
+
+                  <Block
+
+
               </Grid>
           </Grid>
 {/*<Footer/>*/}
