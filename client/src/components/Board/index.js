@@ -2,10 +2,12 @@ import {Container} from "@material-ui/core";
 import glass from '../../App.css';
 import {Grid} from "@material-ui/core";
 import {Button} from "@material-ui/core";
-
+import drawer from './drawer';
 function Board(){
     return(
+        <drawer>
         <Grid container className="" direction="column" justify="space-between" alignItems="center">
+
             <div><h1>Score Board</h1></div>
             <Grid container
                   direction="row"
@@ -20,11 +22,10 @@ function Board(){
                     <div className="mt-1 mb-2">
                         <Button size="small" variant="outlined" color="inherit"><h3>Current Upgrade</h3></Button>
                     </div>
-
-
             </Grid>
-        </Grid>
 
+        </Grid>
+    </drawer>
     );
 }
 

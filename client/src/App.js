@@ -1,0 +1,33 @@
+import {Container, Divider} from "@material-ui/core";
+import Block from "./components/Block";
+import Board from "./components/Board";
+import {Grid} from "@material-ui/core";
+import NavBar from "./components/NavBar";
+import Footer from './components/Footer';
+import test from "./components/test";
+function App() {
+    const block_name="Transistor";
+    // const block_count=0;
+    const objodata=150;
+
+  return (
+      <>
+          <NavBar/>
+          <Grid container>
+              <Grid item xs>
+                <Board/>
+              </Grid>
+          </Grid>
+          <Divider/>
+          <Grid container>
+              <Grid item>
+                  {/*Dynamically input blocks?*/}
+                  <Block curr_block={block_name} curr_count={objodata}/>
+              </Grid>
+          </Grid>
+{/*<Footer/>*/}
+      </>
+  );
+}
+
+export default App;

@@ -1,10 +1,10 @@
 import {Divider, Grid} from "@material-ui/core";
-import glass from "../../App.css";
 import {Button} from "@material-ui/core";
 import {useState} from "react";
 
 function Block(props){
-    const [count,setcount]=useState(0);
+     
+    const [count,setcount]=useState(props.curr_count);
     return(
         <Grid container className="">
                 {/*Row 1*/}
@@ -12,7 +12,7 @@ function Block(props){
                       direction="row"
                       justify="space-evenly"
                       alignItems="center">
-                    <h3>{props.curr_block}<span className=""> {props.curr_count}</span></h3>
+                    <h3>{props.curr_block}<span className=""> {count}</span></h3>
                 </Grid>
             <Divider/>
                 {/*Row 2*/}
@@ -32,10 +32,10 @@ function Block(props){
 
                         <Grid item direction="column">
                             <div className="">per sec:per sec value</div>
-                            <div>Transistors:</div>
-                            <div >Board: </div>
-                            <div> Chips: </div>
-                            <div>Cpu:</div>
+                            <div>Transistors: 40</div>
+                            <div >Board: 0</div>
+                            <div> Chips: 0</div>
+                            <div>Cpu: 0</div>
                         </Grid>
                 </Grid>
             <Divider/>
