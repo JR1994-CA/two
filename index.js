@@ -17,15 +17,6 @@ app.use(expr.json())
 app.use(expr.static(path.join(__dirname, 'public')));
 app.use(expr.static(path.join(__dirname, 'public/control')));
 
-
-// app.use(session({
-//     resave: false,
-//     saveUninitialized:false,
-//     cookie:{},
-//     secret:'FineHeresASecret'
-//     })
-// );
-
 //Routing
 app.use('/', def);
 
