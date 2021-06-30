@@ -1,4 +1,3 @@
-import {createStore} from "redux";
 
 function data(
     state = {value: 0}, action)
@@ -14,10 +13,10 @@ function data(
     }
 }
 
-let store = createStore(data)
+//let store = createStore(data)
 
 
-store
+
 
 const clickModifier = {
     comp: 1,
@@ -310,7 +309,6 @@ const compApp = Vue.createApp({
     </div>
 </div>
 
-   
     `
 }).mount('#comp');
 
