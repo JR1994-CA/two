@@ -2,15 +2,14 @@ import React from "react";
 import {Divider, Grid} from "@material-ui/core";
 import {Button} from "@material-ui/core";
 import {useState} from "react";
-
+import data from "../../util"
 
 export class Block_foo extends React.Component {
-     getNum = function(){count};
 
     render(){
         return(
             <>
-                HI
+                {data.chips};
             </>
         )
     }
@@ -20,16 +19,22 @@ function Block(props) {
 
     const cost=()=>props.costFun.Trans(currUpgrade);//()=>(currUpgrade + 20) * 2;
 
-    const [count, setcount] = useState(props.curr_count);
+
+    let [foo,setFoo] = useState(0);
+    let [count, setcount] = useState(props.curr_count);
     let [currUpgrade, setUpgrade] = useState(0); //temp 0
+
+    let {chips, boards, transisters}=data;
+    console.log(chips.qty);
     return (
+
         <Grid container className="">
             {/*Row 1*/}
             <Grid container
                   direction="row"
                   justify="space-evenly"
                   alignItems="center">
-                <h3>{props.curr_block}<span className=""> {count}</span></h3>
+                <h3>{props.curr_block}<span className=""> {chips.qty}</span></h3>
             </Grid>
             <Divider/>
             {/*Row 2*/}
@@ -41,16 +46,18 @@ function Block(props) {
                     <div className="">click: {count}</div>
                     <div className="">
                         <Button color="secondary" variant="outlined" aria-label="outlined secondary" onClick={() => {
-                            setcount(count + 1)
+                            ++chips.qty;
+                            setFoo(++foo);
                         }}>Do Click</Button>
                     </div>
                     <div className="">
                         <Button color="secondary" variant="outlined" aria-label="outlined secondary" onClick={() =>
                         {
-                            if (count > cost())
+                            if (data.chips.qty > cost())
                             {
                                 setUpgrade(currUpgrade+1);
-                                setcount(count-cost());
+                                data.chips.qty -= cost();
+                                setFoo(0);
                             }
                         }}>Upgrade</Button>
                     </div>

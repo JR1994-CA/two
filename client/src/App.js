@@ -1,5 +1,5 @@
 import {Container, Divider} from "@material-ui/core";
-import Block from "./components/Block";
+import Block, {Block_foo} from "./components/Block";
 import Board from "./components/Board";
 import {Grid} from "@material-ui/core";
 import NavBar from "./components/NavBar";
@@ -28,7 +28,6 @@ function App() {
                       {
                             Trans:(upgrade)=> (upgrade + 20) * 2,
                             Chips:(upgrade)=> (20 + upgrade) * 45
-
                         }
 
                   } curr_count={objodata}/>
