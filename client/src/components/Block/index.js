@@ -6,13 +6,10 @@ import {useState} from "react";
 
 function Block(props) {
 
-    const fCost=()=>props.costFun.Trans(currUpgrade);//()=>(currUpgrade + 20) * 2;
 
-
-    let [foo,setFoo] = useState(0);
-    let [count, setcount] = useState(props.curr_count);
+    let [foo,setFoo] = useState(0); //Cheaty way to update site
     let [currUpgrade, setUpgrade] = useState(0); //temp 0
-    let {qty,cost,changeQty} = props.data;
+    let {data} = props;
 
     return (
 
@@ -34,9 +31,9 @@ function Block(props) {
                     <div className="">click: {count}</div>
                     <div className="">
                         <Button color="secondary" variant="outlined" aria-label="outlined secondary" onClick={() => {
-                            changeQty(1);
+                            data.changeQty(1);
                             setFoo(++foo);//forcing update
-                            console.log(qty)
+                            console.log(data.qty)
                         }}>Do Click</Button>
                     </div>
                     <div className="">
@@ -54,7 +51,7 @@ function Block(props) {
 
                 <Grid item direction="column">
                     <div className="">per sec:0</div>
-                    <div>Transistors: {fCost()}</div>
+                    <div>Transistors: {data.costs.chips()}</div>
                     <div>Board: 0</div>
                     <div> Chips: 0</div>
                     <div>Cpu: 0</div>

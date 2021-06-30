@@ -1,12 +1,13 @@
 class data
 {
-    constructor(name = "TEST" , qty = 0,cost = 0, costFuncs)
+    constructor(name = "TEST" , qty = 0)
     {
         this.name = name;
         this.qty = qty;
-        this.cost = cost;
-        this.costs = costFuncs;
+
+
     }
+
     costs =
         {
             chips : ()=> (this.upgradelVl + 20) * 2 ,
@@ -14,9 +15,9 @@ class data
             trans : ()=> 0,
             cpus :  ()=> 0
         }
+
     name;
     upgradelVl = 0;
-    cost = 10;
     qty = 10;
 
     changeQty = (val) =>

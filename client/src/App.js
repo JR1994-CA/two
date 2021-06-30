@@ -30,7 +30,7 @@ function App() {
                   <Block data={chips}/>
 
 
-                  <Block
+                  <Block data={boards}/>
 
 
               </Grid>
