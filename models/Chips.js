@@ -32,7 +32,15 @@ const Chip = new Schema(
 
 Chip.virtual('getStats').get(function() {
     return this.currStats;
-})
+});
+
+Chip.virtual('getPerSecMod').get(function() {
+    return this.mod.per;
+});
+
+Chip.virtual('getClickMod').get(function() {
+    return this.mod.click;
+});
 
 const Chip = model('Chip', Chip);
 
