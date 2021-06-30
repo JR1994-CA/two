@@ -7,9 +7,9 @@ import Data from './util';
 
 function App() {
 
-    const chips = new Data();
-    const boards = new Data();
-    const trans = new Data();
+    const chips = new Data("Chips");
+    const boards = new Data("Boards");
+    const trans = new Data("Transistor");
 
 
     return (

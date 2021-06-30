@@ -11,6 +11,7 @@ function Block(props) {
     let [currUpgrade, setUpgrade] = useState(0); //temp 0
     let {data} = props;
 
+    let disp  = `Transistors: ${data.costs.chips()}`;
     return (
 
         <Grid container className="">
