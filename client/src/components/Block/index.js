@@ -17,15 +17,15 @@ export class Block_foo extends React.Component {
 
 function Block(props) {
 
-    const cost=()=>props.costFun.Trans(currUpgrade);//()=>(currUpgrade + 20) * 2;
+    const fCost=()=>props.costFun.Trans(currUpgrade);//()=>(currUpgrade + 20) * 2;
 
 
     let [foo,setFoo] = useState(0);
     let [count, setcount] = useState(props.curr_count);
     let [currUpgrade, setUpgrade] = useState(0); //temp 0
 
+    let {qty,cost} = props.data;
     let {chips, boards, transisters}=data;
-    console.log(chips.qty);
     return (
 
         <Grid container className="">
@@ -46,8 +46,9 @@ function Block(props) {
                     <div className="">click: {count}</div>
                     <div className="">
                         <Button color="secondary" variant="outlined" aria-label="outlined secondary" onClick={() => {
-                            ++chips.qty;
-                            setFoo(++foo);
+                            data.chips.changeQty(1);
+                            setFoo(++foo);//forcing update
+                            console.log(qty)
                         }}>Do Click</Button>
                     </div>
                     <div className="">
@@ -56,7 +57,7 @@ function Block(props) {
                             if (data.chips.qty > cost())
                             {
                                 setUpgrade(currUpgrade+1);
-                                data.chips.qty -= cost();
+                                qty -= fCost();
                                 setFoo(0);
                             }
                         }}>Upgrade</Button>
@@ -64,8 +65,8 @@ function Block(props) {
                 </Grid>
 
                 <Grid item direction="column">
-                    <div className="">per sec:per sec value</div>
-                    <div>Transistors: {cost()}</div>
+                    <div className="">per sec:0</div>
+                    <div>Transistors: {fCost()}</div>
                     <div>Board: 0</div>
                     <div> Chips: 0</div>
                     <div>Cpu: 0</div>

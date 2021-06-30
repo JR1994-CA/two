@@ -30,7 +30,7 @@ function App() {
                             Chips:(upgrade)=> (20 + upgrade) * 45
                         }
 
-                  } curr_count={objodata}/>
+                  } data={data.chips}/>
               </Grid>
           </Grid>
 {/*<Footer/>*/}
