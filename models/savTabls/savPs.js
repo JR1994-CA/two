@@ -1,5 +1,7 @@
 const {Model, DataTypes} = require("sequelize");
 const sequelize = require("../connections");
+const { graphQl, buildSchema } = require('graphQl');  
+
 
 class savPerSec extends Model {}
 savPerSec.init({

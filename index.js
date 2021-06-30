@@ -7,6 +7,23 @@ const app = expr();
 const port = process.env.PORT || 3001;
 const def = require('./routes');
 const path = require('path');
+const { graphQl, buildSchema } = require('graphQl'); 
+
+const schema = buildSchema(`
+  type Query {
+    graphQl: String
+  }
+`);
+ 
+const root = { graphQl: () => 'graphQl!' };
+ 
+graphQl(schema, '{ graphQl }', root).then((response) => {
+  console.log(response);
+}); 
+
+
+
+
 
 app.engine('handlebars', hdbar());
 app.set('view engine', 'handlebars');
