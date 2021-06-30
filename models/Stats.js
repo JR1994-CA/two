@@ -18,10 +18,10 @@ const StatsSchema = new Schema(
             default: 0
         },
         saveUnit: {
-            saveID: { type: String, maxlength: 15 },
+            saveID: {type: String, maxlength: 15},
             type: Integer,
             default: 0
-
+        },
         upgradeLvl: {
             saveID: { type: String, maxlength: 15 },
             type: Integer,

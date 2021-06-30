@@ -1,4 +1,5 @@
 const { Schema, model, Types } = require('mongoose');
+const stats = require('./Stats');
 
 const Chip = new Schema(
     {
@@ -14,8 +15,11 @@ const Chip = new Schema(
             per: { type: Integer, default: 0 }
         },
         curUpgrade:{ type: Integer, default: 0 },
-        isHide: { type: Boolean, default: true }
-        stats: [StatsSchema]
+        isHide: { type: Boolean, default: true },
+        currStats: {
+            type: [stats],
+            get: currStats => stats[currStats]
+        }
     },
     {
         toJSON: {
@@ -26,6 +30,10 @@ const Chip = new Schema(
     }
 );
 
-Chip.virtual('updateStat').get(function() {
+Chip.virtual('getStats').get(function() {
+    return this.currStats;
+})
 
-});
+const Chip = model('Chip', Chip);
+
+module.exports = Chip;
