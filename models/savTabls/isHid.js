@@ -9,7 +9,6 @@ savHid.init({
             type:DataTypes.STRING(15),
             allowNull:false
         },
-
         chip: {
             defaultValue:0,
             type:DataTypes.BOOLEAN
