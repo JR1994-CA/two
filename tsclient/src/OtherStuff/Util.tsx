@@ -31,16 +31,16 @@ class data
 
     checkCost = ()=>
     {
-        if(pie.chips.qty < this.costs.chips() )
+        if(pie.chips.qty < this.costs.chips(this.upgradeLVl))
             return false
 
-        if(pie.trans.qty < this.costs.trans())
+        if(pie.trans.qty < this.costs.trans(this.upgradeLVl))
             return false
 
-        if(pie.boards.qty < this.costs.boards())
+        if(pie.boards.qty < this.costs.boards(this.upgradeLVl))
             return false
 
-        return pie.cpus.qty >= this.costs.cpus();
+        return pie.cpus.qty >= this.costs.cpus(this.upgradeLVl);
 
 
     }
