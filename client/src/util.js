@@ -19,7 +19,6 @@ class data
     qty = 10;
     perSec=0;
 
-
     changeQty = (val) =>
     {
         this.qty += val;
@@ -33,7 +32,6 @@ class data
 
 }
 
-
 class upgrade extends data
 {
     perClick=1;
@@ -46,3 +44,5 @@ function hasMoney(data , cost)
 }
 
 export default data;
+
+// util -> holding -> block index -> app

@@ -4,13 +4,14 @@ import {Button} from "@material-ui/core";
 import {useState} from "react";
 
 
-function Block(props) {
+function Block(props)
+{
 
-    let [foo,setFoo] = useState(0); //Cheaty way to update site
+    let [foo, setFoo] = useState(0); //Cheaty way to update site
     let {data} = props;
 
-    let disp  = `Transistors: ${data.costs.trans()}
-                Chips: ${data.costs.chips()}
+    let disp = `Transistors: ${data.costs.trans()}
+                 Chips: ${data.costs.chips()}
                 Board: ${data.costs.boards()}
                 Cpu: ${data.costs.cpus()}
     `;
@@ -31,9 +32,10 @@ function Block(props) {
                   justify="space-evenly"
                   alignItems="center">
                 <Grid item direction="column">
-                    <div className="">click: {data.qty}</div>
+                    <div className="">click: {data.perClick}</div>
                     <div className="">
-                        <Button color="secondary" variant="outlined" aria-label="outlined secondary" onClick={() => {
+                        <Button color="secondary" variant="outlined" aria-label="outlined secondary" onClick={() =>
+                        {
                             data.changeQty(1);
                             setFoo(++foo);//forcing update
                             console.log(data.qty)
@@ -42,7 +44,8 @@ function Block(props) {
                     <div className="">
                         <Tooltip title={disp}>
                             <span>
-                        <Button disabled={data.qty<= data.costs.chips()} color="secondary" variant="outlined" aria-label="outlined secondary" onClick={() =>
+                        <Button disabled={data.qty <= data.costs.chips()} color="secondary" variant="outlined"
+                                aria-label="outlined secondary" onClick={() =>
                         {
                             if (data.qty > data.costs.chips())
                             {
@@ -51,18 +54,15 @@ function Block(props) {
                                 setFoo(0);
                                 console.log(data.upgrade);
                             }
-                        }}>{ data.qty<= data.costs.chips()? "Need more Chips" : "Upgrade"}</Button>
+                        }}>{data.qty <= data.costs.chips() ? "Need more Chips" : "Upgrade"}</Button>
                             </span>
                         </Tooltip>
                     </div>
                 </Grid>
-
-
             </Grid>
             <Divider/>
         </Grid>
     );
-
 }
 
 export default Block;
