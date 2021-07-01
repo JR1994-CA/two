@@ -2,17 +2,17 @@ import Data, {upgrade} from "./Util";
 
 class pie {
     static chips: Data = new Data("Chips", {
-        chips: () => {
-        }, boards: () => {
-        }, cpus: () => {
-        }
+        chips: (val:number) => (20 + val) * 2,
+         boards: (val:number) =>  Math.round((5 + val ) * 1.5),
+        cpus: (val:number) => (1 + val) * 1.001
+
     });
 
     static boards: Data = new Data("Boards", {
         chips: () => {
         }, boards: () => {
         }, cpus: () => {
-        }
+        },
     });
 
     static trans: Data = new Data("Transistor", {
@@ -20,7 +20,7 @@ class pie {
         }, boards: () => {
         }, cpus: () => {
         }
-    });
+    }, 1 );
 
     static cpus: Data = new Data("Cpus", {
         chips: () => {

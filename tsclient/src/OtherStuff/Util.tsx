@@ -2,9 +2,10 @@ import pie from "./Holding"
 
 class data
 {
-    constructor(name = "TEST" ,  funcCosts:object)
+    constructor(name = "TEST" ,  funcCosts:object , qty:number = 0)
     {
         this.name = name;
+        this.qty = qty
     }
 
     costs =

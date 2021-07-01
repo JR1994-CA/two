@@ -3,12 +3,11 @@ import {Divider, Grid, Tooltip} from "@material-ui/core";
 import {Button} from "@material-ui/core";
 import {useState} from "react";
 
-// import {button} from "../../OtherStuff"
 
 function Block(props: any) {
 
     let [foo, setFoo] = useState(0); //Cheaty way to update site
-    let {data,pie} = props;
+    let {data} = props;
 
     let disp = `Transistors: ${data.costs.trans()}
                 Chips: ${data.costs.chips()}
@@ -46,9 +45,9 @@ function Block(props: any) {
 <span>
     <Button disabled={data.qty <= data.costs.chips()} color="secondary" variant="outlined"
             aria-label="outlined secondary" onClick={() => {
-            data.addLvl();
-            setFoo(0);
-            console.log(data.upgrade);
+        data.addLvl();
+        setFoo(0);
+        console.log(data.upgrade);
 
     }}>{data.qty <= data.costs.chips() ? "Need more Chips" : "Upgrade"}</Button>
 </span>
@@ -62,3 +61,6 @@ function Block(props: any) {
 }
 
 export default Block;
+
+
+
