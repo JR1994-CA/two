@@ -2,10 +2,9 @@ import pie from "./Holding"
 
 class data
 {
-    constructor(name = "TEST" , qty = 0)
+    constructor(name = "TEST" ,  funcCosts:object)
     {
         this.name = name;
-        this.qty = qty;
     }
 
     costs =
@@ -32,14 +31,16 @@ class data
     {
         if(pie.chips.qty < this.costs.chips() )
             return false
+
         if(pie.trans.qty < this.costs.trans())
             return false
+
         if(pie.boards.qty < this.costs.boards())
             return false
-        if(pie.cpus.qty < this.costs.cpus() )
-            return false
 
-        return true;
+        return pie.cpus.qty >= this.costs.cpus();
+
+
     }
 
     addLvl =()=>
@@ -57,11 +58,6 @@ export class upgrade extends data
     perClick=1;
 }
 
-
-function hasMoney(data:pie , cost:number)
-{
-
-}
 
 export default data;
 
