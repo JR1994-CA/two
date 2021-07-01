@@ -6,7 +6,6 @@ import {useState} from "react";
 
 function Block(props) {
 
-
     let [foo,setFoo] = useState(0); //Cheaty way to update site
     let {data} = props;
 
