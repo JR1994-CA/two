@@ -2,9 +2,10 @@ import React from "react";
 import {Divider, Grid, Tooltip} from "@material-ui/core";
 import {Button} from "@material-ui/core";
 import {useState} from "react";
+import data from "../../OtherStuff/Util";
 
 
-function Block(props:pie)
+function Block(props:any)
 {
 
     let [foo, setFoo] = useState(0); //Cheaty way to update site

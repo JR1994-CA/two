@@ -1,25 +1,32 @@
-import React from 'react';
-import logo from './logo.svg';
-import './App.css';
+import {Container, Divider} from "@material-ui/core";
+import Block from "./components/Block";
+import {Grid} from "@material-ui/core";
+import NavBar from "./components/NavBar";
+import pie from "./OtherStuff/Holding"
+import Footer from "./components/Footer";
 
 function App() {
+
   return (
-    <div className="App">
-      <header className="App-header">
-        <img src={logo} className="App-logo" alt="logo" />
-        <p>
-          Edit <code>src/App.tsx</code> and save to reload.
-        </p>
-        <a
-          className="App-link"
-          href="https://reactjs.org"
-          target="_blank"
-          rel="noopener noreferrer"
-        >
-          Learn React
-        </a>
-      </header>
-    </div>
+      <>
+        <NavBar/>
+        <Grid container>
+        </Grid>
+        <Divider/>
+        <Grid container>
+          <Grid item>
+            {/*Dynamically input blocks?*/}
+            {/*<Block curr_block={"Transistor"} costFun={(upgrade) => (upgrade + 20) * 2} curr_count={objodata}/>*/}
+            {/*<Block curr_block={"Boards"} costFun={(upgrade) => (upgrade + 20) * 2} curr_count={objodata}/>*/}
+            <Block data={pie.trans} pie={pie}/>
+            <Block data={pie.chips} pie={pie}/>
+            <Block data={pie.boards} pie={pie}/>
+            <Block data={pie.cpus} pie={pie}/>
+
+          </Grid>
+        </Grid>
+        <Footer/>
+      </>
   );
 }
 
