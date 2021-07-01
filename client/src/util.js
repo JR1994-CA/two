@@ -1,3 +1,5 @@
+import pie from "./Holding"
+
 class data
 {
     constructor(name = "TEST" , qty = 0)
@@ -40,9 +42,8 @@ class upgrade extends data
 
 function hasMoney(data , cost)
 {
-    return false;
+
 }
 
 export default data;
 
-// util -> holding -> block index -> app
