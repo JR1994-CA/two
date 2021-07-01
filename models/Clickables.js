@@ -2,16 +2,33 @@ const { Schema, model, Types } = require('mongoose');
 const stats = require('./Stats');
 
 
-const CPU = new Schema(
+const TransistorSchema = new Schema({
+    id: { type: Integer, default: 1},
+    isHide: false
+});
 
-);
+const CompSchema = new Schema({id: { type: Integer, default: 2}});
 
-const Clickable = new Schema(
+const ChipSchema = new Schema({id: { type: Integer, default: 3}});
+
+const CPUSchema = new Schema({ id: { type: Integer, default: 4}});
+
+
+
+
+
+const ClickableSchema = new Schema(
     {
+        children: [
+            TransistorSchema,
+            CompSchema,
+            ChipSchema,
+            CPUSchema],
+
         count: { type: Integer, default: 0 },
         clickModifier: { type: Integer, default: 1 },
         cost: {
-            board:{ type: Integer, default: 0 },
+            transistor:{ type: Integer, default: 0 },
             comp: { type: Integer, default: 0 },
             chip: { type: Integer, default: 0 },
             cpu: { type: Integer, default: 0 }
@@ -48,6 +65,17 @@ Clickable.virtual('getClickMod').get(function() {
     return this.mod.click;
 });
 
-const Clickable = model('Clickable', Clickable);
+const Clickable = model('Clickable', ClickableSchema);
+const Transistor = model('Transistor', TransistorSchema);
+const Comp = model('Comp', CompSchema);
+const Chip = model('Chip', ChipSchema);
+const CPU = model('CPU', CPUSchema);
 
-module.exports = Clickable;
+
+module.exports = {
+    Clickable,
+    Transistor,
+    Comp,
+    Chip,
+    CPU
+};
