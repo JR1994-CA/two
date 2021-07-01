@@ -1,7 +1,7 @@
 import {Container, Divider} from "@material-ui/core";
 import Block from "./components/Block";
 import {Grid} from "@material-ui/core";
-import NavBar from "./components/NavBar";
+import NavBar from "./components/Navbar";
 import pie from "./OtherStuff/Holding"
 import Footer from "./components/Footer";
 

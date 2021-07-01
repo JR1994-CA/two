@@ -1,6 +1,5 @@
 import {Avatar, Link} from "@material-ui/core";
 import {Grid} from "@material-ui/core";
-import {blue, Blue} from "@material-ui/core/colors";
 
 import {makeStyles} from "@material-ui/core/styles";
 
@@ -26,10 +25,10 @@ function Footer(){
                 <Avatar variant="square" alt="Shelby Jordan" src="/static/images/avatar/1.jpg" />
             </Link>
             <Link href="https://github.com/JR1994-CA"  color="inherit">
-                <Avatar alt="Jesus Ramirez Arroyo" src="/static/images/avatar/2.jpg" />
+                <Avatar alt="Jesus Ramirez Arroyo" variant="square" src="/static/images/avatar/2.jpg" />
             </Link>
             <Link href="https://github.com/CynthiaMohan"  color="inherit">
-                <Avatar alt="Cynthia Mohan" src="/static/images/avatar/3.jpg" />
+                <Avatar alt="Cynthia Mohan" src="/static/images/avatar/3.jpg" variant="square" />
             </Link>
         </Grid>
     );
