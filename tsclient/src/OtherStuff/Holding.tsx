@@ -20,7 +20,7 @@ class pie {
         }, boards: () => {
         }, cpus: () => {
         }
-    }, 1 );
+    }, true);
 
     static cpus: Data = new Data("Cpus", {
         chips: () => {

@@ -2,24 +2,25 @@ import pie from "./Holding"
 
 class data
 {
-    constructor(name = "TEST" ,  funcCosts:object , qty:number = 0)
+    constructor(name = "TEST" ,  funcCosts:object , shown:boolean = false)
     {
         this.name = name;
-        this.qty = qty
+        this.shown = shown
     }
 
     costs =
         {
-            chips : ()=> (this.upgradelVl + 20) * 2 ,
-            boards: ()=> 0,
-            trans : ()=> 0,
-            cpus :  ()=> 0
+            chips : (val:number)=> val,
+            boards: (val:number)=> val,
+            trans : (val:number)=> val,
+            cpus :  (val:number)=> val
         }
 
     name;
-    upgradelVl = 0;
+    upgradeLVl = 0;
     qty = 10;
     perSec=0;
+    shown:boolean = false;
 
     changeQty = (val:number) =>
     {
@@ -47,9 +48,9 @@ class data
     addLvl =()=>
     {
         if(pie.chips.qty )
-        this.changeQty(-this.costs.chips());
-        this.upgradelVl++;
-        return this.upgradelVl;
+        this.changeQty(-this.costs.chips(this.upgradeLVl));
+        this.upgradeLVl++;
+        return this.upgradeLVl;
     }
 
 }

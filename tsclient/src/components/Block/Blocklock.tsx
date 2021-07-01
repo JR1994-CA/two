@@ -6,7 +6,7 @@ function Blocklock(props:any)
 {
 
 
-    if(pie.trans.qty > 0)
+    if(pie.trans.shown)
         return <Block data={pie.trans} pie={pie}/>
 
         // if(pie.chips.qty)
