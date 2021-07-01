@@ -1,13 +1,10 @@
-// require('dotenv').config();
 const expr = require('express')
-const session = require('express-session')
-const hdbar = require('express-handlebars');
-//const sql = require('./models/connections');
-const app = expr();
-const port = process.env.PORT || 3001;
+
+
 const def = require('./routes');
 const path = require('path');
-
+const port = process.env.PORT || 3001;
+const app = expr();
 app.engine('handlebars', hdbar());
 app.set('view engine', 'handlebars');
 
