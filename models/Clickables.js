@@ -1,6 +1,11 @@
 const { Schema, model, Types } = require('mongoose');
 const stats = require('./Stats');
 
+
+const CPU = new Schema(
+
+);
+
 const Clickable = new Schema(
     {
         count: { type: Integer, default: 0 },
@@ -31,6 +36,9 @@ const Clickable = new Schema(
     }
 );
 
+Clickable.virtual('getClickable').get(function() {
+    return this.name;
+});
 
 Clickable.virtual('getPerSecMod').get(function() {
     return this.mod.per;
