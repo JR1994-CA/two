@@ -8,10 +8,13 @@ function Block(props) {
 
 
     let [foo,setFoo] = useState(0); //Cheaty way to update site
-    let [currUpgrade, setUpgrade] = useState(0); //temp 0
     let {data} = props;
 
-    let disp  = `Transistors: ${data.costs.chips()}`;
+    let disp  = `Transistors: ${data.costs.trans()}
+                Chips: ${data.costs.chips()}
+                Board: ${data.costs.boards()}
+                Cpu: ${data.costs.cpus()}
+    `;
     return (
 
         <Grid container className="">
@@ -39,7 +42,8 @@ function Block(props) {
                     </div>
                     <div className="">
                         <Tooltip title={disp}>
-                        <Button color="secondary" variant="outlined" aria-label="outlined secondary" onClick={() =>
+                            <span>
+                        <Button disabled={data.qty<= data.costs.chips()} color="secondary" variant="outlined" aria-label="outlined secondary" onClick={() =>
                         {
                             if (data.qty > data.costs.chips())
                             {
@@ -48,18 +52,13 @@ function Block(props) {
                                 setFoo(0);
                                 console.log(data.upgrade);
                             }
-                        }}>Upgrade</Button>
+                        }}>{ data.qty<= data.costs.chips()? "Need more Chips" : "Upgrade"}</Button>
+                            </span>
                         </Tooltip>
                     </div>
                 </Grid>
 
-                <Grid item direction="column">
-                    <div className="">per sec:0</div>
-                    <div>Transistors: {data.costs.chips()}</div>
-                    <div>Board: 0</div>
-                    <div> Chips: 0</div>
-                    <div>Cpu: 0</div>
-                </Grid>
+
             </Grid>
             <Divider/>
         </Grid>

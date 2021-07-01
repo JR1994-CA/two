@@ -8,6 +8,7 @@ class data
 
     }
 
+
     costs =
         {
             chips : ()=> (this.upgradelVl + 20) * 2 ,
@@ -19,6 +20,8 @@ class data
     name;
     upgradelVl = 0;
     qty = 10;
+    perSec=0;
+
 
     changeQty = (val) =>
     {
@@ -31,6 +34,25 @@ class data
         return this.upgradelVl;
     }
 
+}
+
+
+class upgrade extends data
+{
+
+    perClick=1;
+
+}
+
+
+function hasMoney(data , cost)
+{
+    if(costs.chips() > chips)
+
+        retrun true;
+
+
+    return false;
 }
 
 export default data;

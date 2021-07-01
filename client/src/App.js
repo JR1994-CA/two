@@ -7,9 +7,10 @@ import Data from './util';
 
 function App() {
 
-    const chips = new Data("Chips");
-    const boards = new Data("Boards");
-    const trans = new Data("Transistor");
+
+
+
+
 
 
     return (
@@ -26,13 +27,11 @@ function App() {
                   {/*Dynamically input blocks?*/}
                   {/*<Block curr_block={"Transistor"} costFun={(upgrade) => (upgrade + 20) * 2} curr_count={objodata}/>*/}
                   {/*<Block curr_block={"Boards"} costFun={(upgrade) => (upgrade + 20) * 2} curr_count={objodata}/>*/}
-
-                  <Block data={chips}/>
-
-
-                  <Block data={boards}/>
-
                   <Block data={trans}/>
+                  <Block data={chips}/>
+                  <Block data={boards}/>
+                  <Block data={cpus}/>
+
               </Grid>
           </Grid>
 {/*<Footer/>*/}
