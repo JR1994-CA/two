@@ -8,4 +8,5 @@ class pie
     static cpus = new Data("Cpus");
 }
 
+
 export default pie
