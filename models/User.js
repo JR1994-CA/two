@@ -1,6 +1,7 @@
 const { User, model } = require('mongoose');
 
 const clickable = require('./Clickables');
+const transistor = require(./)
 
 const User = new Schema(
     {
@@ -19,6 +20,9 @@ const User = new Schema(
             unique: true
         },
         clickablesArr: [{
+
+            trans: clickable.
+
 
 
         }],

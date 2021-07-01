@@ -3,15 +3,30 @@ const stats = require('./Stats');
 
 
 const TransistorSchema = new Schema({
+    name: {type: String, default: "transistor"},
+    count: { type: Integer, default: 0},
     id: { type: Integer, default: 1},
     isHide: false
 });
 
-const CompSchema = new Schema({id: { type: Integer, default: 2}});
+const CompSchema = new Schema({
+    name: {type: String, default: "comp"},
+    count: { type: Integer, default: 0},
+    id: { type: Integer, default: 2,
+    }
+});
 
-const ChipSchema = new Schema({id: { type: Integer, default: 3}});
+const ChipSchema = new Schema({
+    name: {type: String, default: "chip"},
+    count: { type: Integer, default: 0},
+    id: { type: Integer, default: 3}
+});
 
-const CPUSchema = new Schema({ id: { type: Integer, default: 4}});
+const CPUSchema = new Schema({
+    name: {type: String, default: "cpu"},
+    count: { type: Integer, default: 0},
+    id: { type: Integer, default: 4}
+});
 
 
 
@@ -25,7 +40,6 @@ const ClickableSchema = new Schema(
             ChipSchema,
             CPUSchema],
 
-        count: { type: Integer, default: 0 },
         clickModifier: { type: Integer, default: 1 },
         cost: {
             transistor:{ type: Integer, default: 0 },
