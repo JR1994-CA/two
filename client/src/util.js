@@ -4,10 +4,7 @@ class data
     {
         this.name = name;
         this.qty = qty;
-
-
     }
-
 
     costs =
         {
@@ -39,19 +36,12 @@ class data
 
 class upgrade extends data
 {
-
     perClick=1;
-
 }
 
 
 function hasMoney(data , cost)
 {
-    if(costs.chips() > chips)
-
-        retrun true;
-
-
     return false;
 }
 

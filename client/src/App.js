@@ -4,14 +4,9 @@ import Board from "./components/Board";
 import {Grid} from "@material-ui/core";
 import NavBar from "./components/NavBar";
 import Data from './util';
+import pie from "./Holding"
 
 function App() {
-
-
-
-
-
-
 
     return (
       <>
@@ -27,10 +22,10 @@ function App() {
                   {/*Dynamically input blocks?*/}
                   {/*<Block curr_block={"Transistor"} costFun={(upgrade) => (upgrade + 20) * 2} curr_count={objodata}/>*/}
                   {/*<Block curr_block={"Boards"} costFun={(upgrade) => (upgrade + 20) * 2} curr_count={objodata}/>*/}
-                  <Block data={trans}/>
-                  <Block data={chips}/>
-                  <Block data={boards}/>
-                  <Block data={cpus}/>
+                  <Block data={pie.trans}/>
+                  <Block data={pie.chips}/>
+                  <Block data={pie.boards}/>
+                  <Block data={pie.cpus}/>
 
               </Grid>
           </Grid>

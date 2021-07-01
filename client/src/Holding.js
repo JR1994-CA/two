@@ -7,3 +7,5 @@ class pie
     static trans = new Data("Transistor");
     static cpus = new Data("Cpus");
 }
+
+export default pie
