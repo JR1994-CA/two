@@ -5,13 +5,14 @@ import NavBar from "./components/Navbar";
 import pie from "./OtherStuff/Holding"
 import Footer from "./components/Footer";
 import Drawer from "./components/Layout";
-
+import SimpleModal from "./components/Login Signup";
 function App() {
 
   return (
       <>
 
         <NavBar/>
+
         <Divider/>
           <Grid container>
               <Grid item>
