@@ -1,4 +1,4 @@
-import Data from "./Util";
+import Data, {upgrade} from "./Util";
 
 class pie
 {
@@ -6,6 +6,10 @@ class pie
     static boards:Data = new Data("Boards");
     static trans:Data = new Data("Transistor");
     static cpus:Data = new Data("Cpus");
+    static robot:Data = new upgrade("Robot")
+    static fortyTwo:Data = new upgrade("42")
+    static rowboat:Data = new upgrade("RowBoat")
+    static phonebox:Data = new upgrade("Phone Box")
 }
 
 export default pie

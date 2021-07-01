@@ -5,13 +5,12 @@ import NavBar from "./components/Navbar";
 import pie from "./OtherStuff/Holding"
 import Footer from "./components/Footer";
 
+
 function App() {
 
   return (
       <>
         <NavBar/>
-        <Grid container>
-        </Grid>
         <Divider/>
         <Grid container>
           <Grid item>
@@ -24,6 +23,13 @@ function App() {
             <Block data={pie.cpus} pie={pie}/>
 
           </Grid>
+                <Grid item>
+                    <Block data={pie.robot} pie={pie}/>
+                    <Block data={pie.fortyTwo} pie={pie}/>
+                    <Block data={pie.rowboat} pie={pie}/>
+                    <Block data={pie.phonebox} pie={pie}/>
+                </Grid>
+
         </Grid>
         <Footer/>
       </>

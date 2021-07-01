@@ -34,7 +34,7 @@ class data
 
 }
 
-class upgrade extends data
+export class upgrade extends data
 {
     perClick=1;
 }
