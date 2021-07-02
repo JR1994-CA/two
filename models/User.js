@@ -19,13 +19,6 @@ const User = new Schema(
             trim: true,
             unique: true
         },
-        clickablesArr: [{
-
-            trans: clickable.
-
-
-
-        }],
 
 
 
