@@ -2,31 +2,32 @@ import Data, {upgrade} from "./Util";
 
 class pie {
     static chips: Data = new Data("Chips", {
-        chips: (val:number) => (20 + val) * 2,
-         boards: (val:number) =>  Math.round((5 + val ) * 1.5),
-        cpus: (val:number) => (1 + val) * 1.001
-
+        trans: (val:number) => Math.round((20 + val) * 15),
+        chips: (val:number) =>  Math.round((1 + val) * 10),
+         boards: (val:number) =>  Math.round((5 + val ) * 15),
+        cpus: (val:number) => Math.round((1 + val) * 1.1)
     });
 
     static boards: Data = new Data("Boards", {
-        chips: () => {
-        }, boards: () => {
-        }, cpus: () => {
-        },
+        trans: (val:number) => val,
+        chips: (val:number) => val
+      , boards: (val:number) => val
+        , cpus: () => 0,
     });
 
     static trans: Data = new Data("Transistor", {
-        chips: () => {
-        }, boards: () => {
-        }, cpus: () => {
-        }
-    }, true);
+        trans: (val:number) => Math.round((20 + val) * 15),
+        chips: () => 0
+        , boards: () => 0
+        , cpus: () => 0
+
+    });
 
     static cpus: Data = new Data("Cpus", {
-        chips: () => {
-        }, boards: () => {
-        }, cpus: () => {
-        }
+        trans: (val:number) => val,
+        chips: (val:number) => val
+        , boards: (val:number) => val
+        , cpus: (val:number) => val,
     });
 
     static robot: Data = new upgrade("Robot", {

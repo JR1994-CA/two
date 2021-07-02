@@ -2,10 +2,10 @@ import pie from "./Holding"
 
 class data
 {
-    constructor(name = "TEST" ,  funcCosts:object , shown:boolean = false)
+    constructor(name = "TEST" ,  funcCosts:object)
     {
         this.name = name;
-        this.shown = shown
+        //this.costs = funcCosts;
     }
 
     costs =
@@ -18,9 +18,8 @@ class data
 
     name;
     upgradeLVl = 0;
-    qty = 10;
+    qty = 0;
     perSec=0;
-    shown:boolean = false;
 
     changeQty = (val:number) =>
     {
@@ -41,7 +40,6 @@ class data
             return false
 
         return pie.cpus.qty >= this.costs.cpus(this.upgradeLVl);
-
 
     }
 

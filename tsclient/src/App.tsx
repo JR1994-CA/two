@@ -16,14 +16,7 @@ function App() {
             <Divider/>
             <Grid container>
                 <Grid item>
-
-                    <Blocklock/>
-
-                    {/*Dynamically input blocks?*/}
-                    {/*<Block data={pie.trans} pie={pie}/>*/}
-                    {/*<Block data={pie.chips} pie={pie}/>*/}
-                    {/*<Block data={pie.boards} pie={pie}/>*/}
-                    {/*<Block data={pie.cpus} pie={pie}/>*/}
+                    <Blocklock draw={[pie.trans,pie.chips]} />
                 </Grid>
                 <Grid item>
                     <Block data={pie.robot} pie={pie}/>

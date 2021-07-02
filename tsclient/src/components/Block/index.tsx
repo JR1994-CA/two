@@ -9,10 +9,12 @@ function Block(props: any) {
     let [foo, setFoo] = useState(0); //Cheaty way to update site
     let {data} = props;
 
-    let disp = `Transistors: ${data.costs.trans()}
-                Chips: ${data.costs.chips()}
-                Board: ${data.costs.boards()}
-                Cpu: ${data.costs.cpus()}
+    if (data === null || data === undefined) return  null;
+
+    let disp = `Transistors: ${data.costs.trans(1)}
+                Chips: ${data.costs.chips(1)}
+                Board: ${data.costs.boards(1)}
+                Cpu: ${data.costs.cpus(1)}
     `;
     return (
 
