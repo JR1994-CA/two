@@ -8,5 +8,4 @@ function Blocklock(props: any) {
     return (<span> {draw.map((item: any) => <Block data={item} pie={pie}/>)} </span>)
 }
 
-
 export default Blocklock;

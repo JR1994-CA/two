@@ -25,9 +25,6 @@ function checkUnlocks(data:object){
     //unlock 42 -trans =1000
     //unlock Robot -  comp: 10000, chip: 1000,
     // Phonebox - board: 500,comp: 100000,chip: 1000,
-
-
-
 }
 
 export default function Unlocks(props:any) {
@@ -35,7 +32,7 @@ export default function Unlocks(props:any) {
 
     return (
         <div>
-            <ColorButton variant="contained" color="primary" className={classes.margin} onClick={()=>checkUnlocks()}>
+            <ColorButton variant="contained" color="primary" className={classes.margin} onClick={()=>checkUnlocks({})}>
                Unlocks
             </ColorButton>
 

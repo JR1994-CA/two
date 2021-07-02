@@ -1,5 +1,4 @@
 import {Container, Divider} from "@material-ui/core";
-import Block from "./components/Block";
 import Blocklock from "./components/Block/Blocklock";
 import {Grid} from "@material-ui/core";
 import NavBar from "./components/Navbar";
@@ -15,7 +14,7 @@ function App() {
             <Divider/>
             <Grid container>
                 <Grid item>
-                    <Blocklock draw={[pie.trans,pie.chips]} />
+                    <Blocklock draw={[pie.trans,pie.chips,pie.trans]} />
                 </Grid>
                 <Grid item>
                     <Blocklock draw={[pie.fortyTwo]}/>
@@ -24,9 +23,7 @@ function App() {
     <Unlocks unlockData={pie.trans}/>
 </Grid>
             </Grid>
-
             <Drawer/>
-
         </>
     );
 }
