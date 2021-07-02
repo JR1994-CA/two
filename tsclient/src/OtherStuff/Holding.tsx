@@ -57,8 +57,8 @@ class pie {
         , boards: (val:number) => val
         , cpus: (val:number) => val,
     });
-
-
+    static upLvl =0;
+    static listO_Open =[pie.trans];
 }
 
 export default pie

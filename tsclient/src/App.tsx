@@ -14,7 +14,7 @@ function App() {
             <Divider/>
             <Grid container>
                 <Grid item>
-                    <Blocklock draw={[pie.trans,pie.chips,pie.trans]} />
+                    <Blocklock draw={pie.listO_Open} />
                 </Grid>
                 <Grid item>
                     <Blocklock draw={[pie.fortyTwo]}/>

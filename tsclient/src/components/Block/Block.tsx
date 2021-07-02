@@ -11,10 +11,11 @@ function Block(props: any) {
 
     if (data === null || data === undefined) return  null;
 
-    let disp = `Transistors: ${data.costs.trans(1)}
-                Chips: ${data.costs.chips(1)}
-                Board: ${data.costs.boards(1)}
-                Cpu: ${data.costs.cpus(1)}
+
+    let disp = `Transistors: ${data.costs.trans(data.upgradeLvl)}
+                Chips: ${data.costs.chips(data.upgradeLvl)}
+                Board: ${data.costs.boards(data.upgradeLvl)}
+                Cpu: ${data.costs.cpus(data.upgradeLvl)}
     `;
     return (
 
@@ -39,7 +40,6 @@ function Block(props: any) {
                         <Button color="secondary" variant="outlined" aria-label="outlined secondary" onClick={() => {
                             data.changeQty(1);
                             setFoo(++foo);//forcing update
-                            console.log(data.qty)
                         }}>Do Click</Button>
                     </div>
                     <div className="">
