@@ -5,7 +5,7 @@ class data
     constructor(name = "TEST" ,  funcCosts:object)
     {
         this.name = name;
-        //this.costs = funcCosts;
+        this.upgradeLVl = 0;
     }
 
     costs =
@@ -17,10 +17,9 @@ class data
         }
 
     name;
-    upgradeLVl = 0;
+    upgradeLVl = 1;
     qty = 0;
     perSec=0;
-    perUnlock=0;
 
     changeQty = (val:number) =>
     {
@@ -28,6 +27,7 @@ class data
         return this.qty
     }
 
+    getLvl = ()=> this.upgradeLVl
 
     checkCost = ()=>
     {

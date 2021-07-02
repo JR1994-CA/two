@@ -8,9 +8,9 @@ function Block(props: any) {
 
     let [foo, setFoo] = useState(0); //Cheaty way to update site
     let {data} = props;
-
     if (data === null || data === undefined) return  null;
 
+    console.log(data.costs.trans(data.getLvl()))
 
     let disp = `Transistors: ${data.costs.trans(data.upgradeLvl)}
                 Chips: ${data.costs.chips(data.upgradeLvl)}

@@ -4,14 +4,9 @@ import Button from '@material-ui/core/Button';
 import { indigo, purple} from '@material-ui/core/colors';
 import {uOrder} from "../../OtherStuff/Something";
 import pie from '../../OtherStuff/Holding';
-import Blocklock from "../Block/Blocklock";
 import {Grid} from "@material-ui/core";
 
 
-
-
-
-let unlockCount=0;
 const ColorButton = withStyles((theme) => ({
     root: {
         color: theme.palette.getContrastText(purple[500]),
@@ -34,8 +29,9 @@ const useStyles = makeStyles((theme) => ({
     },
 }));
 
-function checkUnlocks(unlocksData:any){
-    if (unlocksData.trans.qty >= uOrder[pie.upLvl].trans && unlocksData.boards.qty >= uOrder[pie.upLvl].boards && unlocksData.chips.qty >= uOrder[pie.upLvl].cpus && unlocksData.tran.qty >= uOrder[pie.upLvl].cpus) {
+function checkUnlocks(pieProp:any){
+
+    if (pie.trans.qty >= uOrder[pie.upLvl].trans && pie.boards.qty >= uOrder[pie.upLvl].boards && pie.chips.qty >= uOrder[pie.upLvl].cpus && pie.cpus.qty >= uOrder[pie.upLvl].cpus) {
         pie.chips.changeQty(-uOrder[pie.upLvl].chips);
         pie.trans.changeQty(-uOrder[pie.upLvl].trans);
         pie.cpus.changeQty(-uOrder[pie.upLvl].cpus);
@@ -53,7 +49,7 @@ export default function Unlocks(props:any) {
     return (
         <Grid container>
             <div>
-            <ColorButton variant="contained" color="primary" className={classes.blue} onClick={()=>checkUnlocks(Props)}>
+            <ColorButton variant="contained" color="primary" className={classes.blue} onClick={()=>checkUnlocks(props)}>
                 Unlocks
             </ColorButton>
             </div>

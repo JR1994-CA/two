@@ -1,9 +1,7 @@
 import {Avatar, Link} from "@material-ui/core";
 import {Grid} from "@material-ui/core";
-import {amber, deepOrange, indigo, yellow} from "@material-ui/core/colors";
-import {blue} from "@material-ui/core/colors";
+import {amber, deepOrange} from "@material-ui/core/colors";
 import {purple} from "@material-ui/core/colors";
-import {BottomNavigation} from "@material-ui/core";
 import {Tooltip} from "@material-ui/core";
 import {makeStyles} from "@material-ui/core/styles";
 import {Fade} from "@material-ui/core";
