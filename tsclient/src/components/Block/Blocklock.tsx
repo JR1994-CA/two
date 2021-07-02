@@ -6,9 +6,8 @@ function Blocklock(props: any) {
 
     let [set,sets] = useState(0)
     let {draw} = props
-    setInterval(()=>sets(pie.listO_Open.length),200);
-
-
+    
+    console.log(draw);
     return (<span> {draw.map((item: any) => <Block data={item} pie={pie}/>)} </span>)
 }
 

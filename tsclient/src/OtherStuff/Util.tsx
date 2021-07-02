@@ -58,16 +58,6 @@ export class upgrade extends data
 {
     perClick=1;
 }
-// export let unlocks =
-//     {
-//         chips:
-//             {
-//                 trans: (val: number) => 0,
-//                 chips: (val: number) => 0,
-//                 boards: (val: number) => 0,
-//                 cpus: () => 0,
-//             }
-//     }
 
 
 export default data;

@@ -8,24 +8,27 @@ import Unlocks from './components/Unlocks';
 
 function App() {
 
-    return (
-        <>
-            <NavBar/>
-            <Divider/>
-            <Grid container>
-                <Grid item>
-                    <Blocklock draw={pie.listO_Open} />
-                </Grid>
-                <Grid item>
-                    <Blocklock draw={[pie.fortyTwo]}/>
-                </Grid>
-                <Grid item>
-                    <Unlocks unlockData={pie.trans}/>
-                </Grid>
-            </Grid>
-            <Drawer/>
-        </>
-    );
-}
+        return (
 
+            <>
+                <NavBar/>
+                <Divider/>
+                <Grid container>
+                    <Grid item>
+                        <Blocklock draw={pie.listO_Open}/>
+                    </Grid>
+                    <Grid item>
+                        <Blocklock draw={[pie.fortyTwo]}/>
+                    </Grid>
+                    <Grid item>
+                        <Unlocks unlockData={pie}/>
+                    </Grid>
+                </Grid>
+
+                <Drawer/>
+
+            </>
+        );
+
+}
 export default App;
