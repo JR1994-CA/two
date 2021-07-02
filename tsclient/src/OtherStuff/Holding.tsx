@@ -35,28 +35,28 @@ class pie {
         }, boards: () => {
         }, cpus: () => {
         }
-    })
+    },);
 
     static fortyTwo: Data = new upgrade("42", {
         chips: () => {
         }, boards: () => {
         }, cpus: () => {
         }
-    })
+    },);
 
     static rowboat: Data = new upgrade("RowBoat", {
         chips: () => {
         }, boards: () => {
         }, cpus: () => {
         }
-    })
+    },);
 
     static phonebox: Data = new upgrade("Phone Box", {
         chips: () => {
         }, boards: () => {
         }, cpus: () => {
         }
-    })
+    });
 
 
 }

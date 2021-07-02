@@ -4,9 +4,8 @@ import Blocklock from "./components/Block/Blocklock";
 import {Grid} from "@material-ui/core";
 import NavBar from "./components/Navbar";
 import pie from "./OtherStuff/Holding"
-import Footer from "./components/Footer";
 import Drawer from "./components/Layout";
-import SimpleModal from "./components/Login Signup";
+
 
 function App() {
 
@@ -19,15 +18,11 @@ function App() {
                     <Blocklock draw={[pie.trans,pie.chips]} />
                 </Grid>
                 <Grid item>
-                    <Block data={pie.robot} pie={pie}/>
-                    <Block data={pie.fortyTwo} pie={pie}/>
-                    <Block data={pie.rowboat} pie={pie}/>
-                    <Block data={pie.phonebox} pie={pie}/>
+                    <Blocklock draw={[pie.fortyTwo]}/>
                 </Grid>
 
             </Grid>
             <Drawer/>
-            {/*<Footer/>*/}
 
         </>
     );
