@@ -3,13 +3,13 @@ import { makeStyles } from '@material-ui/core/styles';
 import Modal from '@material-ui/core/Modal';
 import {Button} from "@material-ui/core";
 import {TextField} from "@material-ui/core";
-function rand() {
-    return Math.round(Math.random() * 20) - 10;
-}
+import {FormControl} from "@material-ui/core";
+import FancyButtons from "./password";
+
 
 function getModalStyle() {
-    const top = 50 + rand();
-    const left = 50 + rand();
+    const top = 50 ;
+    const left = 50 ;
 
     return {
         top: `${top}%`,
@@ -21,11 +21,25 @@ function getModalStyle() {
 const useStyles = makeStyles((theme) => ({
     paper: {
         position: 'absolute',
-        width: 400,
+        width:400,
+        height:400,
         backgroundColor: theme.palette.background.paper,
         border: '2px solid #000',
         boxShadow: theme.shadows[5],
         padding: theme.spacing(2, 4, 3),
+    },
+    root: {
+        display: 'flex',
+        flexWrap: 'wrap',
+    },
+    margin: {
+        margin: theme.spacing(1),
+    },
+    withoutLabel: {
+        marginTop: theme.spacing(3),
+    },
+    textField: {
+        width: '25ch',
     },
 }));
 
@@ -46,10 +60,12 @@ const {text_name}=Props;
     const body = (
         <div style={modalStyle} className={classes.paper}>
             <h2 id="simple-modal-title">Login</h2>
-            <form >
-                <TextField id="standard-basic" label="e-mail" />
-                <TextField id="standard-basic" label="password" />
-            </form>
+            <FormControl>
+                <TextField id="standard-basic" label="e-mail" size={"medium"}/>
+                {/*<TextField id="standard-basic" label="password" />*/}
+
+                </FormControl>
+            <FancyButtons/>
         </div>
     );
 
