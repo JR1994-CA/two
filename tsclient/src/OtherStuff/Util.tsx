@@ -20,6 +20,7 @@ class data
     upgradeLVl = 0;
     qty = 0;
     perSec=0;
+    perUnlock=0;
 
     changeQty = (val:number) =>
     {
@@ -57,6 +58,16 @@ export class upgrade extends data
 {
     perClick=1;
 }
+// export let unlocks =
+//     {
+//         chips:
+//             {
+//                 trans: (val: number) => 0,
+//                 chips: (val: number) => 0,
+//                 boards: (val: number) => 0,
+//                 cpus: () => 0,
+//             }
+//     }
 
 
 export default data;

@@ -2,7 +2,9 @@ import React from 'react';
 import {withStyles, makeStyles} from '@material-ui/core/styles';
 import Button from '@material-ui/core/Button';
 import {purple } from '@material-ui/core/colors';
-import pie from "../../OtherStuff/Holding"
+import {uOrder} from "../../OtherStuff/Something";
+import data from '../../OtherStuff/Holding';
+import pie from '../../OtherStuff/Holding';
 
 const ColorButton = withStyles((theme) => ({
     root: {
@@ -20,19 +22,30 @@ const useStyles = makeStyles((theme) => ({
     },
 }));
 
-function checkUnlocks(data:object){
-    //unlock Robot - trans=100
-    //unlock 42 -trans =1000
-    //unlock Robot -  comp: 10000, chip: 1000,
-    // Phonebox - board: 500,comp: 100000,chip: 1000,
+function checkUnlocks(data:any){
+
+    console.log(data.trans.qty);
+    // console.log(data.chips);
+if( true || data.tran.qty >= uOrder[pie.upLvl].trans && data.boards.qty >= uOrder[pie.upLvl].boards && data.chips.qty >= uOrder[pie.upLvl].cpus && data.tran.qty >= uOrder[pie.upLvl].cpus ) {
+
+    pie.chips.changeQty(-uOrder[pie.upLvl].chips);
+    pie.trans.changeQty(-uOrder[pie.upLvl].trans);
+    pie.cpus.changeQty(-uOrder[pie.upLvl].cpus);
+    pie.boards.changeQty(-uOrder[pie.upLvl].boards);
+    pie.listO_Open.push(uOrder[pie.upLvl].x);
+    pie.upLvl++;
+
+console.log(pie.listO_Open);
+}
+
 }
 
 export default function Unlocks(props:any) {
     const classes = useStyles();
-
     return (
         <div>
-            <ColorButton variant="contained" color="primary" className={classes.margin} onClick={()=>checkUnlocks({})}>
+            <ColorButton variant="contained" color="primary" className={classes.margin} onClick=
+                {()=>checkUnlocks(data)}>
                Unlocks
             </ColorButton>
 

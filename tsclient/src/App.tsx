@@ -19,9 +19,9 @@ function App() {
                 <Grid item>
                     <Blocklock draw={[pie.fortyTwo]}/>
                 </Grid>
-<Grid item>
-    <Unlocks unlockData={pie.trans}/>
-</Grid>
+                <Grid item>
+                    <Unlocks unlockData={pie.trans}/>
+                </Grid>
             </Grid>
             <Drawer/>
         </>
