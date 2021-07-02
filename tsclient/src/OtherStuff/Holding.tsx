@@ -31,31 +31,31 @@ class pie {
     });
 
     static robot: Data = new upgrade("Robot", {
-        chips: () => {
-        }, boards: () => {
-        }, cpus: () => {
-        }
+        trans: (val:number) => val,
+        chips: (val:number) => val
+        , boards: (val:number) => val
+        , cpus: (val:number) => val,
     },);
 
     static fortyTwo: Data = new upgrade("42", {
-        chips: () => {
-        }, boards: () => {
-        }, cpus: () => {
-        }
+        trans: (val:number) => val,
+        chips: (val:number) => val
+        , boards: (val:number) => val
+        , cpus: (val:number) => val,
     },);
 
     static rowboat: Data = new upgrade("RowBoat", {
-        chips: () => {
-        }, boards: () => {
-        }, cpus: () => {
-        }
+        trans: (val:number) => val,
+        chips: (val:number) => val
+        , boards: (val:number) => val
+        , cpus: (val:number) => val,
     },);
 
     static phonebox: Data = new upgrade("Phone Box", {
-        chips: () => {
-        }, boards: () => {
-        }, cpus: () => {
-        }
+        trans: (val:number) => val,
+        chips: (val:number) => val
+        , boards: (val:number) => val
+        , cpus: (val:number) => val,
     });
 
 
