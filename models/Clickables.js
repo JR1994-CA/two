@@ -28,10 +28,6 @@ const CPUSchema = new Schema({
     id: { type: Integer, default: 4}
 });
 
-
-
-
-
 const ClickableSchema = new Schema(
     {
         children: [
