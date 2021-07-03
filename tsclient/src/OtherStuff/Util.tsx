@@ -27,7 +27,6 @@ class data
         return this.qty
     }
     getLvl = ()=> this.upgradeLVl
-
     checkCost = ()=>
     {
         if(pie.chips.qty < this.costs.chips(this.upgradeLVl))
@@ -42,7 +41,6 @@ class data
         return pie.cpus.qty >= this.costs.cpus(this.upgradeLVl);
 
     }
-
     addLvl =()=>
     {
         if(pie.chips.qty )
@@ -50,7 +48,6 @@ class data
         this.upgradeLVl++;
         return this.upgradeLVl;
     }
-
 }
 
 export class upgrade extends data
