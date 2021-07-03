@@ -2,20 +2,20 @@ import React from "react";
 import {Divider, Grid, Tooltip} from "@material-ui/core";
 import {Button} from "@material-ui/core";
 import {useState} from "react";
-
-
+import pie from '../../OtherStuff/Holding';
+import {upgrade} from "../../OtherStuff/Util";
 function Block(props: any) {
 
     let [foo, setFoo] = useState(0); //Cheaty way to update site
     let {data} = props;
     if (data === null || data === undefined) return  null;
+    console.log(data);
+    // console.log(data.costs.trans)
 
-    console.log(data.costs.trans(data.getLvl()))
-
-    let disp = `Transistors: ${data.costs.trans(data.upgradeLvl)}
-                Chips: ${data.costs.chips(data.upgradeLvl)}
-                Board: ${data.costs.boards(data.upgradeLvl)}
-                Cpu: ${data.costs.cpus(data.upgradeLvl)}
+    let disp = `Transistors: ${data.costs.trans(data.upgradeLVl)}
+                Chips: ${data.costs.chips(data.upgradeLVl)}
+                Board: ${data.costs.boards(data.upgradeLVl)}
+                Cpu: ${data.costs.cpus(data.upgradeLVl)}
     `;
     return (
 
