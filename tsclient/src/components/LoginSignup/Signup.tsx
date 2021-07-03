@@ -14,10 +14,7 @@ const useStyles = makeStyles((theme) => ({
             margin: theme.spacing(1),
         },
     },
-    pink: {
-        color: theme.palette.getContrastText(pink[500]),
-        backgroundColor: pink[500],
-    },
+
     blue: {
         color: '#fff',
         backgroundColor: indigo[400],
@@ -33,10 +30,10 @@ headerStyle:{
 
 const Signup = () => {
     const classes = useStyles();
-    const paperStyle = {padding: '20px', height: '70vh', width: 300, margin: "20px auto"};
+    const paperStyle = {padding: '20px', height: '70vh', width: 300, margin: "00px auto"};
     return (
         <Grid>
-            <Paper elevation={20} style={paperStyle}>
+            <Paper style={paperStyle}>
                 <Grid container justify="center" direction={"column"} alignItems={"center"}>
                     <Avatar className={classes.blue}><PermIdentityIcon/></Avatar>
                     <h2 className={classes.headerStyle}>Sign up</h2>
