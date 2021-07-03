@@ -17,7 +17,7 @@ function main() {
                 {/*<Blocklock draw={[pie.fortyTwo]}/>*/}
             </Grid>
             <Grid item>
-                <Unlocks/>
+                {/*<Unlocks/>*/}
                 {/*unlockData={pie}*/}
             </Grid>
         </Grid>

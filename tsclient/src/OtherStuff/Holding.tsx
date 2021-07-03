@@ -59,6 +59,10 @@ class pie {
     });
     static upLvl = 0;
     static listO_Open =[pie.trans];
+
+    static getList() {
+        return this.listO_Open
+    }
 }
 
 export default pie
