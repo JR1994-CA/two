@@ -2,21 +2,26 @@ import React from "react";
 import {Divider, Grid, Tooltip} from "@material-ui/core";
 import {Button} from "@material-ui/core";
 import {useState} from "react";
-import pie from '../../OtherStuff/Holding';
-import {upgrade} from "../../OtherStuff/Util";
+import {uChips} from '../../OtherStuff/Something'
 function Block(props: any) {
 
     let [foo, setFoo] = useState(0); //Cheaty way to update site
     let {data} = props;
     if (data === null || data === undefined) return  null;
     console.log(data);
-    // console.log(data.costs.trans)
+    console.log(uChips.trans);
 
     let disp = `Transistors: ${data.costs.trans(data.upgradeLVl)}
                 Chips: ${data.costs.chips(data.upgradeLVl)}
                 Board: ${data.costs.boards(data.upgradeLVl)}
                 Cpu: ${data.costs.cpus(data.upgradeLVl)}
     `;
+
+    // let disp = `Transistors: ${uChips.trans}
+    //             Chips: ${uChips.chips}
+    //             Boards: ${uChips.boards}
+    //             Cpus: ${uChips.cpus}
+    // `;
     return (
 
         <Grid container className="">

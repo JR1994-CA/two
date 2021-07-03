@@ -1,5 +1,5 @@
 import pie from './Holding';
-class Something {
+ class Something {
 
 
     constructor(chips = 10000,

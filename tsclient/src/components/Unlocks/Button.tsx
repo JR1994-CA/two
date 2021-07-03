@@ -29,7 +29,7 @@ const useStyles = makeStyles((theme) => ({
     },
 }));
 
-function checkUnlocks(pieProp:any){
+function checkUnlocks(){
 
     if (pie.trans.qty >= uOrder[pie.upLvl].trans && pie.boards.qty >= uOrder[pie.upLvl].boards && pie.chips.qty >= uOrder[pie.upLvl].cpus && pie.cpus.qty >= uOrder[pie.upLvl].cpus) {
         pie.chips.changeQty(-uOrder[pie.upLvl].chips);
@@ -51,7 +51,7 @@ export default function Unlocks(props:any) {
     return (
         <Grid container>
             <div>
-            <ColorButton variant="contained" color="primary" className={classes.blue} onClick={()=>{checkUnlocks(props);}}>
+            <ColorButton variant="contained" color="primary" className={classes.blue} onClick={()=>{checkUnlocks();}}>
                 Unlocks
             </ColorButton>
             </div>
