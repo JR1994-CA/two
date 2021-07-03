@@ -145,6 +145,7 @@ export default function PersistentDrawerRight() {
                     {['SignIn', 'Sign Up', 'Contact Us'].map((text, index) => (
                         <ListItem button key={text} >
                             <ListItemText primary={text} />
+
                         </ListItem>
                     ))}
                 </List>
