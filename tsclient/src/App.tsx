@@ -5,18 +5,20 @@ import Main from './components/Draw/main';
 import Login from "./components/LoginSignup/Login";
 import Signup from "./components/LoginSignup/Signup";
 import SignInOutContainer from "./components/LoginSignup/Container";
-
+import {Switch,Route} from 'react-router-dom';
 function App() {
     return (
-        <>
-            <NavBar/>
-            <Divider/>
-            {/*<Login/>*/}
-            {/*<Signup/>*/}
-            <SignInOutContainer/>
-            <Main/>
-            <Drawer/>
-        </>
+        <Drawer>
+            <Switch>
+                {/*<NavBar/>*/}
+                {/*<Divider/>*/}
+                {/*<Login/>*/}
+                {/*<Signup/>*/}
+                <Route path='/SigninOut' component={SignInOutContainer}/>
+                <Route path='/' component={Main}/>
+                {/*<Drawer/>*/}
+            </Switch>
+        </Drawer>
     );
 }
 export default App;

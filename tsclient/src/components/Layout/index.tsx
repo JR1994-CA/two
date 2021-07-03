@@ -78,7 +78,7 @@ const useStyles = makeStyles((theme) => ({
     },
 }));
 
-export default function PersistentDrawerRight() {
+export default function PersistentDrawerRight(Props:any) {
     const classes = useStyles();
     const theme = useTheme();
     const [open, setOpen] = React.useState(false);
@@ -121,6 +121,7 @@ export default function PersistentDrawerRight() {
                 })}
             >
                 <div className={classes.drawerHeader} />
+                {Props.children}
                 <Typography >
                    <Footer/>
                 </Typography>
