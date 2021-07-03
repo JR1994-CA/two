@@ -128,9 +128,9 @@ const unlocks = Vue.createApp({
 
                 {
                     cost: {
-                        board: 100000,
-                        comp: 100000,
-                        chip: 30000,
+                        board: 100_000,
+                        comp: 100_000,
+                        chip: 30_000,
                         cpu: 0,
                     },
                     name: "Unlock CPUS",
