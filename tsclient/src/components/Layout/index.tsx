@@ -13,13 +13,11 @@ import MenuIcon from '@material-ui/icons/Menu';
 import ChevronLeftIcon from '@material-ui/icons/ChevronLeft';
 import ChevronRightIcon from '@material-ui/icons/ChevronRight';
 import ListItem from '@material-ui/core/ListItem';
+import ListItemIcon from '@material-ui/core/ListItemIcon';
 import ListItemText from '@material-ui/core/ListItemText';
-import {Modal, TextField} from "@material-ui/core";
+import InboxIcon from '@material-ui/icons/MoveToInbox';
+import MailIcon from '@material-ui/icons/Mail';
 import Footer from "../Footer";
-import modal from "../Login Signup";
-import SimpleModal from "../Login Signup";
-import Unlocks from '../Unlocks/Button';
-
 
 const drawerWidth = 240;
 
@@ -104,7 +102,7 @@ export default function PersistentDrawerRight() {
             >
                 <Toolbar>
                     <Typography variant="h6" noWrap className={classes.title}>
-                        Silicon Clicker
+                        Silicon-Clicker
                     </Typography>
                     <IconButton
                         color="inherit"
@@ -123,8 +121,10 @@ export default function PersistentDrawerRight() {
                 })}
             >
                 <div className={classes.drawerHeader} />
+                <Typography >
+                   <Footer/>
+                </Typography>
 
-                <Footer/>
             </main>
             <Drawer
                 className={classes.drawer}
@@ -142,17 +142,14 @@ export default function PersistentDrawerRight() {
                 </div>
                 <Divider />
                 <List>
-                    {['Login', 'Sign-up', 'Contact Us'].map((text, index) => (
-                        <ListItem button key={text}>
-                            {/*<ListItemText primary={text} />*/}
-                            <SimpleModal text_name={text}/>
+                    {['SignIn', 'Sign Up', 'Contact Us'].map((text, index) => (
+                        <ListItem button key={text} >
+                            <ListItemText primary={text} />
                         </ListItem>
                     ))}
-
                 </List>
 
             </Drawer>
-
         </div>
     );
 }
