@@ -63,18 +63,6 @@ const ClickableSchema = new Schema(
     }
 );
 
-Clickable.virtual('getClickable').get(function() {
-    return this.name;
-});
-
-Clickable.virtual('getPerSecMod').get(function() {
-    return this.mod.per;
-});
-
-Clickable.virtual('getClickMod').get(function() {
-    return this.mod.click;
-});
-
 const Clickable = model('Clickable', ClickableSchema);
 const Transistor = model('Transistor', TransistorSchema);
 const Comp = model('Comp', CompSchema);
