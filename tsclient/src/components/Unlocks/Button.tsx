@@ -1,4 +1,4 @@
-import React from 'react';
+import React, {useState} from 'react';
 import {withStyles, makeStyles} from '@material-ui/core/styles';
 import Button from '@material-ui/core/Button';
 import { indigo, purple} from '@material-ui/core/colors';
@@ -30,14 +30,16 @@ const useStyles = makeStyles((theme) => ({
 }));
 
 function checkUnlocks(pieProp:any){
-
-    if (pie.trans.qty >= uOrder[pie.upLvl].trans && pie.boards.qty >= uOrder[pie.upLvl].boards && pie.chips.qty >= uOrder[pie.upLvl].cpus && pie.cpus.qty >= uOrder[pie.upLvl].cpus) {
+        if (true)
+        {
+    //if ( pie.trans.qty >= uOrder[pie.upLvl].trans && pie.boards.qty >= uOrder[pie.upLvl].boards && pie.chips.qty >= uOrder[pie.upLvl].cpus && pie.cpus.qty >= uOrder[pie.upLvl].cpus) {
         pie.chips.changeQty(-uOrder[pie.upLvl].chips);
         pie.trans.changeQty(-uOrder[pie.upLvl].trans);
         pie.cpus.changeQty(-uOrder[pie.upLvl].cpus);
         pie.boards.changeQty(-uOrder[pie.upLvl].boards);
         pie.listO_Open.push(uOrder[pie.upLvl].x);
         pie.upLvl++;
+        console.log(pie.listO_Open);
         console.log("Checking");
 
     }
@@ -46,10 +48,11 @@ function checkUnlocks(pieProp:any){
 
 export default function Unlocks(props:any) {
     const classes = useStyles();
+    let [bar,setbar] = useState(0);
     return (
         <Grid container>
             <div>
-            <ColorButton variant="contained" color="primary" className={classes.blue} onClick={()=>checkUnlocks(props)}>
+            <ColorButton variant="contained" color="primary" className={classes.blue} onClick={()=>{checkUnlocks(props);}}>
                 Unlocks
             </ColorButton>
             </div>
