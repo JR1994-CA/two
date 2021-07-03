@@ -29,5 +29,4 @@ export let uCpus=new Something(30000,100000,100000,0);
 export let uOrder = [
     new Something(0,1000,0,0,pie.chips),
     new Something(1000,10_000,0,0,pie.boards),
-    new Something(30000,100000,100000,0,pie.cpus)
-];
+    new Something(30000,100000,100000,0,pie.cpus)];
