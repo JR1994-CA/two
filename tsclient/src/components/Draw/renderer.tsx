@@ -26,7 +26,6 @@ class Redoer extends Component<any, any> {
 
     render() {
 
-
         return (
             <>
                 <Trans/>

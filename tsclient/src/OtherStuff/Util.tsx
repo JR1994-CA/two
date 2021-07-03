@@ -26,7 +26,6 @@ class data
         this.qty += val;
         return this.qty
     }
-
     getLvl = ()=> this.upgradeLVl
 
     checkCost = ()=>
