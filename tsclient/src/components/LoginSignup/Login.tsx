@@ -29,9 +29,9 @@ const useStyles = makeStyles((theme) => ({
 
 }));
 
-const Login=()=> {
+const Login=(handleChange:any)=> {
     const classes = useStyles();
-    const paperStyle = {padding: '20px', height: '70vh', width: 300, margin: "20px auto"};
+    const paperStyle = {padding: '20px', height: '70vh', width: 300, margin: "0px auto"};
     const btnStyle={margin:"8px 0px"};
     const [state, setState] = React.useState({
         checked: true,
@@ -41,12 +41,12 @@ const Login=()=> {
 
     return (
         <Grid>
-            <Paper elevation={10} style={paperStyle}>
+            <Paper  style={paperStyle}>
                 <Grid container justify="center" direction={"column"} alignItems={"center"}>
                     <Avatar className={classes.blue}><LockOutlinedIcon/></Avatar>
                     <h2>Sign in</h2>
                 </Grid>
-                <TextField label={'Username'} placeholder={'Enter username'} fullWidth/>
+                <TextField label={'Email'} placeholder={'Enter email'} fullWidth/>
                 <TextField label={'Password'} placeholder={'Enter password'} type="password" fullWidth/>
                 <FormControlLabel
                     control={
@@ -64,7 +64,7 @@ const Login=()=> {
                     </Link>
                 </Typography>
                 <Typography > Do you have an account?
-                    <Link href="#" >
+                    <Link href="#" onClick={()=>{handleChange("event",1)}} >
                         Sign up
                     </Link>
                 </Typography>
