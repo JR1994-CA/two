@@ -40,19 +40,11 @@ const Signup = () => {
                     <Typography variant={'caption'}>Please fill this form to create your Account</Typography>
                 </Grid>
                 <form>
-                    <TextField label={'Name'} fullWidth/>
+
                     <TextField label={'e-mail'} fullWidth/>
                     <TextField label={'Password'} type={'password'} fullWidth/>
                     <TextField label={'Confirm Password'} type={'password'} fullWidth/>
-                    <FormControlLabel
-                        control={
-                            <Checkbox
-                                name="checked"
-                                color="primary"
-                            />
-                        }
-                        label="I accept all the terms and conditions"
-                    />
+
                     <Button type="submit" variant="contained" color="primary" className={classes.btnStyle}>
                         Sign up
                     </Button>

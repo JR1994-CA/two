@@ -6,6 +6,7 @@ import Button from '@material-ui/core/Button';
 import {makeStyles} from "@material-ui/core/styles";
 import {indigo} from "@material-ui/core/colors";
 import {checkUnlocks} from "../Unlocks/Button";
+import UnlocksDrawer from "../Unlocks/uDrawer";
 
 
 const useStyles = makeStyles((theme) => ({
@@ -42,11 +43,13 @@ class Redoer extends Component<any, any> {
         <>
             <Grid container>
                 <Grid>
+                    <UnlocksDrawer/>
                 <div>
                     <Button variant="contained" color="primary" onClick={this.clicks}>
                         Unlocks
                     </Button>
                 </div>
+
                 </Grid>
                 <Grid>
                     <Blocklock draw={this.state.list}/>
