@@ -36,10 +36,9 @@ export function checkUnlocks(){
         pie.trans.changeQty(-uOrder[pie.upLvl].trans);
         pie.cpus.changeQty(-uOrder[pie.upLvl].cpus);
         pie.boards.changeQty(-uOrder[pie.upLvl].boards);
-        pie.listO_Open.push(uOrder[pie.upLvl].x);
+        pie.upLvl%2 ? pie.listO_Open.push(uOrder[pie.upLvl].x):pie.listO_Up.push(uOrder[pie.upLvl].x);
         pie.upLvl++;
-        console.log(pie.listO_Open);
-        console.log("Checking");
+
 
     }
     // <Blocklock draw={pie.listO_Open} />
