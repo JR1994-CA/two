@@ -8,7 +8,8 @@ import ListItemText from '@material-ui/core/ListItemText';
 
 import AttachMoney from '@material-ui/icons/AttachMoney';
 
-const drawerWidth = 240;
+
+const drawerWidth = 190;
 
 const useStyles = makeStyles((theme) => ({
     root: {
