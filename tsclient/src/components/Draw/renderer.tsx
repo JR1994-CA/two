@@ -41,18 +41,18 @@ class Redoer extends Component<any, any> {
     render = () => (
         <>
             <Grid container>
-            <Grid>
-                <Blocklock draw={this.state.list}/>
-            </Grid>
-                <Grid>
-                    <Blocklock draw={this.state.listU}/>
-                </Grid>
                 <Grid>
                 <div>
                     <Button variant="contained" color="primary" onClick={this.clicks}>
                         Unlocks
                     </Button>
                 </div>
+                </Grid>
+                <Grid>
+                    <Blocklock draw={this.state.list}/>
+                </Grid>
+                <Grid>
+                    <Blocklock draw={this.state.listU}/>
                 </Grid>
             </Grid>
         </>

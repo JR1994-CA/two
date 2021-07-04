@@ -13,14 +13,14 @@ class pie {
         trans: (val:number) => val,
         chips: (val:number) => val
       , boards: (val:number) => val
-        , cpus: () => 0,
+        , cpus: (val:number) => 0,
     });
 
     static trans: Data = new Data("Transistor", {
         trans: (val:number) => Math.round((20 + val) * 15),
-        chips: () => 0
-        , boards: () => 0
-        , cpus: () => 0
+        chips: (val:number) => 0
+        , boards: (val:number) => 0
+        , cpus: (val:number) => 0
 
     });
 
