@@ -2,14 +2,14 @@ import React from "react";
 import {Divider, Grid, Tooltip} from "@material-ui/core";
 import {Button} from "@material-ui/core";
 import {useState} from "react";
-import {uChips} from '../../OtherStuff/Something'
 function Block(props: any) {
 
-    let [foo, setFoo] = useState(0); //Cheaty way to update site
     let {data} = props;
+    let [foo, setFoo] = useState(0); //Cheaty way to update site
+    let [mess,setMess]= useState('')
     if (data === null || data === undefined) return  null;
-    console.log(data);
-    console.log(uChips.trans);
+
+
 
     let disp = `Transistors: ${data.costs.trans(data.upgradeLVl)}
                 Chips: ${data.costs.chips(data.upgradeLVl)}
@@ -17,11 +17,7 @@ function Block(props: any) {
                 Cpu: ${data.costs.cpus(data.upgradeLVl)}
     `;
 
-    // let disp = `Transistors: ${uChips.trans}
-    //             Chips: ${uChips.chips}
-    //             Boards: ${uChips.boards}
-    //             Cpus: ${uChips.cpus}
-    // `;
+
     return (
 
         <Grid container className="">
@@ -50,13 +46,12 @@ function Block(props: any) {
                     <div className="">
                         <Tooltip title={disp}>
 <span>
-    <Button disabled={data.qty <= data.costs.chips()} color="secondary" variant="outlined"
+    <Button disabled={!data.checkCost().did} color="secondary" variant="outlined"
             aria-label="outlined secondary" onClick={() => {
-        data.addLvl();
-        setFoo(--foo);
-        console.log(data.upgrade);
+            setMess(data.addLvl().mess);
+            setFoo(--foo);
 
-    }}>{data.qty <= data.costs.chips() ? "Need more Chips" : "Upgrade"}</Button>
+    }}>{data.getMess().mess}</Button>
 </span>
                         </Tooltip>
                     </div>

@@ -2,17 +2,18 @@ import pie from "./Holding"
 
 class data
 {
-    constructor(name = "TEST" ,  funcCosts:object)
+    constructor(name = "TEST" ,  funcCosts:any)
     {
         this.name = name;
         this.upgradeLVl = 0;
+        this.costs =funcCosts
     }
 
     costs =
         {
+            trans : (val:number)=> val,
             chips : (val:number)=> val,
             boards: (val:number)=> val,
-            trans : (val:number)=> val,
             cpus :  (val:number)=> val
         }
 
@@ -29,29 +30,51 @@ class data
     getLvl = ()=> this.upgradeLVl
     checkCost = ()=>
     {
+        let fin = {did:true , mess:'Need More '}
+
         if(pie.chips.qty < this.costs.chips(this.upgradeLVl))
-            return false
+        {
+            fin.did = false
+            fin.mess += ' Chips'
+        }
 
         if(pie.trans.qty < this.costs.trans(this.upgradeLVl))
-            return false
+        {
+            fin.did = false
+            fin.mess += ' Transistor'
+        }
 
         if(pie.boards.qty < this.costs.boards(this.upgradeLVl))
-            return false
+        {
+            fin.did = false
+            fin.mess += ' Boards'
+        }
 
-        return pie.cpus.qty >= this.costs.cpus(this.upgradeLVl);
+        return {did:fin.did, mess:fin.did?'Upgrade':fin.mess };
 
     }
+    getMess = ()=>
+    {
+        return this.checkCost();
+    }
+
     addLvl =()=>
     {
-        if(pie.chips.qty )
-        this.changeQty(-this.costs.chips(this.upgradeLVl));
-        this.upgradeLVl++;
-        return this.upgradeLVl;
+        let a = this.checkCost()
+
+        if(a.did) {
+            this.changeQty(-this.costs.chips(this.upgradeLVl));
+            this.upgradeLVl++;
+        }
+
+        return a;
+
     }
 }
 
 export class upgrade extends data
 {
+
     perClick=1;
 }
 
