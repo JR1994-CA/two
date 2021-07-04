@@ -43,11 +43,12 @@ class Redoer extends Component<any, any> {
         <>
             <Grid container>
                 <Grid>
-                    <UnlocksDrawer/>
+
                 <div>
                     <Button variant="contained" color="primary" onClick={this.clicks}>
                         Unlocks
                     </Button>
+                    {/*<UnlocksDrawer/>*/}
                 </div>
 
                 </Grid>
