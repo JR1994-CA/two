@@ -94,6 +94,7 @@ export default function PersistentDrawerRight(Props:any) {
     };
 
 console.log(Props);
+const linkStyles={textDecoration:'none',color:'white'};
     return (
         <div className={classes.root}>
             <CssBaseline />
@@ -105,7 +106,8 @@ console.log(Props);
             >
                 <Toolbar>
                     <Typography variant="h6" noWrap className={classes.title}>
-                        Silicon-Clicker
+                        <Link style={linkStyles} to="/"> Silicon-Clicker</Link>
+
                     </Typography>
                     <IconButton
                         color="inherit"
