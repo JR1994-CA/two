@@ -19,11 +19,6 @@ import pie from './Holding';
     x = pie.chips;
 }
 
-
-export let uChips=new Something(0,1000,0,0);
-export let uCpus=new Something(30000,100000,100000,0);
-
-
 export let uOrder = [
     new Something(0,1000,0,0,pie.fortyTwo),
     new Something(0,1000,0,0,pie.chips),
