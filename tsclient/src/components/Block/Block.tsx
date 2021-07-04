@@ -9,14 +9,11 @@ function Block(props: any) {
     let [mess,setMess]= useState('')
     if (data === null || data === undefined) return  null;
 
-
-
     let disp = `Transistors: ${data.costs.trans(data.upgradeLVl)}
                 Chips: ${data.costs.chips(data.upgradeLVl)}
                 Board: ${data.costs.boards(data.upgradeLVl)}
                 Cpu: ${data.costs.cpus(data.upgradeLVl)}
     `;
-
 
     return (
 

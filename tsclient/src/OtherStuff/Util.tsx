@@ -32,16 +32,16 @@ class data
     {
         let fin = {did:true , mess:'Need More '}
 
-        if(pie.chips.qty < this.costs.chips(this.upgradeLVl))
-        {
-            fin.did = false
-            fin.mess += ' Chips'
-        }
-
         if(pie.trans.qty < this.costs.trans(this.upgradeLVl))
         {
             fin.did = false
             fin.mess += ' Transistor'
+        }
+
+        if(pie.chips.qty < this.costs.chips(this.upgradeLVl))
+        {
+            fin.did = false
+            fin.mess += ' Chips'
         }
 
         if(pie.boards.qty < this.costs.boards(this.upgradeLVl))
