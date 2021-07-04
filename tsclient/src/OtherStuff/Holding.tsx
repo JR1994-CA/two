@@ -2,7 +2,7 @@ import Data, {upgrade} from "./Util";
 import data from "./Util";
 
 class pie {
-    static chips: Data = new Data("Chips", {
+    static cpus: Data = new Data("Cpus", {
         trans: (val:number) => Math.round((20 + val) * 15),
         chips: (val:number) =>  Math.round((1 + val) * 10),
          boards: (val:number) =>  Math.round((5 + val ) * 15),
@@ -12,7 +12,7 @@ class pie {
     static boards: Data = new Data("Boards", {
         trans: (val:number) => val,
         chips: (val:number) => val
-      , boards: (val:number) => val
+      , boards: (val:number) => 0
         , cpus: (val:number) => 0,
     });
 
@@ -24,11 +24,11 @@ class pie {
 
     });
 
-    static cpus: Data = new Data("Cpus", {
+    static chips: Data = new Data("Chips", {
         trans: (val:number) => val,
         chips: (val:number) => val
-        , boards: (val:number) => val
-        , cpus: (val:number) => val,
+        , boards: (val:number) => 0
+        , cpus: (val:number) => 0,
     });
 
     static robot: Data = new upgrade("Robot", {

@@ -49,7 +49,11 @@ class data
             fin.did = false
             fin.mess += ' Boards'
         }
-
+        if(pie.cpus.qty < this.costs.cpus(this.upgradeLVl))
+        {
+            fin.did = false
+            fin.mess += ' Cpus'
+        }
         return {did:fin.did, mess:fin.did?'Upgrade':fin.mess };
 
     }
