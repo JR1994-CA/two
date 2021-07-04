@@ -1,4 +1,4 @@
-import React from 'react';
+import React, {useState} from 'react';
 import clsx from 'clsx';
 import { makeStyles, useTheme } from '@material-ui/core/styles';
 import Drawer from '@material-ui/core/Drawer';
@@ -18,7 +18,8 @@ import ListItemText from '@material-ui/core/ListItemText';
 import InboxIcon from '@material-ui/icons/MoveToInbox';
 import MailIcon from '@material-ui/icons/Mail';
 import Footer from "../Footer";
-
+import {Link, Route} from 'react-router-dom';
+import SignInOutContainer from "../LoginSignup/Container";
 const drawerWidth = 240;
 
 const useStyles = makeStyles((theme) => ({
@@ -79,6 +80,7 @@ const useStyles = makeStyles((theme) => ({
 }));
 
 export default function PersistentDrawerRight(Props:any) {
+
     const classes = useStyles();
     const theme = useTheme();
     const [open, setOpen] = React.useState(false);
@@ -91,6 +93,7 @@ export default function PersistentDrawerRight(Props:any) {
         setOpen(false);
     };
 
+console.log(Props);
     return (
         <div className={classes.root}>
             <CssBaseline />
@@ -143,10 +146,9 @@ export default function PersistentDrawerRight(Props:any) {
                 </div>
                 <Divider />
                 <List>
-                    {['SignIn', 'Sign Up', 'Contact Us'].map((text, index) => (
-                        <ListItem button key={text} >
+                    {['SigninOut', 'Contact'].map((text, index) => (
+                        <ListItem component={Link} to={text} button key={text}>
                             <ListItemText primary={text} />
-
                         </ListItem>
                     ))}
                 </List>
