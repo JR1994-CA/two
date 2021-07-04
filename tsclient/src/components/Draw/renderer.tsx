@@ -20,48 +20,40 @@ const useStyles = makeStyles((theme) => ({
 }));
 
 
-function Chip() {
-
-return <>{pie.listO_Open.length > 0 && <Block data={pie.chips} />} </>
-}
-
-function Trans(){
-   return <> {pie.listO_Open.length >= 0 && <Block data={pie.trans} />} </>
-}
-
-function Boards(){
-    return <>{pie.listO_Open.length > 0 && <Block data={pie.boards} />} </>
-}
-
-function Cpus(){
-
-    return <> {pie.listO_Open.length > 0 && <Block data={pie.cpus}/>} </>
-}
 
 class Redoer extends Component<any, any> {
 
     constructor(props:any) {
         super(props);
 
+
         this.state = {
-            list: [pie.trans]
+            list: [pie.trans],
+            listU:[]
         };
     }
 
     clicks = () => {
         checkUnlocks();
-        this.setState({list:pie.listO_Open});
+        this.setState({list:pie.listO_Open , listU:pie.listO_Up});
     };
 
     render = () => (
         <>
-            <Blocklock draw={this.state.list}/>
             <Grid container>
+            <Grid>
+                <Blocklock draw={this.state.list}/>
+            </Grid>
+                <Grid>
+                    <Blocklock draw={this.state.listU}/>
+                </Grid>
+                <Grid>
                 <div>
                     <Button variant="contained" color="primary" onClick={this.clicks}>
                         Unlocks
                     </Button>
                 </div>
+                </Grid>
             </Grid>
         </>
     );

@@ -1,4 +1,5 @@
 import Data, {upgrade} from "./Util";
+import data from "./Util";
 
 class pie {
     static chips: Data = new Data("Chips", {
@@ -57,12 +58,11 @@ class pie {
         , boards: (val:number) => val
         , cpus: (val:number) => val,
     });
+
     static upLvl = 0;
     static listO_Open =[pie.trans];
+    static listO_Up:data[] =  [];
 
-    static getList() {
-        return this.listO_Open
-    }
 }
 
 export default pie

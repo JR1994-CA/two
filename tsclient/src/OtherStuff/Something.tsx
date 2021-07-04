@@ -17,16 +17,42 @@ import pie from './Holding';
     boards=10000
     cpus=10000
     x = pie.chips;
+}
+
+
+export let uChips=new Something(0,1000,0,0);
+export let uCpus=new Something(30000,100000,100000,0);
+
+export let uOrder = [
+    new Something(0,1000,0,0,pie.fortyTwo),
+    new Something(0,1000,0,0,pie.chips),
+    new Something(10000,10000,300,0,pie.phonebox),
+    new Something(1000,10_000,0,0,pie.boards),
+    new Something(100000,100000,10000,10000,pie.rowboat),
+    new Something(30000,100000,100000,0,pie.cpus),
+    new Something(300000,3000000,30000,300000,pie.robot)
+];
+
+
+
+let order = {
+    Comps : [
+
+        new Something(0,1000,0,0,pie.chips),
+        new Something(1000,10_000,0,0,pie.boards),
+        new Something(30000,100000,100000,0,pie.cpus),
+
+    ],
+
+    Uses:[
+
+        new Something(0,1000,0,0,pie.fortyTwo),
+        new Something(10000,10000,300,0,pie.phonebox),
+        new Something(100000,100000,10000,10000,pie.rowboat),
+        new Something(300000,3000000,30000,300000,pie.robot)
+
+    ]
 
 }
 
 
-export let uRobots =new Something(0,100,0,0);
-export let uChips=new Something(0,1000,0,0);
-export let uBoards=new Something(1000,10_000,0,0);
-export let uCpus=new Something(30000,100000,100000,0);
-
-export let uOrder = [
-    new Something(0,1000,0,0,pie.chips),
-    new Something(1000,10_000,0,0,pie.boards),
-    new Something(30000,100000,100000,0,pie.cpus)];

@@ -53,7 +53,7 @@ function Block(props: any) {
     <Button disabled={data.qty <= data.costs.chips()} color="secondary" variant="outlined"
             aria-label="outlined secondary" onClick={() => {
         data.addLvl();
-        setFoo(0);
+        setFoo(--foo);
         console.log(data.upgrade);
 
     }}>{data.qty <= data.costs.chips() ? "Need more Chips" : "Upgrade"}</Button>
