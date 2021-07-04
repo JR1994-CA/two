@@ -4,9 +4,13 @@ import Drawer from "./components/Layout/index";
 import Main from './components/Draw/main';
 import ContactComponent from './components/LoginSignup/ContactModal';
 import SignInOutContainer from "./components/LoginSignup/Container";
+import SignupComponent from "./components/LoginSignup/Signup";
 import {Switch,Route,Link} from 'react-router-dom';
+import UnlocksDrawer from './components/Unlocks/uDrawer';
+
 function App() {
     return (
+        <>
         <Drawer>
             <Switch>
                 <Route path='/SigninOut' component={SignInOutContainer}/>
@@ -14,6 +18,8 @@ function App() {
                 <Route path='/' component={Main}/>
             </Switch>
         </Drawer>
+
+        </>
     );
 }
 export default App;

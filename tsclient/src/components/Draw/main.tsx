@@ -10,15 +10,10 @@ function main() {
     return(
         <Grid container>
             <Grid item>
+
                 <Redoer/>
-                {/*{<span>{(pie.listO_Open).map((blockItem: any) =><Blocklock draw={[blockItem]}/>)} </span>}*/}
-            </Grid>
-            <Grid item>
-                {/*<Blocklock draw={[pie.fortyTwo]}/>*/}
-            </Grid>
-            <Grid item>
-                {/*<Unlocks/>*/}
-                {/*unlockData={pie}*/}
+
+
             </Grid>
         </Grid>
     );

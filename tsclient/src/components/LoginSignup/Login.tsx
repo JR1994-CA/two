@@ -64,7 +64,7 @@ const Login=(handleChange:any)=> {
                     </Link>
                 </Typography>
                 <Typography > Do you have an account?
-                    <Link href="#" onClick={()=>{handleChange("event",1)}} >
+                    <Link href="/SigninOut" onClick={()=>{handleChange("event",1)}} >
                         Sign up
                     </Link>
                 </Typography>
