@@ -10,22 +10,22 @@ const StatsSchema = new Schema(
         },
         savePerClick: {
             saveID: { type: String, maxlength: 15 },
-            type: Integer,
+            type: Number,
             default: 0
         },
         savePerSec: {
             saveID: { type: String, maxlength: 15 },
-            type: Integer,
+            type: Number,
             default: 0
         },
         saveUnit: {
             saveID: {type: String, maxlength: 15},
-            type: Integer,
+            type: Number,
             default: 0
         },
         upgradeLvl: {
             saveID: { type: String, maxlength: 15 },
-            type: Integer,
+            type: Number,
             default: 0
         }
 
