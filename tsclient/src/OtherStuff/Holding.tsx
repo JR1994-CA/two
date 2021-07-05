@@ -18,7 +18,7 @@ class pie {
 
     static trans: Data = new Data("Transistor", {
         trans: (val:number) => Math.round((20 + val) * 15),
-        chips: (val:number) => 0,
+        chips: (val:number) => 0 ,
         boards: (val:number) => 0,
         cpus: (val:number) => 0
 
