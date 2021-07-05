@@ -152,9 +152,7 @@ export class upgrade extends data
     {
         return{did:true ,mess:":)"}
     }
-
 }
-
 
 export default data;
 
