@@ -1,19 +1,34 @@
-import React from "react";
+import React, {useEffect} from "react";
 import {Divider, Grid, Tooltip} from "@material-ui/core";
 import {Button} from "@material-ui/core";
 import {useState} from "react";
 function Block(props: any) {
 
     let {data} = props;
+    let [lQty, setLQty] = useState(0); //DONT USE DIRECTLY USE SETSTATE LOCALLY
     let [foo, setFoo] = useState(0); //Cheaty way to update site
     let [mess,setMess]= useState('')
-    if (data === null || data === undefined) return  null;
 
     let disp = `Transistors: ${data.costs.trans(data.upgradeLVl)}
                 Chips: ${data.costs.chips(data.upgradeLVl)}
                 Board: ${data.costs.boards(data.upgradeLVl)}
                 Cpu: ${data.costs.cpus(data.upgradeLVl)}
     `;
+
+    function changeQty_L(x:number)
+    {
+        let temp = lQty + x;
+        setLQty(temp);
+        data.changeQty(x);
+    }
+
+    let inc = ()=> {
+       setInterval(()=>{
+           changeQty_L(data.perSec);
+       },1000)
+    }
+
+    useEffect(inc);
 
     return (
 
@@ -36,8 +51,9 @@ function Block(props: any) {
                     <div className="">click: {data.perClick}</div>
                     <div className="">
                         <Button color="secondary" variant="outlined" aria-label="outlined secondary" onClick={() => {
-                            data.changeQty(1);
-                            setFoo(++foo);//forcing update
+                            changeQty_L(1);
+                            //data.changeQty(1);
+                            //setFoo(++foo);//forcing update
                         }}>Do Click</Button>
                     </div>
                     <div className="">
@@ -46,7 +62,7 @@ function Block(props: any) {
     <Button disabled={!data.checkCost().did} color="secondary" variant="outlined"
             aria-label="outlined secondary" onClick={() => {
             setMess(data.addLvl().mess);
-            setFoo(--foo);
+            //setFoo(--foo);
 
     }}>{data.getMess().mess}</Button>
 </span>
