@@ -88,15 +88,19 @@ export class UfortyTwo extends data {
         this.perSec++;
         this.addLvl();
     }
+    checkCost = ()=>
+    {
+        return{did:true ,mess:":)"}
+    }
 }
 //Rowboat
 export class URow extends data
 {
 
-    // checkCost = ()=>
-    // {
-    //  return{did:true ,mess:":)"}
-    // }
+    checkCost = ()=>
+    {
+     return{did:true ,mess:":)"}
+    }
 
     uButton=()=>{
 
@@ -106,6 +110,7 @@ export class URow extends data
         this.perSec++;
         this.addLvl();
     }
+
 }
 export class UPhoneBox extends data
 {
@@ -115,6 +120,10 @@ export class UPhoneBox extends data
         this.perSec++;
         this.addLvl();
     }
+    checkCost = ()=>
+    {
+        return{did:true ,mess:":)"}
+    }
 }
 export class URobot extends data
 {
@@ -122,6 +131,10 @@ export class URobot extends data
         pie.trans.perSec++;
         this.perSec++;
         this.addLvl();
+    }
+    checkCost = ()=>
+    {
+        return{did:true ,mess:":)"}
     }
 }
 
@@ -131,13 +144,14 @@ export class upgrade extends data
     uButton=()=>{
 
         pie.rowboat.perClick++;
+        pie.chips.perClick++;
         this.perSec++;
         this.addLvl();
     }
-    // checkCost = ()=>
-    // {
-    //     return{did:true ,mess:":)"}
-    // }
+    checkCost = ()=>
+    {
+        return{did:true ,mess:":)"}
+    }
 
 }
 
