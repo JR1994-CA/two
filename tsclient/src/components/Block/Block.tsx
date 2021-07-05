@@ -2,6 +2,7 @@ import React, {useEffect} from "react";
 import {Divider, Grid, Tooltip} from "@material-ui/core";
 import {Button} from "@material-ui/core";
 import {useState} from "react";
+
 function Block(props: any) {
 
     let {data} = props;
@@ -28,6 +29,12 @@ function Block(props: any) {
     }
 
     useEffect(inc);
+
+    let upButton= ()=>
+    {
+        data.perSec++
+        setMess(data.addLvl().mess);
+    }
 
     return (
 
@@ -58,10 +65,7 @@ function Block(props: any) {
                         <Tooltip title={disp}>
 <span>
     <Button disabled={!data.checkCost().did} color="secondary" variant="outlined"
-            aria-label="outlined secondary" onClick={() => {
-            setMess(data.addLvl().mess);
-
-    }}>{data.getMess().mess}</Button>
+            aria-label="outlined secondary" onClick={upButton}>{data.getMess().mess}</Button>
 </span>
                         </Tooltip>
                     </div>

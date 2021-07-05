@@ -8,7 +8,6 @@ import {indigo} from "@material-ui/core/colors";
 import {checkUnlocks} from "../Unlocks/Button";
 
 
-
 const useStyles = makeStyles((theme) => ({
     margin: {
         margin: theme.spacing(1),
@@ -39,6 +38,7 @@ class Redoer extends Component<any, any> {
 
     render = () => (
         <>
+
             <Grid container>
                 <Grid>
 
