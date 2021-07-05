@@ -1,4 +1,4 @@
-import Data, {upgrade, URow} from "./Util";
+import Data, {UfortyTwo, upgrade, UPhoneBox, URobot, URow} from "./Util";
 import data from "./Util";
 
 class pie {
@@ -31,14 +31,14 @@ class pie {
         , cpus: (val:number) => 0,
     });
 
-    static robot: Data = new upgrade("Robot", {
+    static robot: URobot = new URobot("Robot", {
         trans: (val:number) => val,
         chips: (val:number) => val
         , boards: (val:number) => val
         , cpus: (val:number) => val,
     },);
 
-    static fortyTwo: Data = new upgrade("42", {
+    static fortyTwo: UfortyTwo = new UfortyTwo("42", {
         trans: (val:number) => val,
         chips: (val:number) => val
         , boards: (val:number) => val
@@ -52,7 +52,7 @@ class pie {
         , cpus: (val:number) => val,
     },);
 
-    static phonebox: Data = new upgrade("Phone Box", {
+    static phonebox: UPhoneBox = new UPhoneBox("Phone Box", {
         trans: (val:number) => val,
         chips: (val:number) => val
         , boards: (val:number) => val

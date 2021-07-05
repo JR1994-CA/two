@@ -81,23 +81,50 @@ class data
 
     }
 }
-
-
-export class URow extends data
-{
-
-    checkCost = ()=>
-    {
-     return{did:true ,mess:":)"}
-    }
-
-    uButton=()=>{
-
+//42
+export class UfortyTwo extends data {
+    uButton = () => {
         pie.trans.perSec++;
         this.perSec++;
         this.addLvl();
     }
 }
+//Rowboat
+export class URow extends data
+{
+
+    // checkCost = ()=>
+    // {
+    //  return{did:true ,mess:":)"}
+    // }
+
+    uButton=()=>{
+
+        pie.trans.perSec++;
+        pie.chips.perSec++;
+        pie.boards.perSec++;
+        this.perSec++;
+        this.addLvl();
+    }
+}
+export class UPhoneBox extends data
+{
+    uButton=()=>{
+        pie.trans.perSec++;
+        pie.chips.perSec++;
+        this.perSec++;
+        this.addLvl();
+    }
+}
+export class URobot extends data
+{
+    uButton=()=>{
+        pie.trans.perSec++;
+        this.perSec++;
+        this.addLvl();
+    }
+}
+
 
 export class upgrade extends data
 {
@@ -107,10 +134,10 @@ export class upgrade extends data
         this.perSec++;
         this.addLvl();
     }
-    checkCost = ()=>
-    {
-        return{did:true ,mess:":)"}
-    }
+    // checkCost = ()=>
+    // {
+    //     return{did:true ,mess:":)"}
+    // }
 
 }
 
