@@ -51,9 +51,9 @@ function Footer() {
                     <Avatar alt="Jesus Ramirez Arroyo" variant="square" src="/broken-image.jpg" className={classes.orange}>J</Avatar>
                 </Link>
                 </Tooltip>
-                {/*<Tooltip title="Shelby Jordan" TransitionComponent={Fade} TransitionProps={{ timeout: 600 }}>*/}
-                {/*<Link href="https://github.com/AustinJohnAaro  color="inherit" underline={'none'} target="_blank" rel="noopener"> */}
-                {/*    <Avatar alt="Austin John Aaro" src="/static/images/avatar/3.jpg">A</Avatar>*/}
+                {/*<Tooltip title="AustinJohnAaro" TransitionComponent={Fade} TransitionProps={{ timeout: 600 }}>*/}
+                {/*<Link href="https://github.com/AustinJohnAaro"  color="inherit" underline={'none'} target="_blank" rel="noopener">*/}
+                {/*    <Avatar alt="Austin John Aaro" src="/broken-image.jpg" variant="square">A</Avatar>*/}
                 {/*</Link>*/}
                 {/*</Tooltip>*/}
                 <Tooltip title="Cynthia Mohan" TransitionComponent={Fade} TransitionProps={{ timeout: 600 }}>

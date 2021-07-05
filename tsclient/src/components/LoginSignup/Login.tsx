@@ -32,10 +32,10 @@ const useStyles = makeStyles((theme) => ({
 const Login=(handleChange:any)=> {
     const classes = useStyles();
     const paperStyle = {padding: '20px', height: '70vh', width: 300, margin: "0px auto"};
-    const btnStyle={margin:"8px 0px"};
-    const [state, setState] =useState({
-        checked: true,
-    });
+    const btnStyle={margin:"30px 0px"};
+    // const [state, setState] =useState({
+    //     checked: true,
+    // });
 
 
     return (
@@ -47,23 +47,23 @@ const Login=(handleChange:any)=> {
                 </Grid>
                 <TextField label={'Email'} placeholder={'Enter email'} fullWidth/>
                 <TextField label={'Password'} placeholder={'Enter password'} type="password" fullWidth/>
-                <FormControlLabel
-                    control={
-                        <Checkbox
-                            name="checked"
-                            color="primary"
-                        />
-                    }
-                    label="Remember Me"
-                />
+                {/*<FormControlLabel*/}
+                {/*    control={*/}
+                {/*        <Checkbox*/}
+                {/*            name="checked"*/}
+                {/*            color="primary"*/}
+                {/*        />*/}
+                {/*    }*/}
+                {/*    label="Remember Me"*/}
+                {/*/>*/}
                 <Button type="submit" color='primary' variant='contained' fullWidth style={btnStyle}>Sign in</Button>
-                <Typography>
-                    <Link href="#" >
-                        Forgot Password?
-                    </Link>
-                </Typography>
+                {/*<Typography>*/}
+                {/*    <Link href="#" >*/}
+                {/*        Forgot Password?*/}
+                {/*    </Link>*/}
+                {/*</Typography>*/}
                 <Typography > Do you have an account?
-                    <Link href="/SigninOut" onClick={()=>{handleChange("event",1)}} >
+                    <Link href="/SignUp" onClick={()=>{handleChange("event",1)}} >
                         Sign up
                     </Link>
                 </Typography>
