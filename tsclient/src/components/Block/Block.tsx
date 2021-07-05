@@ -65,7 +65,7 @@ function Block(props: any) {
                         <Tooltip title={disp}>
 <span>
     <Button disabled={!data.checkCost().did} color="secondary" variant="outlined"
-            aria-label="outlined secondary" onClick={upButton}>{data.getMess().mess}</Button>
+            aria-label="outlined secondary" onClick={data.uButton}>{data.getMess().mess}</Button>
 </span>
                         </Tooltip>
                     </div>
