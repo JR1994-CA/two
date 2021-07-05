@@ -4,67 +4,6 @@ import {Button} from "@material-ui/core";
 import {useState} from "react";
 
 
-// class BlockC extends React.Component<any, any>{
-//
-//     constructor(props:any) {
-//         super(props);
-//
-//
-//
-//     }
-//
-//     inc = ()=>
-//     {
-//         console.log("called")
-//     }
-//
-//
-//
-//     render() {
-//         return(
-//             <Grid container className="">
-//                 {/*Row 1*/}
-//                 <Grid container
-//                       direction="row"
-//                       justify="space-evenly"
-//                       alignItems="center">
-//                     <h3>{this.props.data.name}<span className=""> {this.props.data.qty}</span></h3>
-//                 </Grid>
-//                 <Divider/>
-//                 {/*Row 2*/}
-//                 <Grid container
-//                       direction="row"
-//                       justify="space-evenly"
-//                       alignItems="center">
-//
-//                     <Grid item direction="column">
-//                         <div className="">click: {this.props.data.perClick}</div>
-//                         <div className="">
-//                             <Button color="secondary" variant="outlined" aria-label="outlined secondary" onClick={() => {
-//                                 changeQty_L(1);
-//
-//                             }}>Do Click</Button>
-//                         </div>
-//                         <div className="">
-//                             <Tooltip title={disp}>
-// <span>
-//     <Button disabled={!this.props.data.checkCost().did} color="secondary" variant="outlined"
-//             aria-label="outlined secondary" onClick={this.props.data.uButton}>{this.props.data.getMess().mess}</Button>
-// </span>
-//                             </Tooltip>
-//                         </div>
-//                     </Grid>
-//                 </Grid>
-//                 <Divider/>
-//             </Grid>
-//         )
-//
-//     }
-//
-//
-// }
-
-
 function Block(props: any) {
 
     let {data} = props;
@@ -142,5 +81,6 @@ function Block(props: any) {
         </Grid>
     );
 }
+
 
 export default Block;
