@@ -148,7 +148,7 @@ const linkStyles={textDecoration:'none',color:'white'};
                 </div>
                 <Divider />
                 <List>
-                    {['SigninOut', 'Contact'].map((text, index) => (
+                    {['Home','Login','SignUp','Contact'].map((text, index) => (
                         <ListItem component={Link} to={text} button key={text}>
                             <ListItemText primary={text} />
                         </ListItem>

@@ -1,7 +1,5 @@
 import {Grid} from "@material-ui/core";
-import Blocklock from "../Block/Blocklock";
 import pie from "../../OtherStuff/Holding";
-import Unlocks from "../Unlocks";
 import Redoer from "./renderer";
 
 function main() {
