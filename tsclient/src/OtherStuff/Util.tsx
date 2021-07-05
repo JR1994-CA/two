@@ -23,6 +23,10 @@ class data
     perSec=0;
     perClick=1;
 
+    uButton(){
+        this.perClick++;
+        this.addLvl();
+    }
 
     changeQty = (val:number) =>
     {
@@ -78,9 +82,31 @@ class data
     }
 }
 
-export class upgrade extends data
+
+export class URow extends data
 {
 
+    checkCost = ()=>
+    {
+     return{did:true ,mess:":)"}
+    }
+
+    uButton(){
+
+        pie.rowboat.perClick++;
+        this.perSec++;
+        this.addLvl();
+    }
+}
+
+export class upgrade extends data
+{
+    uButton(){
+
+        pie.rowboat.perClick++;
+        this.perSec++;
+        this.addLvl();
+    }
 
 }
 

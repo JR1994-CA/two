@@ -1,4 +1,4 @@
-import Data, {upgrade} from "./Util";
+import Data, {upgrade, URow} from "./Util";
 import data from "./Util";
 
 class pie {
@@ -45,7 +45,7 @@ class pie {
         , cpus: (val:number) => val,
     },);
 
-    static rowboat: Data = new upgrade("RowBoat", {
+    static rowboat: URow = new URow("RowBoat", {
         trans: (val:number) => val,
         chips: (val:number) => val
         , boards: (val:number) => val

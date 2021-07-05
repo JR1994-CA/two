@@ -2,9 +2,9 @@ import React, {useState} from 'react';
 import {withStyles, makeStyles} from '@material-ui/core/styles';
 import Button from '@material-ui/core/Button';
 import { indigo, purple} from '@material-ui/core/colors';
-import {uOrder} from "../../OtherStuff/Something";
 import pie from '../../OtherStuff/Holding';
 import {Grid} from "@material-ui/core";
+import uOrder from "../../OtherStuff/Something";
 
 
 const ColorButton = withStyles((theme) => ({
@@ -38,8 +38,6 @@ export function checkUnlocks(){
         pie.boards.changeQty(-uOrder[pie.upLvl].boards);
         pie.upLvl%2 ? pie.listO_Open.push(uOrder[pie.upLvl].x):pie.listO_Up.push(uOrder[pie.upLvl].x);
         pie.upLvl++;
-
-
     }
 
 }
