@@ -1,7 +1,4 @@
-const express = require('express');
-let {graphqlHTTP} = require('express-graphql');
 let {buildSchema} = require('graphql');
-let mongoo = require('mongoose')
 // Construct a schema, using GraphQL schema language
 
 const schema = buildSchema(`
