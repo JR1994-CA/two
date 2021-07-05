@@ -74,7 +74,11 @@ class data
 
         if(a.did) {
             this.changeQty(-this.costs.chips(this.upgradeLVl));
+            this.changeQty(-this.costs.trans(this.upgradeLVl));
+            this.changeQty(-this.costs.boards(this.upgradeLVl));
+            this.changeQty(-this.costs.cpus(this.upgradeLVl));
             this.upgradeLVl++;
+
         }
 
         return a;
@@ -88,19 +92,19 @@ export class UfortyTwo extends data {
         this.perSec++;
         this.addLvl();
     }
-    checkCost = ()=>
-    {
-        return{did:true ,mess:":)"}
-    }
+    // checkCost = ()=>
+    // {
+    //     return{did:true ,mess:"Unlock"}
+    // }
 }
 //Rowboat
 export class URow extends data
 {
 
-    checkCost = ()=>
-    {
-     return{did:true ,mess:":)"}
-    }
+    // checkCost = ()=>
+    // {
+    //  return{did:true ,mess:"Unlock"}
+    // }
 
     uButton=()=>{
 
@@ -120,10 +124,10 @@ export class UPhoneBox extends data
         this.perSec++;
         this.addLvl();
     }
-    checkCost = ()=>
-    {
-        return{did:true ,mess:":)"}
-    }
+    // checkCost = ()=>
+    // {
+    //     return{did:true ,mess:"Unlock"}
+    // }
 }
 export class URobot extends data
 {
@@ -132,10 +136,10 @@ export class URobot extends data
         this.perSec++;
         this.addLvl();
     }
-    checkCost = ()=>
-    {
-        return{did:true ,mess:":)"}
-    }
+    // checkCost = ()=>
+    // {
+    //     return{did:true ,mess:"Unlock"}
+    // }
 }
 
 
@@ -148,10 +152,10 @@ export class upgrade extends data
         this.perSec++;
         this.addLvl();
     }
-    checkCost = ()=>
-    {
-        return{did:true ,mess:":)"}
-    }
+    // checkCost = ()=>
+    // {
+    //     return{did:true ,mess:"Unlock"}
+    // }
 }
 
 export default data;
