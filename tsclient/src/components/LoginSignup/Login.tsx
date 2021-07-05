@@ -1,4 +1,4 @@
-import React from 'react';
+import React, {useState} from 'react';
 import {Avatar, Grid, Paper, TextField} from "@material-ui/core";
 import LockOutlinedIcon from '@material-ui/icons/LockOutlined';
 import {indigo,pink} from "@material-ui/core/colors";
@@ -33,9 +33,8 @@ const Login=(handleChange:any)=> {
     const classes = useStyles();
     const paperStyle = {padding: '20px', height: '70vh', width: 300, margin: "0px auto"};
     const btnStyle={margin:"8px 0px"};
-    const [state, setState] = React.useState({
+    const [state, setState] =useState({
         checked: true,
-
     });
 
 
