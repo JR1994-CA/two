@@ -26,7 +26,9 @@ headerStyle:{
         margin:"10px auto"
     },
 }));
-
+const handleNotify=()=>{
+    return(<h1>Successful</h1>);
+}
 
 const Signup = () => {
     const classes = useStyles();
@@ -45,10 +47,18 @@ const Signup = () => {
                     <TextField label={'Password'} type={'password'} fullWidth/>
                     <TextField label={'Confirm Password'} type={'password'} fullWidth/>
 
-                    <Button type="submit" variant="contained" color="primary" className={classes.btnStyle}>
+                    <Button
+                        type="submit"
+                        variant="contained"
+                        color="primary"
+                        className={classes.btnStyle}
+                        onClick={()=>handleNotify}>
                         Sign up
                     </Button>
                 </form>
+                {/*<div className={}>*/}
+                {/*    You have Successfully Signed up!*/}
+                {/*</div>*/}
             </Paper>
         </Grid>
     );

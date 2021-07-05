@@ -5,8 +5,9 @@ import Redoer from "./renderer";
 function main() {
     const blockIndex=pie.listO_Open.length;
     console.log(blockIndex)
+
     return(
-        <Grid container>
+        <Grid container >
             <Grid item>
                 <Redoer/>
             </Grid>
