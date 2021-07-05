@@ -11,52 +11,52 @@ class pie {
 
     static boards: Data = new Data("Boards", {
         trans: (val:number) => val,
-        chips: (val:number) => val
-      , boards: (val:number) => 0
-        , cpus: (val:number) => 0,
+        chips: (val:number) => val,
+        boards: (val:number) => 0,
+        cpus: (val:number) => 0,
     });
 
     static trans: Data = new Data("Transistor", {
         trans: (val:number) => Math.round((20 + val) * 15),
-        chips: (val:number) => 0
-        , boards: (val:number) => 0
-        , cpus: (val:number) => 0
+        chips: (val:number) => 0,
+        boards: (val:number) => 0,
+        cpus: (val:number) => 0
 
     });
 
     static chips: Data = new Data("Chips", {
         trans: (val:number) => val,
-        chips: (val:number) => val
-        , boards: (val:number) => 0
-        , cpus: (val:number) => 0,
+        chips: (val:number) => val,
+        boards: (val:number) => 0,
+        cpus: (val:number) => 0,
     });
 
     static robot: URobot = new URobot("Robot", {
         trans: (val:number) => val,
-        chips: (val:number) => val
-        , boards: (val:number) => val
-        , cpus: (val:number) => val,
+        chips: (val:number) => val,
+        boards: (val:number) => val,
+        cpus: (val:number) => val,
     },);
 
     static fortyTwo: UfortyTwo = new UfortyTwo("42", {
         trans: (val:number) => val,
-        chips: (val:number) => val
-        , boards: (val:number) => val
-        , cpus: (val:number) => val,
+        chips: (val:number) => val,
+        boards: (val:number) => val,
+        cpus: (val:number) => val,
     },);
 
     static rowboat: URow = new URow("RowBoat", {
         trans: (val:number) => val,
-        chips: (val:number) => val
-        , boards: (val:number) => val
-        , cpus: (val:number) => val,
+        chips: (val:number) => val,
+        boards: (val:number) => val,
+        cpus: (val:number) => val,
     },);
 
     static phonebox: UPhoneBox = new UPhoneBox("Phone Box", {
         trans: (val:number) => val,
-        chips: (val:number) => val
-        , boards: (val:number) => val
-        , cpus: (val:number) => val,
+        chips: (val:number) => val,
+        boards: (val:number) => val,
+        cpus: (val:number) => val,
     });
 
     static upLvl = 0;
