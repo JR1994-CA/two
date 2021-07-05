@@ -40,7 +40,7 @@ const Login=(handleChange:any)=> {
 
     return (
         <Grid>
-            <Paper  style={paperStyle}>
+            <Paper elevation={20} style={paperStyle}>
                 <Grid container justify="center" direction={"column"} alignItems={"center"}>
                     <Avatar className={classes.blue}><LockOutlinedIcon/></Avatar>
                     <h2>Sign in</h2>

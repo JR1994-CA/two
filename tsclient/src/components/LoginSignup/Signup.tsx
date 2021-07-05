@@ -33,7 +33,7 @@ const Signup = () => {
     const paperStyle = {padding: '20px', height: '70vh', width: 300, margin: "00px auto"};
     return (
         <Grid>
-            <Paper style={paperStyle}>
+            <Paper elevation={20} style={paperStyle}>
                 <Grid container justify="center" direction={"column"} alignItems={"center"}>
                     <Avatar className={classes.blue}><PermIdentityIcon/></Avatar>
                     <h2 className={classes.headerStyle}>Sign up</h2>
