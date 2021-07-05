@@ -21,6 +21,8 @@ class data
     upgradeLVl = 1;
     qty = 0;
     perSec=0;
+    perClick=1;
+
 
     changeQty = (val:number) =>
     {
@@ -79,7 +81,7 @@ class data
 export class upgrade extends data
 {
 
-    perClick=1;
+
 }
 
 
