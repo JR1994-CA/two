@@ -23,7 +23,7 @@ class data
     perSec=0;
     perClick=1;
 
-    uButton(){
+    uButton=()=>{
         this.perClick++;
         this.addLvl();
     }
@@ -91,9 +91,9 @@ export class URow extends data
      return{did:true ,mess:":)"}
     }
 
-    uButton(){
+    uButton=()=>{
 
-        pie.rowboat.perClick++;
+        pie.trans.perSec++;
         this.perSec++;
         this.addLvl();
     }
@@ -101,11 +101,15 @@ export class URow extends data
 
 export class upgrade extends data
 {
-    uButton(){
+    uButton=()=>{
 
         pie.rowboat.perClick++;
         this.perSec++;
         this.addLvl();
+    }
+    checkCost = ()=>
+    {
+        return{did:true ,mess:":)"}
     }
 
 }
