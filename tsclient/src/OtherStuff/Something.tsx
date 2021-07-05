@@ -19,7 +19,7 @@ import pie from './Holding';
     x = pie.chips;
 }
 
-export let uOrder = [
+ let uOrder = [
     new Something(0,1000,0,0,pie.fortyTwo),
     new Something(0,1000,0,0,pie.chips),
     new Something(10000,10000,0,0,pie.phonebox),
@@ -29,3 +29,4 @@ export let uOrder = [
     new Something(300000,3000000,30000,300000,pie.robot)
 ];
 
+export default uOrder;

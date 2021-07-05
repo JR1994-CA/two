@@ -5,8 +5,7 @@ import {useState} from "react";
 function Block(props: any) {
 
     let {data} = props;
-    let [lQty, setLQty] = useState(0); //DONT USE DIRECTLY USE SETSTATE LOCALLY
-    let [foo, setFoo] = useState(0); //Cheaty way to update site
+    let [lQty, setLQty] = useState(0); //DONT USE DIRECTLY USE ChangeQty LOCALLY
     let [mess,setMess]= useState('')
 
     let disp = `Transistors: ${data.costs.trans(data.upgradeLVl)}
@@ -52,8 +51,7 @@ function Block(props: any) {
                     <div className="">
                         <Button color="secondary" variant="outlined" aria-label="outlined secondary" onClick={() => {
                             changeQty_L(1);
-                            //data.changeQty(1);
-                            //setFoo(++foo);//forcing update
+
                         }}>Do Click</Button>
                     </div>
                     <div className="">
@@ -62,7 +60,6 @@ function Block(props: any) {
     <Button disabled={!data.checkCost().did} color="secondary" variant="outlined"
             aria-label="outlined secondary" onClick={() => {
             setMess(data.addLvl().mess);
-            //setFoo(--foo);
 
     }}>{data.getMess().mess}</Button>
 </span>
