@@ -10,10 +10,7 @@ function main() {
     return(
         <Grid container>
             <Grid item>
-
                 <Redoer/>
-
-
             </Grid>
         </Grid>
     );

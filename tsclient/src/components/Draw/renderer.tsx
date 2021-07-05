@@ -6,7 +6,7 @@ import Button from '@material-ui/core/Button';
 import {makeStyles} from "@material-ui/core/styles";
 import {indigo} from "@material-ui/core/colors";
 import {checkUnlocks} from "../Unlocks/Button";
-import UnlocksDrawer from "../Unlocks/uDrawer";
+
 
 
 const useStyles = makeStyles((theme) => ({
@@ -19,8 +19,6 @@ const useStyles = makeStyles((theme) => ({
         marginLeft:"25px",
     },
 }));
-
-
 
 class Redoer extends Component<any, any> {
 
