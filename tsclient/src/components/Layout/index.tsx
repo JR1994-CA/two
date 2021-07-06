@@ -127,9 +127,9 @@ const linkStyles={textDecoration:'none',color:'white'};
             >
                 <div className={classes.drawerHeader} />
                 {Props.children}
-                <Typography >
-                   <Footer/>
-                </Typography>
+                {/*<Typography >*/}
+                {/*   <Footer/>*/}
+                {/*</Typography>*/}
 
             </main>
             <Drawer
@@ -148,7 +148,7 @@ const linkStyles={textDecoration:'none',color:'white'};
                 </div>
                 <Divider />
                 <List>
-                    {['Home','Login','SignUp','Contact'].map((text, index) => (
+                    {['About','Login','SignUp','Contact','Home'].map((text, index) => (
                         <ListItem component={Link} to={text} button key={text}>
                             <ListItemText primary={text} />
                         </ListItem>
