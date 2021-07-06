@@ -1,6 +1,7 @@
 let {buildSchema} = require('graphql');
 
 const schemaStat = buildSchema(`
+ 
   type Query {
     savHid:Boolean,
     savePerClick:Int,
@@ -10,4 +11,6 @@ const schemaStat = buildSchema(`
   
 `);
 
-module.export =schemaStat;
+
+
+module.exports = schemaStat;

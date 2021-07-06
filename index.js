@@ -5,7 +5,6 @@ const path = require('path');
 const port = process.env.PORT || 4100;
 const app = expr();
 const ql = require("./routes/GraphQl/Ql")
-const schm = require("./models")
 const mongoo = require('mongoose')
 const roots = require('./models/roots')
 
@@ -19,11 +18,19 @@ app.use(expr.json())
 app.use(expr.static(path.join(__dirname, 'public')));
 app.use(expr.static(path.join(__dirname, 'public/control')));
 
+roots.rStat
+
 app.use('/graphql', graphqlHTTP({
-    schema: schm.stats,
-    rootValue: roots,
+    schema: roots.sStat,
+    rootValue: roots.rStat,
     graphiql: true,
 }));
+app.use('/graphql2', graphqlHTTP({
+    schema: ql.schema,
+    rootValue: ql.root,
+    graphiql: true,
+}));
+
 
 //Routing
 app.use('/', def);
