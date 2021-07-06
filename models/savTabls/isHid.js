@@ -1,5 +1,20 @@
 const {Model, DataTypes} = require("sequelize");
 const sequelize = require("../connections");
+const { graphQl, buildSchema } = require('graphQl'); 
+
+const schema = buildSchema(`
+  type Query {
+    graphQl: String
+  }
+`);
+ 
+const root = { graphQl: () => 'graphQl!' };
+ 
+graphQl(schema, '{ graphQl }', root).then((response) => {
+  console.log(response);
+}); 
+
+
 
 class savHid extends Model{}
 

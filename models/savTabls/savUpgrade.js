@@ -1,7 +1,20 @@
 const {Model, DataTypes} = require("sequelize");
 const sequelize = require("../connections");
-
+const { graphQl, buildSchema } = require('graphQl');
 class savUpgrade extends Model{}
+
+const schema = buildSchema(`
+  type Query {
+    graphQl: String
+  }
+`);
+ 
+const root = { graphQl: () => 'graphQl!' };
+ 
+graphQl(schema, '{ graphQl }', root).then((response) => {
+  console.log(response);
+}); 
+
 
 savUpgrade.init({
 
