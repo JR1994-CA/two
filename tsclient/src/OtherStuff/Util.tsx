@@ -79,10 +79,14 @@ class data
         let a = this.checkCost()
 
         if(a.did) {
-            this.changeQty(-this.costs.chips(this.upgradeLVl));
-            this.changeQty(-this.costs.trans(this.upgradeLVl));
-            this.changeQty(-this.costs.boards(this.upgradeLVl));
-            this.changeQty(-this.costs.cpus(this.upgradeLVl));
+            pie.trans.changeQty(-this.costs.trans(this.upgradeLVl));
+            pie.chips.changeQty(-this.costs.chips(this.upgradeLVl));
+            pie.boards.changeQty(-this.costs.boards(this.upgradeLVl));
+            pie.cpus.changeQty(-this.costs.cpus(this.upgradeLVl));
+            // this.changeQty(-this.costs.chips(this.upgradeLVl));
+            // this.changeQty(-this.costs.trans(this.upgradeLVl));
+            // this.changeQty(-this.costs.boards(this.upgradeLVl));
+            // this.changeQty(-this.costs.cpus(this.upgradeLVl));
             this.upgradeLVl++;
 
         }
