@@ -62,10 +62,11 @@ function Block(props: any) {
                 <Grid item direction="column">
                     <div className="">click: {data.perClick}</div>
                     <div className="">
-                        <Button color="secondary" variant="outlined" aria-label="outlined secondary" onClick={() => {
+                        <Button disabled={false} color="secondary" variant="outlined" aria-label="outlined secondary" onClick={() => {
+                            // data.bButton(1)
                             changeQty_L(1);
 
-                        }}>Do Click</Button>
+                        }}>Click</Button>
                     </div>
                     <div className="">
                         <Tooltip title={disp}>

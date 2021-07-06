@@ -27,7 +27,10 @@ class data
         this.perClick++;
         this.addLvl();
     }
-
+    bButton=(val:number)=>{
+        this.changeQty(val);
+        return{did:true,mess:'Click'};
+    }
     changeQty = (val:number) =>
     {
         this.qty += val;
@@ -36,18 +39,21 @@ class data
     getLvl = ()=> this.upgradeLVl
     checkCost = ()=>
     {
+        return({did:true,mess:'Cheat'});
         let fin = {did:true , mess:'Need More '}
 
         if(pie.trans.qty < this.costs.trans(this.upgradeLVl))
         {
             fin.did = false
             fin.mess += ' Transistor'
+
         }
 
         if(pie.chips.qty < this.costs.chips(this.upgradeLVl))
         {
             fin.did = false
             fin.mess += ' Chips'
+
         }
 
         if(pie.boards.qty < this.costs.boards(this.upgradeLVl))
@@ -89,8 +95,12 @@ class data
 export class UfortyTwo extends data {
     uButton = () => {
         pie.trans.perSec++;
-        this.perSec++;
         this.addLvl();
+    }
+    bButton=(val:number)=>{
+        this.perClick++;
+        this.addLvl();
+        return{did:true,mess:'Click'}
     }
     // checkCost = ()=>
     // {
