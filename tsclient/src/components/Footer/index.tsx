@@ -31,9 +31,11 @@ const useStyles = makeStyles((theme) => ({
 
 function Footer() {
     const classes = useStyles();
+
     return (
 
         <div className={classes.footer}>
+            {/*<h4>Made by Shelby Jordan, Jesus Ramirez Arroyo, Austin John Aaro and Cynthia Mohan </h4>*/}
             <Grid container
                   direction="row"
                   justify="space-evenly"
@@ -51,7 +53,7 @@ function Footer() {
                     <Avatar alt="Jesus Ramirez Arroyo" variant="square" src="/broken-image.jpg" className={classes.orange}>J</Avatar>
                 </Link>
                 </Tooltip>
-                {/*<Tooltip title="AustinJohnAaro" TransitionComponent={Fade} TransitionProps={{ timeout: 600 }}>*/}
+                {/*<Tooltip title="Austin John Aaro" TransitionComponent={Fade} TransitionProps={{ timeout: 600 }}>*/}
                 {/*<Link href="https://github.com/AustinJohnAaro"  color="inherit" underline={'none'} target="_blank" rel="noopener">*/}
                 {/*    <Avatar alt="Austin John Aaro" src="/broken-image.jpg" variant="square">A</Avatar>*/}
                 {/*</Link>*/}
