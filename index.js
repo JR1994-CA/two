@@ -4,9 +4,9 @@ const def = require('./routes');
 const path = require('path');
 const port = process.env.PORT || 4100;
 const app = expr();
-const ql = require("./routes/GraphQl/Ql")
+const ql = require("./GraphQl/Ql")
 const mongoo = require('mongoose')
-const roots = require('./models/roots')
+const roots = require('./GraphQl/Schemas')
 
 //app.engine('handlebars', hdbar());
 //app.set('view engine', 'handlebars');
