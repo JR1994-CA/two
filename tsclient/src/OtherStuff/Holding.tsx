@@ -10,8 +10,8 @@ class pie {
     });
 
     static boards: Data = new Data("Boards", {
-        trans: (val:number) => val,
-        chips: (val:number) => val,
+        trans: (val:number) => Math.round((50+val)**1.25*0.75),
+        chips: (val:number) => Math.round((1+val)**1.25*0.65),
         boards: (val:number) => 0,
         cpus: (val:number) => 0,
     });
@@ -39,18 +39,19 @@ class pie {
 
 
     static fortyTwo: UfortyTwo = new UfortyTwo("42", {
-        trans: (val: number) => {
-            if (pie.trans.qty > 10000)
-                Math.round((1+val)**1.5*0.75)
-            return Math.round((2 + val) ** 1.5 * 0.9);
-        },
+        trans: (val: number) =>
+        // {
+            // if (pie.trans.qty > 10000)
+            //     Math.round((1+val)**1.5*0.75)
+             Math.round((1 + val) ** 1.5 * 0.9),
+        // },
         chips: (val:number) => 0,
         boards: (val:number) => 0,
         cpus: (val:number) => 0,
     },);
 
     static phonebox: UPhoneBox = new UPhoneBox("Phone Box", {
-        trans: (val:number) => Math.round((50+val)**1.5*0.75),
+        trans: (val:number) => Math.round((40+val)**1.25*0.8),
         chips: (val:number) => Math.round((1+val)**1.25*0.75) ,
         boards: (val:number) => 0,
         cpus: (val:number) => 0,
