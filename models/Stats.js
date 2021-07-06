@@ -6,7 +6,7 @@ const StatsSchema = new Schema(
         savHid: {
             saveID: { type: String, maxlength: 15 },
             type: Boolean,
-            default: 0
+            default: true
         },
         savePerClick: {
             saveID: { type: String, maxlength: 15 },

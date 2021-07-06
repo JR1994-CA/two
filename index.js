@@ -10,7 +10,7 @@ const roots = require('./models/roots')
 
 //app.engine('handlebars', hdbar());
 //app.set('view engine', 'handlebars');
-mongoo.connect('mongodb://localhost',{ useNewUrlParser: true, useUnifiedTopology: true })
+mongoo.connect('mongodb://localhost/pie',{ useNewUrlParser: true, useUnifiedTopology: true })
 
 app.use(expr.urlencoded({ extended: true }))
 app.use(expr.json())
@@ -18,7 +18,6 @@ app.use(expr.json())
 app.use(expr.static(path.join(__dirname, 'public')));
 app.use(expr.static(path.join(__dirname, 'public/control')));
 
-roots.rStat
 
 app.use('/graphql', graphqlHTTP({
     schema: roots.sStat,
