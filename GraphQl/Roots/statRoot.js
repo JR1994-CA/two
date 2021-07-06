@@ -1,4 +1,4 @@
-const m = require('../Stats')
+const m = require('../../models/Stats')
 
 let roots = {
         savHid:()=>m.find({}),
