@@ -7,13 +7,10 @@ const schemaStat = buildSchema(`
     savePerClick:Int,
     saveUnit:Int,
     upgradeLvl:Int,
+    test:Int
   }
   
-  type Mutation {
-  
-  
-  }
-  
+ 
 `);
 
 
