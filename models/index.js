@@ -1,16 +1,10 @@
-const connect = require('./connections');
-const save = require('./savTabls');
-const { graphQl, buildSchema } = require('graphQl');
-const schema = buildSchema(`
-  type Query {
-    graphQl: String
-  }
-`);
- 
-const root = { graphQl: () => 'graphQl!' };
- 
-graphQl(schema, '{ graphQl }', root).then((response) => {
-  console.log(response);
-}); 
+// const connect = require('./connections');
+// const save = require('./savTabls');
+//const stats = require('./Stats');
+//const saving = require('./SaveTables');
+//const clickable = require('./Clickables');
+const stats = require('./Stats')
 
-module.exports = {connect, save};
+module.exports = {stats};
+
+

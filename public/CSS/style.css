@@ -54,15 +54,7 @@
 	/* border-top: 1px solid rgba(44,13,44,0.5); */
 	/* border:1px solid #401f44; */
 }
-.glass{
-	background: linear-gradient(to right bottom, #0b0a1e5e,#4a1139e8);
-	backdrop-filter: blur(0.5rem);
-	border-radius: 1rem;
-	z-index: 2;
-	border-right: 1px solid rgba(44,13,44,0.5); 
-	border-top: 1px solid rgba(44,13,44,0.5);
-	
-}
+
 .upgrade{
     width:25px;
     height:25px;

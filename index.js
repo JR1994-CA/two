@@ -1,32 +1,17 @@
-// require('dotenv').config();
+const {graphqlHTTP} = require ("express-graphql");
 const expr = require('express')
-const session = require('express-session')
-const hdbar = require('express-handlebars');
-const sql = require('./models/connections');
-const app = expr();
-const port = process.env.PORT || 3001;
 const def = require('./routes');
 const path = require('path');
-const { graphQl, buildSchema } = require('graphQl'); 
-
-const schema = buildSchema(`
-  type Query {
-    graphQl: String
-  }
-`);
- 
-const root = { graphQl: () => 'graphQl!' };
- 
-graphQl(schema, '{ graphQl }', root).then((response) => {
-  console.log(response);
-}); 
+const port = process.env.PORT || 4100;
+const app = expr();
+const ql = require("./GraphQl/Ql")
+const mongoo = require('mongoose')
+const roots = require('./GraphQl/Schemas')
 
 
-
-
-
-app.engine('handlebars', hdbar());
-app.set('view engine', 'handlebars');
+//app.engine('handlebars', hdbar());
+//app.set('view engine', 'handlebars');
+mongoo.connect('mongodb://localhost/pie',{ useNewUrlParser: true, useUnifiedTopology: true })
 
 app.use(expr.urlencoded({ extended: true }))
 app.use(expr.json())
@@ -35,20 +20,24 @@ app.use(expr.static(path.join(__dirname, 'public')));
 app.use(expr.static(path.join(__dirname, 'public/control')));
 
 
-// app.use(session({
-//     resave: false,
-//     saveUninitialized:false,
-//     cookie:{},
-//     secret:'FineHeresASecret'
-//     })
-// );
+app.use('/graphql', graphqlHTTP({
+    schema: roots.sStat,
+    rootValue: roots.rStat,
+    graphiql: true,
+}));
+app.use('/graphql2', graphqlHTTP({
+    schema: ql.schema,
+    rootValue: ql.root,
+    graphiql: true,
+}));
+
 
 //Routing
 app.use('/', def);
 
 //SERVER CREATION
 (async () => {
-    await sql.sync({ force: false });
+    //await sql.sync({ force: false });
 
     app.listen(port, () => {
         console.log(`listening on port ${port}`)
