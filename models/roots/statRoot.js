@@ -1,8 +1,10 @@
+const m = require('../Stats')
+
 let roots = {
-        savHid:()=>true,
-        savePerClick:()=>15,
-        saveUnit:()=>15,
-        upgradeLvl:()=>1,
+        savHid:()=>m.find({}),
+        savePerClick:()=>m.find({}),
+        saveUnit:()=>m.find({}),
+        upgradeLvl:()=>m.find({}),
     }
 
 module.exports = roots;
