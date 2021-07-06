@@ -2,10 +2,10 @@
   "name": "full_stack",
   "version": "1.0.0",
   "description": "",
-  "main": "server.js",
+  "main": "index.js",
   "scripts": {
     "test": "jest",
-    "start": "node server.js",
+    "start": "node index.js",
     "debug": "nodemon"
   },
   "keywords": [],
@@ -17,6 +17,7 @@
   "dependencies": {
     "@reduxjs/toolkit": "^1.6.0",
     "apollo-server-express": "^2.25.2",
+    "bcrypt": "^5.0.1",
     "express": "^4.17.1",
     "express-graphql": "^0.12.0",
     "express-handlebars": "^5.3.1",

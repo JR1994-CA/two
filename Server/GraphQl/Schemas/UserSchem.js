@@ -6,7 +6,8 @@ const User = buildSchema
     const typeDefs = `
     type User {
     id:Int!
-    username:String!
+    name:String!
+    email:String!
     password:String!
     }
     
@@ -15,8 +16,8 @@ const User = buildSchema
     }
     
     type Mutation {
-    adding (username: String!, password: String!): String
-    login (username: String!, password: String!): String
+    signup (username: String!, email: String!, password: String!): String
+    login (email: String!, password: String!): String
     }
     `
 
