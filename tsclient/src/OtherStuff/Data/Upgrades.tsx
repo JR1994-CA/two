@@ -3,28 +3,26 @@ import upgrade from "./GenericUpgrade";
 
 export class UfortyTwo extends upgrade {
 
-    defcostTrans:number = 100 * this.qty+1;
-
     uButton = () => {
         pie.trans.perSec = pie.fortyTwo.qty;
         this.addLvl();
     }
 
-    // bButton=()=>
-    // {
-    //     if(pie.trans.qty > this.defcost) {
-    //         console.log(this.defcost)
-    //         pie.trans.changeQty(-this.defcost);
-    //         this.qty++
-    //         this.defcost = 100 * this.qty+1
-    //         return{did:true,mess:"Hi"}
-    //     }
-    //     return{did:false,mess:"Bye"}
-    // }
+    bButton=()=>
+    {
+        if(pie.trans.qty > this.defcost.trans) {
+            console.log(this.defcost)
+            pie.trans.changeQty(-this.defcost.trans);
+            this.qty++
+            this.defcost.trans = 100 * this.qty+1
+            return{did:true,mess:"Hi"}
+        }
+        return{did:false,mess:"Bye"}
+    }
 
     checkCCost= ()=>
     {
-        if(pie.trans.qty > this.defcostTrans)
+        if(pie.trans.qty > this.defcost.trans)
             return{did:true,mess:"Buy"}
         return {did:false,mess:'Locked'}
     }
@@ -34,12 +32,14 @@ export class UfortyTwo extends upgrade {
 //Rowboat
 export class URow extends upgrade
 {
-    defcostTrans:number = 100 * this.qty+1;
-    defcostChips:number = 50 * this.qty+1;
-    defcostBoards:number =25 * this.qty+1;
+    constructor(name = "TEST" ,  funcCosts:any)
+    {
+        super(name,  funcCosts)
+
+    }
     checkCost = ()=>
     {
-        if(pie.trans.qty > this.defcostTrans&&pie.chips.qty>this.defcostChips&&pie.boards.qty>this.defcostBoards)
+        if(pie.trans.qty > this.defcost.trans&&pie.chips.qty>this.defcost.chips&&pie.boards.qty>this.defcost.boards)
             return{did:true,mess:"Buy"}
         return{did:true ,mess:"Unlock"}
     }
@@ -50,38 +50,75 @@ export class URow extends upgrade
         this.addLvl();
     }
 
+    bButton=()=>
+    {
+        if(pie.boards.qty > this.defcost.boards) {
+            console.log(this.defcost)
+            pie.boards.changeQty(-this.defcost.boards);
+            this.qty++
+            this.defcost.boards = 100 * this.qty+1
+            return{did:true,mess:"Hi"}
+        }
+        return{did:false,mess:"Bye"}
+    }
 }
 
 export class UPhoneBox extends upgrade
 {
-    defcostTrans:number = 100 * this.qty+1;
-    defcostChips:number = 50 * this.qty+1;
+    constructor(name = "TEST" ,  funcCosts:any)
+    {
+        super(name,  funcCosts)
+
+    }
     uButton=()=>{
         pie.chips.perSec = pie.phonebox.qty ;
         this.addLvl();
     }
     checkCost = ()=>
     {
-        if(pie.trans.qty > this.defcostTrans&&pie.chips.qty>this.defcostChips)
+        if(pie.trans.qty > this.defcost.trans&&pie.chips.qty>this.defcost.chips)
             return{did:true,mess:"Buy"}
         return{did:true ,mess:"Unlock"}
+    }
+    bButton=()=>
+    {
+        if(|pie.chips.qty > this.defcost.chips) {
+            console.log(this.defcost)
+            pie.chips.changeQty(-this.defcost.chips);
+            this.qty++
+            this.defcost.trans = 100 * this.qty+1
+            return{did:true,mess:"Hi"}
+        }
+        return{did:false,mess:"Bye"}
     }
 }
 
 export class URobot extends upgrade
 {
-    defcostTrans:number = 100 * this.qty+1;
-    defcostChips:number = 50 * this.qty+1;
-    defcostBoards:number =25 * this.qty+1;
-    defcostCpus:number=10*this.qty+1;
+    constructor(name = "TEST" ,  funcCosts:any)
+    {
+        super(name,  funcCosts)
+
+    }
     uButton=()=>{
         pie.cpus.perSec = pie.robot.qty;
         this.addLvl();
     }
     checkCost = ()=>
     {
-        if(pie.trans.qty > this.defcostTrans&&pie.chips.qty>this.defcostChips&&pie.boards.qty>this.defcostBoards&&pie.cpus.qty>this.defcostCpus)
+        if(|pie.trans.qty > this.defcost.trans&&pie.chips.qty>this.defcost.chips&&pie.boards.qty>this.defcost.boards&&pie.cpus.qty>this.defcost.cpus)
             return{did:true,mess:"Buy"}
         return{did:true ,mess:"Unlock"}
+    }
+    bButton=()=>
+    {
+        if(pie.cpus.qty > this.defcost.chips) {
+            console.log(this.defcost)
+            pie.cpus.changeQty(-this.defcost.cpus);
+            this.qty++
+            this.defcost.cpus = 100 * this.qty+1
+            return{did:true,mess:"Hi"}
+        }
+        return{did:false,mess:"Bye"}
     }
 }
