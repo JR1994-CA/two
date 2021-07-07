@@ -2,11 +2,16 @@ import pie from "../Init";
 import upgrade from "./GenericUpgrade";
 
 class UfortyTwo extends upgrade {
+
     uButton = () => {
         pie.trans.perSec = pie.fortyTwo.qty;
         this.addLvl();
     }
 
+
+
+       this.defcost = pie.trans
+    }
 
     checkCost = ()=>
     {
@@ -29,6 +34,7 @@ class URow extends upgrade
     }
 
 }
+
 class UPhoneBox extends upgrade
 {
     uButton=()=>{

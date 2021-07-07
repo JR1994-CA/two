@@ -27,14 +27,18 @@ class data
         this.perClick++;
         this.addLvl();
     }
+
     bButton=()=>{
+        this.qty++;
         return{did:true,mess:'Click'};
     }
+
     changeQty = (val:number) =>
     {
         this.qty += val;
         return this.qty
     }
+
     setQty =(val:number) =>
     {
         this.qty = val;
