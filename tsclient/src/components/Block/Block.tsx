@@ -70,18 +70,18 @@ function Block(props: any) {
                 <Grid item direction="column">
                     <div className="">click: {data.perClick}</div>
                     <div className="">
-                        <Button disabled={false} color="secondary" variant="outlined" aria-label="outlined secondary" onClick={() => {
-                            data.bButton()
+                        {/*Click Button*/}
+                        <Button disabled={data.checkCCost()} color="secondary" variant="outlined" aria-label="outlined secondary" onClick={() => {
+                            data.bButton();
                             setQty_L(data.qty);
 
                         }}>Click</Button>
                     </div>
                     <div className="">
                         <Tooltip title={disp}>
-<span>
-    <Button disabled={!data.checkCost().did} color="secondary" variant="outlined"
-            aria-label="outlined secondary" onClick={data.uButton}>{data.getMess().mess}</Button>
-</span>
+                            <span>
+                                <Button disabled={!data.checkCost().did} color="secondary" variant="outlined" aria-label="outlined secondary" onClick={data.uButton}>{data.getUMess().mess}</Button>
+                            </span>
                         </Tooltip>
                     </div>
                 </Grid>
