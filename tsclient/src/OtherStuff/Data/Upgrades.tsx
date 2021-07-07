@@ -37,7 +37,7 @@ export class URow extends upgrade
         super(name,  funcCosts)
 
     }
-    checkCost = ()=>
+    checkCCost = ()=>
     {
         if(pie.trans.qty > this.defcost.trans&&pie.chips.qty>this.defcost.chips&&pie.boards.qty>this.defcost.boards)
             return{did:true,mess:"Buy"}
@@ -74,7 +74,7 @@ export class UPhoneBox extends upgrade
         pie.chips.perSec = pie.phonebox.qty ;
         this.addLvl();
     }
-    checkCost = ()=>
+    checkCCost = ()=>
     {
         if(pie.trans.qty > this.defcost.trans&&pie.chips.qty>this.defcost.chips)
             return{did:true,mess:"Buy"}
@@ -82,7 +82,7 @@ export class UPhoneBox extends upgrade
     }
     bButton=()=>
     {
-        if(|pie.chips.qty > this.defcost.chips) {
+        if(pie.chips.qty > this.defcost.chips) {
             console.log(this.defcost)
             pie.chips.changeQty(-this.defcost.chips);
             this.qty++
@@ -104,9 +104,9 @@ export class URobot extends upgrade
         pie.cpus.perSec = pie.robot.qty;
         this.addLvl();
     }
-    checkCost = ()=>
+    checkCCost = ()=>
     {
-        if(|pie.trans.qty > this.defcost.trans&&pie.chips.qty>this.defcost.chips&&pie.boards.qty>this.defcost.boards&&pie.cpus.qty>this.defcost.cpus)
+        if(pie.trans.qty > this.defcost.trans&&pie.chips.qty>this.defcost.chips&&pie.boards.qty>this.defcost.boards&&pie.cpus.qty>this.defcost.cpus)
             return{did:true,mess:"Buy"}
         return{did:true ,mess:"Unlock"}
     }

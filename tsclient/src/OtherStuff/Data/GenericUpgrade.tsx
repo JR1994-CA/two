@@ -26,7 +26,7 @@ class upgrade extends data
 
     checkCCost = ()=>
     {
-        return{did:pie.trans.qty > this.qty, mess:'Click'}
+        return{did:true, mess:'Click'}
     }
 
     bButton=()=>{
