@@ -1,9 +1,10 @@
 import data from "../Data/currency";
+import pie from "../Init";
 
 class upgrade extends data
 {
 
-    who = pie.trans;
+    who =pie.trans;
     uButton=()=>{
 
         this.addLvl();
