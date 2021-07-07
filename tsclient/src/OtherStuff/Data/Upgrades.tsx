@@ -3,7 +3,7 @@ import upgrade from "./GenericUpgrade";
 
 export class UfortyTwo extends upgrade {
 
-    defcost:number = 100 * this.qty;
+    defcost:number = 100 * this.qty+1;
 
     uButton = () => {
         pie.trans.perSec = pie.fortyTwo.qty;
@@ -12,13 +12,23 @@ export class UfortyTwo extends upgrade {
 
     bButton=()=>
     {
-        if(pie.trans.qty > this.qty) {
+        if(pie.trans.qty > this.defcost) {
+            console.log(this.defcost)
             pie.trans.changeQty(-this.defcost);
             this.qty++
+            this.defcost = 100 * this.qty+1
             return{did:true,mess:"Hi"}
         }
         return{did:false,mess:"Bye"}
     }
+
+    checkCCost= ()=>
+    {
+        if(pie.trans.qty > this.defcost)
+            return{did:true,mess:"Buy"}
+        return {did:false,mess:'Locked'}
+    }
+
 
     checkCost = ()=>
     {

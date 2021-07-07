@@ -4,19 +4,24 @@ import pie from "../Init";
 class upgrade extends data
 {
 
-    // who =pie.trans;
+
+    constructor(name = "TEST" ,  funcCosts:any) {
+        super(name , funcCosts);
+    }
+
+
     uButton=()=>{
 
         this.addLvl();
     }
 
-    getCMess=()=> this.checkCCost()
+    getCMess=()=> this.checkCCost();
 
     checkCCost = ()=>
     {
-        // console.log(pie.trans.qty > this.qty);
         return{did:pie.trans.qty > this.qty, mess:'Click'}
     }
+
 
     bButton=()=>{
         // if (who > this.qty)
