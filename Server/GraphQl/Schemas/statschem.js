@@ -10,7 +10,7 @@ const schemaStat = buildSchema(`
     test:Int
   }
   type Mutation {
-  setMessage(message: String): String
+        make:Int
     }
  
 `);

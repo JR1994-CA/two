@@ -7,16 +7,10 @@ let roots = {
     upgradeLvl: () => m.find({}),
     test: () => 8080,
 
-    setMessage: ({}) =>
-    {
-        let r = new m({saveUnit})
-        return message;
-    },
-
-    getMessage: () =>
-    {
-        return
-    }
+    make:(async ()=> {
+       await m.create({savHid:0,savePerClick:0,saveUnit:15,upgradeLvl:15})
+        return 0;
+    }),
 }
 
 module.exports = roots;
