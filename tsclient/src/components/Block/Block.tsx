@@ -63,7 +63,7 @@ function Block(props: any) {
                     <div className="">click: {data.perClick}</div>
                     <div className="">
                         <Button disabled={false} color="secondary" variant="outlined" aria-label="outlined secondary" onClick={() => {
-                           // data.bButton()
+                            data.bButton()
                             changeQty_L(data.qty);
 
                         }}>Click</Button>
