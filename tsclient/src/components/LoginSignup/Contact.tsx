@@ -42,11 +42,12 @@ const Contact=()=>{
                     <Avatar className={classes.blue}><LockOutlinedIcon/></Avatar>
                     <h2>Contact</h2>
                 </Grid>
+                <form>
                 <TextField label={'Email'} placeholder={'Enter email'} fullWidth/>
                 <TextField label={'Message'} placeholder={'Send us your thoughts'}  multiline rows={4} fullWidth style={textStyle}/>
 
-                <Button type="submit" color='primary' variant='contained' fullWidth style={btnStyle}>Submit</Button>
-
+                <Button type="submit" color='primary' variant='contained' fullWidth style={btnStyle} >Submit</Button>
+                </form>
 
             </Paper>
         </Grid>

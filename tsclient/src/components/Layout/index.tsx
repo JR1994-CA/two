@@ -14,7 +14,7 @@ import ChevronLeftIcon from '@material-ui/icons/ChevronLeft';
 import ChevronRightIcon from '@material-ui/icons/ChevronRight';
 import ListItem from '@material-ui/core/ListItem';
 import ListItemText from '@material-ui/core/ListItemText';
-import Footer from "../Footer";
+
 import {Link, Route} from 'react-router-dom';
 
 
@@ -127,9 +127,7 @@ const linkStyles={textDecoration:'none',color:'white'};
             >
                 <div className={classes.drawerHeader} />
                 {Props.children}
-                <Typography >
-                   <Footer/>
-                </Typography>
+
 
             </main>
             <Drawer
@@ -148,7 +146,7 @@ const linkStyles={textDecoration:'none',color:'white'};
                 </div>
                 <Divider />
                 <List>
-                    {['Home','Login','SignUp','Contact'].map((text, index) => (
+                    {['About','Login','SignUp','Contact','Home'].map((text, index) => (
                         <ListItem component={Link} to={text} button key={text}>
                             <ListItemText primary={text} />
                         </ListItem>

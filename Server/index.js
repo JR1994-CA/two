@@ -7,6 +7,7 @@ const app = expr();
 const ql = require("./GraphQl/Ql")
 const mongoo = require('mongoose')
 const roots = require('./GraphQl/Schemas')
+const {graphql} = require('graphql')
 
 
 //app.engine('handlebars', hdbar());
@@ -25,15 +26,10 @@ app.use('/graphql', graphqlHTTP({
     rootValue: roots.rStat,
     graphiql: true,
 }));
-app.use('/graphql2', graphqlHTTP({
-    schema: ql.schema,
-    rootValue: ql.root,
-    graphiql: true,
-}));
 
 
 //Routing
-app.use('/', def);
+//app.use('/', def);
 
 //SERVER CREATION
 (async () => {
