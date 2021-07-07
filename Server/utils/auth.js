@@ -1,6 +1,6 @@
 const bcrypt = require('./bcrypt');
 const jwt = require('jsonwebtoken');
-const User = require('../Schemas/UserSchem');
+const User = require('../GraphQl/Schemas/UserSchem');
 
 module.exports = {
     createUser: async args => {
