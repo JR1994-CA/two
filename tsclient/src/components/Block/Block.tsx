@@ -8,7 +8,6 @@ function Block(props: any) {
 
     let {data} = props;
     let [lQty, setLQty] = useState(0); //DONT USE DIRECTLY USE ChangeQty LOCALLY
-    let [mess,setMess]= useState('')
 
 
     let disp = `Transistors: ${data.costs.trans(data.upgradeLVl)}
@@ -44,12 +43,6 @@ function Block(props: any) {
 
     useEffect(inc);
 
-    let upButton= ()=>
-    {
-        data.perSec++
-        setMess(data.addLvl().mess);
-    }
-
     return (
 
         <Grid container className="">
@@ -75,7 +68,7 @@ function Block(props: any) {
                             data.bButton();
                             setQty_L(data.qty);
 
-                        }}>Click</Button>
+                        }}>{data.getCMess().mess}</Button>
                     </div>
                     <div className="">
                         <Tooltip title={disp}>

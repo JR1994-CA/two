@@ -79,9 +79,19 @@ class data
         return {did:fin.did, mess:fin.did?'Upgrade':fin.mess };
 
     }
-    getMess = ()=>
+
+    checkCCost= ()=> {
+       return {did:true,mess: 'True'}
+    }
+
+    getUMess = ()=>
     {
         return this.checkCost();
+    }
+
+    getCMess = ()=>
+    {
+    return this.checkCCost()
     }
 
     addLvl =()=>
