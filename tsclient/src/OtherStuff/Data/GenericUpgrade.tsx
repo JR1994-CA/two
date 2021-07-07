@@ -24,8 +24,7 @@ class upgrade extends data
 
 
     bButton=()=>{
-        // if (who > this.qty)
-        //     who.qty -= this.defcost
+
         this.qty++;
         return{did:true,mess:'Click'}
     }

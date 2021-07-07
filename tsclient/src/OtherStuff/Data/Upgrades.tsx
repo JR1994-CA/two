@@ -29,11 +29,6 @@ export class UfortyTwo extends upgrade {
         return {did:false,mess:'Locked'}
     }
 
-
-    checkCost = ()=>
-    {
-        return{did:true ,mess:"Unlock"}
-    }
 }
 
 //Rowboat

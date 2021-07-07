@@ -29,7 +29,7 @@ class data
     }
 
     bButton=()=>{
-        this.qty++;
+        this.qty+= this.perClick;
         return{did:true,mess:'Click'};
     }
 
