@@ -9,7 +9,9 @@ const schemaStat = buildSchema(`
     upgradeLvl:Int,
     test:Int
   }
-  
+  type Mutation {
+  setMessage(message: String): String
+    }
  
 `);
 

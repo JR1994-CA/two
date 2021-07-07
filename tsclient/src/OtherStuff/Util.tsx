@@ -27,8 +27,7 @@ class data
         this.perClick++;
         this.addLvl();
     }
-    bButton=(val:number)=>{
-        this.changeQty(val);
+    bButton=()=>{
         return{did:true,mess:'Click'};
     }
     changeQty = (val:number) =>
@@ -37,9 +36,10 @@ class data
         return this.qty
     }
     getLvl = ()=> this.upgradeLVl
+
     checkCost = ()=>
     {
-        return({did:true,mess:'Cheat'});
+        //return({did:true,mess:'Cheat'});
         let fin = {did:true , mess:'Need More '}
 
         if(pie.trans.qty < this.costs.trans(this.upgradeLVl))
@@ -95,81 +95,70 @@ class data
 
     }
 }
-//42
-export class UfortyTwo extends data {
-    uButton = () => {
-        pie.trans.perSec++;
-        this.addLvl();
-    }
-    bButton=(val:number)=>{
-        this.perClick++;
-        this.addLvl();
-        return{did:true,mess:'Click'}
-    }
-    // checkCost = ()=>
-    // {
-    //     return{did:true ,mess:"Unlock"}
-    // }
-}
-//Rowboat
-export class URow extends data
-{
-
-    // checkCost = ()=>
-    // {
-    //  return{did:true ,mess:"Unlock"}
-    // }
-
-    uButton=()=>{
-
-        pie.trans.perSec++;
-        pie.chips.perSec++;
-        pie.boards.perSec++;
-        this.perSec++;
-        this.addLvl();
-    }
-
-}
-export class UPhoneBox extends data
-{
-    uButton=()=>{
-        pie.trans.perSec++;
-        pie.chips.perSec++;
-        this.perSec++;
-        this.addLvl();
-    }
-    // checkCost = ()=>
-    // {
-    //     return{did:true ,mess:"Unlock"}
-    // }
-}
-export class URobot extends data
-{
-    uButton=()=>{
-        pie.trans.perSec++;
-        this.perSec++;
-        this.addLvl();
-    }
-    // checkCost = ()=>
-    // {
-    //     return{did:true ,mess:"Unlock"}
-    // }
-}
-
-
 export class upgrade extends data
 {
     uButton=()=>{
 
-        pie.rowboat.perClick++;
-        pie.chips.perClick++;
-        this.perSec++;
         this.addLvl();
     }
-    // checkCost = ()=>
-    // {
-    //     return{did:true ,mess:"Unlock"}
-    // }
+
+}
+
+
+//42
+export class UfortyTwo extends upgrade {
+    uButton = () => {
+        pie.trans.perSec = pie.fortyTwo.qty;
+        this.addLvl();
+    }
+
+    bButton=()=>{
+        this.perClick++;
+        this.addLvl();
+        return{did:true,mess:'Click'}
+    }
+    checkCost = ()=>
+    {
+        return{did:true ,mess:"Unlock"}
+    }
+}
+//Rowboat
+export class URow extends upgrade
+{
+
+    checkCost = ()=>
+    {
+     return{did:true ,mess:"Unlock"}
+    }
+
+    uButton=()=>{
+
+        pie.boards.perSec = pie.rowboat.qty;
+        this.addLvl();
+    }
+
+}
+export class UPhoneBox extends upgrade
+{
+    uButton=()=>{
+        pie.chips.perSec = pie.phonebox.qty ;
+        this.addLvl();
+    }
+    checkCost = ()=>
+    {
+        return{did:true ,mess:"Unlock"}
+    }
+}
+export class URobot extends upgrade
+{
+    uButton=()=>{
+        pie.cpus.perSec = pie.robot.qty;
+        this.addLvl();
+    }
+    checkCost = ()=>
+    {
+        return{did:true ,mess:"Unlock"}
+    }
 }
 
 export default data;
