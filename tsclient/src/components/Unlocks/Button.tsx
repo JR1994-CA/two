@@ -33,6 +33,7 @@ export function checkUnlocks() {
 
     if (pie.trans.qty >= uOrder[pie.upLvl].trans && pie.boards.qty >= uOrder[pie.upLvl].boards && pie.chips.qty >= uOrder[pie.upLvl].cpus && pie.cpus.qty >= uOrder[pie.upLvl].cpus)
     {
+
         pie.chips.changeQty(-uOrder[pie.upLvl].chips);
         pie.trans.changeQty(-uOrder[pie.upLvl].trans);
         pie.cpus.changeQty(-uOrder[pie.upLvl].cpus);

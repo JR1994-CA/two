@@ -1,5 +1,5 @@
 import Block, {Blocklock} from "../Block";
-import {Grid} from "@material-ui/core";
+import {Grid, Tooltip} from "@material-ui/core";
 import pie from "../../OtherStuff/Init";
 import React, {Component, useState} from "react";
 import Button from '@material-ui/core/Button';
@@ -43,10 +43,11 @@ class Redoer extends Component<any, any> {
                 <Grid>
 
                 <div>
+                    {/*<Tooltip title={`I unlock 42`}  placement="bottom">*/}
                     <Button variant="contained" color="primary" onClick={this.clicks}>
-                        Unlocks
+                        Unlock
                     </Button>
-                    {/*<UnlocksDrawer/>*/}
+                    {/*</Tooltip>*/}
                 </div>
 
                 </Grid>
