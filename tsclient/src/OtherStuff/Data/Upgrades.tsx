@@ -1,7 +1,7 @@
 import pie from "../Init";
 import upgrade from "./GenericUpgrade";
 
-class UfortyTwo extends upgrade {
+export class UfortyTwo extends upgrade {
 
     defcost:number = 100 * this.qty;
 
@@ -25,8 +25,9 @@ class UfortyTwo extends upgrade {
         return{did:true ,mess:"Unlock"}
     }
 }
+
 //Rowboat
-class URow extends upgrade
+export class URow extends upgrade
 {
 
     checkCost = ()=>
@@ -42,7 +43,7 @@ class URow extends upgrade
 
 }
 
-class UPhoneBox extends upgrade
+export class UPhoneBox extends upgrade
 {
     uButton=()=>{
         pie.chips.perSec = pie.phonebox.qty ;
@@ -53,7 +54,8 @@ class UPhoneBox extends upgrade
         return{did:true ,mess:"Unlock"}
     }
 }
-class URobot extends upgrade
+
+export class URobot extends upgrade
 {
     uButton=()=>{
         pie.cpus.perSec = pie.robot.qty;
@@ -64,5 +66,3 @@ class URobot extends upgrade
         return{did:true ,mess:"Unlock"}
     }
 }
-
-export  {UfortyTwo,URow,UPhoneBox,URobot};

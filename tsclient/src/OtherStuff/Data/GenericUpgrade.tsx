@@ -10,11 +10,11 @@ class upgrade extends data
         this.addLvl();
     }
 
-    getCMess=()=> this.checkCCost
+    getCMess=()=> this.checkCCost();
 
     checkCCost = ()=>
     {
-        return{did:this.who.qty > this.qty, mess:()=>did?'Skip':'Click'}
+        return{did:this.who.qty > this.qty, mess:'Click'}
     }
 
     constructor(name = "TEST" ,  funcCosts:any) {
