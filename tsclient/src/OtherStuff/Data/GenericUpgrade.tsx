@@ -14,8 +14,8 @@ class upgrade extends data
 
     checkCCost = ()=>
     {
-        console.log(pie.trans.qty > this.qty);
-        return{did:pie.trans.qty > this.qty, mess:'G-upgrades Skip'}
+        // console.log(pie.trans.qty > this.qty);
+        return{did:pie.trans.qty > this.qty, mess:'Click'}
     }
 
     bButton=()=>{

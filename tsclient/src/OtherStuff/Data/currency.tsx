@@ -81,7 +81,7 @@ class data
     }
 
     checkCCost= ()=> {
-       return {did:true,mess: 'Currency'}
+       return {did:true,mess: 'Click'}
     }
 
     getUMess = ()=>
