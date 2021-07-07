@@ -35,6 +35,12 @@ class data
         this.qty += val;
         return this.qty
     }
+    setQty =(val:number) =>
+    {
+        this.qty = val;
+        return this.qty
+    }
+
     getLvl = ()=> this.upgradeLVl
 
     checkCost = ()=>

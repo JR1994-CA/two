@@ -7,11 +7,7 @@ class UfortyTwo extends upgrade {
         this.addLvl();
     }
 
-    bButton=()=>{
-        this.perClick++;
-        this.addLvl();
-        return{did:true,mess:'Click'}
-    }
+
     checkCost = ()=>
     {
         return{did:true ,mess:"Unlock"}

@@ -21,8 +21,16 @@ function Block(props: any) {
     {
         data.changeQty(x);
         setLQty(data.qty);
-        console.log(x)
+        //console.log(x)
     }
+
+    function setQty_L(x:number)
+    {
+        data.setQty(x);
+        setLQty(data.qty);
+        //console.log(x)
+    }
+
 
     let inc = ()=> {
 
@@ -64,7 +72,7 @@ function Block(props: any) {
                     <div className="">
                         <Button disabled={false} color="secondary" variant="outlined" aria-label="outlined secondary" onClick={() => {
                             data.bButton()
-                            changeQty_L(data.qty);
+                            setQty_L(data.qty);
 
                         }}>Click</Button>
                     </div>
