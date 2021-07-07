@@ -12,7 +12,7 @@ export class UfortyTwo extends upgrade {
 
     bButton=()=>
     {
-        if(this.who.qty > this.qty) {
+        if(pie.trans.qty > this.qty) {
             pie.trans.changeQty(-this.defcost);
             this.qty++
             return{did:true,mess:"Hi"}

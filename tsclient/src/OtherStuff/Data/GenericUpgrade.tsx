@@ -4,21 +4,18 @@ import pie from "../Init";
 class upgrade extends data
 {
 
-    who =pie.trans;
+    // who =pie.trans;
     uButton=()=>{
 
         this.addLvl();
     }
 
-    getCMess=()=> this.checkCCost();
+    getCMess=()=> this.checkCCost()
 
     checkCCost = ()=>
     {
-        return{did:this.who.qty > this.qty, mess:'Click'}
-    }
-
-    constructor(name = "TEST" ,  funcCosts:any) {
-        super(name, funcCosts);
+        console.log(pie.trans.qty > this.qty);
+        return{did:pie.trans.qty > this.qty, mess:'G-upgrades Skip'}
     }
 
     bButton=()=>{

@@ -36,12 +36,7 @@ class pie {
     });
 
     static fortyTwo: UfortyTwo = new UfortyTwo("42", {
-        trans: (val: number) =>
-        // {
-            // if (pie.trans.qty > 10000)
-            //     Math.round((1+val)**1.5*0.75)
-             Math.round((1 + val) ** 1.5 * 0.9),
-        // },
+        trans: (val: number) => Math.round((1 + val) ** 1.5 * 0.9),
         chips: (val:number) => 0,
         boards: (val:number) => 0,
         cpus: (val:number) => 0,
