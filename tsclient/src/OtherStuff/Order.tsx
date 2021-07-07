@@ -1,4 +1,4 @@
-import pie from './Holding';
+import pie from './Init';
  class Something {
 
 

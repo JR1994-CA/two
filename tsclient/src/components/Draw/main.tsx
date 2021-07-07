@@ -1,5 +1,5 @@
 import {Grid} from "@material-ui/core";
-import pie from "../../OtherStuff/Holding";
+import pie from "../../OtherStuff/Init";
 import Redoer from "./renderer";
 
 function main() {

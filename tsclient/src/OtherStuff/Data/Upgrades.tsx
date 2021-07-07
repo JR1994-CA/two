@@ -1,4 +1,4 @@
-import pie from "../Holding";
+import pie from "../Init";
 import upgrade from "./GenericUpgrade";
 
 class UfortyTwo extends upgrade {

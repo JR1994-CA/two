@@ -1,4 +1,4 @@
-import pie from "../../OtherStuff/Holding";
+import pie from "../Init";
 
 class data
 {

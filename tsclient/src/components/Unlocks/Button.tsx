@@ -2,9 +2,9 @@ import React, {useState} from 'react';
 import {withStyles, makeStyles} from '@material-ui/core/styles';
 import Button from '@material-ui/core/Button';
 import { indigo, purple} from '@material-ui/core/colors';
-import pie from '../../OtherStuff/Holding';
+import pie from '../../OtherStuff/Init';
 import {Grid} from "@material-ui/core";
-import uOrder from "../../OtherStuff/Something";
+import uOrder from "../../OtherStuff/Order";
 
 
 const ColorButton = withStyles((theme) => ({

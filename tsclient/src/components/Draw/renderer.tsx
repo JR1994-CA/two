@@ -1,6 +1,6 @@
 import Block, {Blocklock} from "../Block";
 import {Grid} from "@material-ui/core";
-import pie from "../../OtherStuff/Holding";
+import pie from "../../OtherStuff/Init";
 import React, {Component, useState} from "react";
 import Button from '@material-ui/core/Button';
 import {makeStyles} from "@material-ui/core/styles";
