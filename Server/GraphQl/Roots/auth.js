@@ -20,25 +20,31 @@ module.exports = {
             });
             const result = await user.save();
 
-            return { ...result, password: null, _id:result.id };
+            return { ...result._doc, password: null, _id:result.id };
         } catch (err) {
             throw err;
         }
     },
     login: async ({ email, password }) => {
-        const user = await User.findOne({ email: email});
-        if(!user) {
+        const user = await User.findOne({email: email});
+        if (!user) {
             throw new Error('User does not exist!');
+        }
+        const isEqual = await bcrypt.compare(password, user.password);
+        if(!isEqual) {
+            throw new Error('Password is incorrect!');
         }
         const token = jwt.sign(
             {
-                userId: user.id, email: user.email },
-                'LOLthiskey',
+                userId: user.id, email: user.email
+            },
+            'thisourkeyLMAO',
             {
-                    expiresIn: '1h'
+                expiresIn: '1h'
             }
         );
-        return { userId: user.id, token: token, tokenExpiration: 1 };
+        return {userId: user.id, token: token, tokenExpiration: 1};
     }
+
 
 };

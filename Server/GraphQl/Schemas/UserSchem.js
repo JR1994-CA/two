@@ -5,18 +5,19 @@ module.exports = buildSchema
     (`
     
     type User {
-        _id:Int!
+        id:Int!
         name:String!
         email:String!
         password:String!
     }
     
     type UserInput {
+        name: String!
         email: String!
         password: String!
     
-    type Query {
-        me: User
+    type RootQuery {
+        login (email: String!, password: String!): AuthData
     }
     
     type AuthData {
@@ -25,9 +26,14 @@ module.exports = buildSchema
         tokenExpiration: Int!
     }
     
-    type Mutation {
-        signup (username: String!, email: String!, password: String!): String
-        login (email: String!, password: String!): AuthData
+    type RootMutation {
+        createUser(userInput: UserInput): User
+        
+    }
+    
+    schema {
+        query: RootQuery
+        mutation: RootMutation
     }
     `
     );

@@ -31,6 +31,12 @@ app.use('/graphql2', graphqlHTTP({
     graphiql: true,
 }));
 
+app.use('/graph3', graphqlHTTP({
+    schema:user.schema,
+    rootValue:
+    graphiql:
+}));
+
 
 //Routing
 app.use('/', def);
