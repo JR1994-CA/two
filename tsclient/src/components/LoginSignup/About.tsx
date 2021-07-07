@@ -43,7 +43,7 @@ function About() {
 
 
             <Grid container justify="space-evenly">
-                <h3>View our Github profiles here</h3>
+
             </Grid>
             <Grid container
                   direction="row"
@@ -51,8 +51,9 @@ function About() {
                   alignItems="flex-end"
             >
                 <Grid item>
-                    <h3>Shelby Jordan:: Scrum Master </h3>
+                    <h3>Shelby Jordan :: Scrum Master </h3>
                     <p>Lorem ipsum dolor sit amet, consectetur adipisicing elit. Accusamus ad blanditiis consequuntur, deserunt distinctio dolorem ducimus earum eum fuga fugit in, ipsa itaque neque officiis perspiciatis quas quod recusandae. Possimus.</p>
+                    <h4>Github profile :</h4>
                     <Tooltip title="Shelby Jordan" TransitionComponent={Fade} TransitionProps={{timeout: 600}}>
                         <Link href="https://github.com/Kingly77" color="inherit" underline={'none'} target="_blank"
                               rel="noopener">
@@ -64,8 +65,9 @@ function About() {
                     </Tooltip>
                 </Grid>
                 <Grid item>
-                    <h3>Jesus Ramirez Arroyo</h3>
+                    <h3>Jesus Ramirez Arroyo </h3>
                     <p>Lorem ipsum dolor sit amet, consectetur adipisicing elit. Deleniti dolor dolores ea expedita facere, fugit, ipsam laudantium magni nam nesciunt officia officiis omnis praesentium recusandae ullam, veritatis voluptas voluptatibus voluptatum?</p>
+                    <h4>Github profile :</h4>
                     <Tooltip title="Jesus Ramirez Arroyo" TransitionComponent={Fade} TransitionProps={{timeout: 600}}>
                         <Link href="https://github.com/JR1994-CA" color="inherit" underline={'none'} target="_blank"
                               rel="noopener">
@@ -89,6 +91,7 @@ function About() {
                 <Grid item >
                     <h3>Cynthia Mohan</h3>
                     <p>Lorem ipsum dolor sit amet, consectetur adipisicing elit. Asperiores aspernatur consequatur deserunt dolor est facere, fuga id in incidunt inventore nihil non optio perferendis quasi quidem sit sunt voluptas voluptates?</p>
+                    <h4>Github profile :</h4>
                     <Tooltip title="Cynthia Mohan" TransitionComponent={Fade} TransitionProps={{timeout: 600}}>
                         <Link href="https://github.com/CynthiaMohan" color="inherit" underline={'none'} target="_blank"
                               rel="noopener">
