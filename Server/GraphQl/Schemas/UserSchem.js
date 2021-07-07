@@ -1,26 +1,35 @@
 let {buildSchema} = require('graphql');
 const routes = require('../../routes/Users');
 
-const User = buildSchema
-
-    const typeDefs = `
+module.exports = buildSchema
+    (`
+    
     type User {
-    id:Int!
-    name:String!
-    email:String!
-    password:String!
+        _id:Int!
+        name:String!
+        email:String!
+        password:String!
     }
     
+    type UserInput {
+        email: String!
+        password: String!
+    
     type Query {
-    me: User
+        me: User
+    }
+    
+    type AuthData {
+        userId: ID!
+        token: String!
+        tokenExpiration: Int!
     }
     
     type Mutation {
-    signup (username: String!, email: String!, password: String!): String
-    login (email: String!, password: String!): String
+        signup (username: String!, email: String!, password: String!): String
+        login (email: String!, password: String!): AuthData
     }
     `
+    );
 
 
-
-module.exports = buildSchema({typeDefs, routes });

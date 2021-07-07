@@ -1,3 +1,4 @@
 const roots = require('./statRoot');
+const auth = require('./auth');
 
-module.exports = roots;
+module.exports = { roots, auth };
