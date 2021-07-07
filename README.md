@@ -6,37 +6,25 @@
 
 ## Description
 
-A clicker game consisting of incressing numbers.
+Silicon Clicker is a clicker game which requires the player performing clicking action repeatedly to gain currency. Upon earning required currency upgrades will be provided which increase the rate of gaining currency.Unlocks are available with stages of gained currency. The unlocked items like 42 Robots and Rowboats enable the player to gain a significant increase in currency.
 
 
 ## Table of Contents
 
--   [Installation](#installation)
--   [Usage](#usage)
+
+-   [HowToPlay](#HowToPlay)
 -   [Credits](#credits)
 -   [License](#license)
 -   [Contributing](#contributing)
 -   [Questions](#questions)
 -   [How to Play](#HOW-TO-PLAY)
 -   [Play](https://silicon-clicker.herokuapp.com/)
-## Installation
-
-To install this application, first, branch the Github Repo and clone the repo to your local machine. Then, you will need to install the node dependencies which can be done by running the `npm install` command in your terminal/bash shell.
 
 
-After the dependencies have been installed, you will need to populate your MySQL database. This can be done with dummy data that is found in the sqlFiles folder. There are two files for this. First the db.sql which will creat the database and the three tables for employee, role, and department.
-Second, there is a seed.sql file which will populate the database with data for each table.
-
-After populating the data, you will need to add your MySQL password to the server.js file to ensure tha the connection to the database can be made and requests for actions can be pushed to the database.
-
-Once this has been completed, you are ready to use the application!
-
-## Usage
-
-Once everything has been set up, the application can be launched by running the command `nodemon index.js` or `npm start`. Then the application is running on port http://localhost:3001/
 
 
-## HOW TO PLAY
+
+## HowToPlay
 
 - collect components buy upgrades advance along the tech line.
 - Get to the end of the tech to WIN.
@@ -44,22 +32,22 @@ Once everything has been set up, the application can be launched by running the 
 
 ## Credits
 
-This application was completed by:
+This application has been completed by:
                                   Shelby Jordan(Scrum-Master)
                                   Jesus Ramirez Arroyo(Driver)
                                   Cynthia Mohan(Driver)
-for the interactive full-stack project for UC Berkeley's Full Stack web-developer Bootcamp.
+for the interactive MERN-stack project for UC Berkeley's Full Stack web-developer Bootcamp.
 
-Dependencies for this project include the node modules:
-
-dotenv -used for loading environment variables from a .env file into process.env.
-express - used for providing small, robust tooling for HTTP servers, making it a great solution for single page applications, web sites, hybrids, or public HTTP APIs.
-express-handlebars - used to render web pages to the client side from data on the server-side.
-express-session - used to store data between HTTP requests.
-mysql2 - is relational database mangement system based on SQL(Structured Query Language).
+## Tech Used
+    
+* GraphQl 
+  
+* MongoDB
+* Mongoose
+* React
+* Nodejs
 pug - is a high performance template engine.
-sequelize - solid transaction support, relations, eager and lazy loading, read replication and more. 
-sqlite3 -  allows the user to manually enter and execute SQL statements against an SQLite database.
+
 
 
 
@@ -88,14 +76,12 @@ sqlite3 -  allows the user to manually enter and execute SQL statements against 
 
 If you would like to contribute to this application, please feel free to contact us to the gitHub link found in the questions section and we can discuss how to collaborate and enhance this application.
 
-## Tests
-
-N/A
 
 ## Questions
 
 -   For any questions related to this applicaiton, please contact us at:
 
--   Please use this link to access our Github Profile: [GitHub-Shelby-Jordan](https://github.com/Kingly77)
-                                                       [GitHub-Cynthia](https://github.com/CynthiaMohan)
-                                                       [GitHub-Jesus-Ramirez-Arroyo](https://github.com/JR1994-CA)
+-   Please use this link to access our Github Profile: [GitHub-Shelby-Jordan](https://github.com/Kingly77) <br>
+    [GitHub-Jesus-Ramirez-Arroyo](https://github.com/JR1994-CA) <br>
+    [GitHub-Cynthia](https://github.com/CynthiaMohan) <br>
+                                                       
