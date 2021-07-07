@@ -1,5 +1,5 @@
-import Data, {UfortyTwo, upgrade, UPhoneBox, URobot, URow} from "./Util";
-import data from "./Util";
+import {data as Data} from "./Data";
+import {UfortyTwo,URow,UPhoneBox,URobot} from "./Data";
 
 class pie {
     static trans: Data = new Data("Transistor", {
@@ -69,7 +69,7 @@ class pie {
     },);
     static upLvl = 0;
     static listO_Open =[pie.trans];
-    static listO_Up:data[] =  [];
+    static listO_Up:Data[] =  [];
 
 }
 

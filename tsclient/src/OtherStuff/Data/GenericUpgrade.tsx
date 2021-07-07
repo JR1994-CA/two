@@ -1,6 +1,6 @@
-import data from "../Util";
+import data from "../Data/currency";
 
-export class upgrade extends data
+class upgrade extends data
 {
     uButton=()=>{
 
@@ -8,3 +8,4 @@ export class upgrade extends data
     }
 
 }
+export default upgrade;

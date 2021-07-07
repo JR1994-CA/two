@@ -1,7 +1,7 @@
 import pie from "../Holding";
-import {upgrade} from "./GenericUpgrade";
+import upgrade from "./GenericUpgrade";
 
-export class UfortyTwo extends upgrade {
+class UfortyTwo extends upgrade {
     uButton = () => {
         pie.trans.perSec = pie.fortyTwo.qty;
         this.addLvl();
@@ -18,7 +18,7 @@ export class UfortyTwo extends upgrade {
     }
 }
 //Rowboat
-export class URow extends upgrade
+class URow extends upgrade
 {
 
     checkCost = ()=>
@@ -33,7 +33,7 @@ export class URow extends upgrade
     }
 
 }
-export class UPhoneBox extends upgrade
+class UPhoneBox extends upgrade
 {
     uButton=()=>{
         pie.chips.perSec = pie.phonebox.qty ;
@@ -44,7 +44,7 @@ export class UPhoneBox extends upgrade
         return{did:true ,mess:"Unlock"}
     }
 }
-export class URobot extends upgrade
+class URobot extends upgrade
 {
     uButton=()=>{
         pie.cpus.perSec = pie.robot.qty;
@@ -55,3 +55,5 @@ export class URobot extends upgrade
         return{did:true ,mess:"Unlock"}
     }
 }
+
+export  {UfortyTwo,URow,UPhoneBox,URobot};
