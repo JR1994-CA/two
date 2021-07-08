@@ -1,4 +1,11 @@
-const rStat = require('../Roots/statRoot')
-const sStat = require('./statschem')
+const statRoot = require('./statRoot')
+const userRoot = require('./userRoot')
+const statTypeDef = require('./statTypeDefs')
+const userTypeDef = require('./userTypeDefs')
 
-module.exports = {rStat, sStat}
+module.exports = {
+    statRoot,
+    userRoot,
+    userTypeDef,
+    statTypeDef
+}

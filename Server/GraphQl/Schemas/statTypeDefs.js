@@ -4,18 +4,23 @@ const statTypeDefs = gql`
  
   type Stats {
       user: User,
+      transistors:Int,
+      comps:Int,
+      chips:Int,
+      cpus:Int,
       savHid:Boolean,
       savePerClick:Int,
       saveUnit:Int,
       upgradeLvl:Int,
   }
   
-  type Mutation {
-  
-  
+  type Query {
+      
+      
   }
   
-`);
+
+`;
 
 
 
