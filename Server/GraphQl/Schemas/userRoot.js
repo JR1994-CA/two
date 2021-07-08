@@ -1,52 +1,85 @@
-const bcrypt = require('./bcrypt');
-const jwt = require('jsonwebtoken');
-const User = require('../GraphQl/Schemas/UserSchem');
 const { AuthenticationError } = require('apollo-server-express');
+const { User, Stat }  = require('../../models');
 const { signToken } = require('../utils/auth');
 
-module.exports = {
-    createUser: async args => {
-        try {
-            //Making sure User doesnt already exists
-            const existingUser = await User.findOne({ email: args.userInput.email});
-            if(existingUser) {
-                throw new Error('User exists already.');
+const userRoots = {
+    Query: {
+        me: async (parent, args, context) => {
+            if (context.user) {
+                const userData = await User.findOne({ _id: context.user._id })
+                    .select('-__v -password')
+                    .populate('messages')
+                    .populate('stats');
+
+                return userData;
             }
-            //creates new hashed password up to 12 characters long
-            const hashedPassword = await bcrypt.hash(args.userInput.password, 12);
 
-            const user = new User({
-                name: args.userInput.name,
-                email: args.userInput.email,
-                password: hashedPassword
-            });
-            const result = await user.save();
-
-            return { ...result._doc, password: null, _id:result.id };
-        } catch (err) {
-            throw err;
+            throw new AuthenticationError('Not logged in');
+        },
+        users: async () => {
+            return User.find()
+                .select('-__v -password')
+                .populate('messages')
+                .populate('stats');
+        },
+        user: async (parent, { username }) => {
+            return User.findOne({ username })
+                .select('-__v -password')
+                .populate('messages')
+                .populate('stats');
+        },
+        messages: async (parent, { username }) => {
+            const params = username ? { username } : {};
+            return User.find(params).sort({ createdAt: -1 });
+        },
+        message: async (parent, { _id }) => {
+            return User.findOne({ _id });
         }
     },
-    login: async ({ email, password }) => {
-        const user = await User.findOne({email: email});
-        if (!user) {
-            throw new Error('User does not exist!');
-        }
-        const isEqual = await bcrypt.compare(password, user.password);
-        if(!isEqual) {
-            throw new Error('Password is incorrect!');
-        }
-        const token = jwt.sign(
-            {
-                userId: user.id, email: user.email
-            },
-            'thisourkeyLMAO',
-            {
-                expiresIn: '1h'
+
+    Mutation: {
+        addUser: async (parent, args) => {
+            const user = await User.create(args);
+            const token = signToken(user);
+
+            return { token, user };
+        },
+        login: async (parent, { email, password }) => {
+            const user = await User.findOne({ email });
+
+            if (!user) {
+                throw new AuthenticationError('Incorrect credentials');
             }
-        );
-        return {userId: user.id, token: token, tokenExpiration: 1};
+
+            const correctPw = await user.isCorrectPassword(password);
+
+            if (!correctPw) {
+                throw new AuthenticationError('Incorrect credentials');
+            }
+
+            const token = signToken(user);
+            return { token, user };
+        },
+        addMessage: async (parent, args, context) => {
+            if (context.user) {
+                const message = await Message.create({ ...args, username: context.user.username });
+
+                await User.findByIdAndUpdate(
+                    { _id: context.user._id },
+                    { $push: { messages: message._id } },
+                    { new: true }
+                );
+
+                return message;
+            }
+
+            throw new AuthenticationError('You need to be logged in!');
+        }
+
     }
 
 
+
 };
+
+module.exports = userRoots;

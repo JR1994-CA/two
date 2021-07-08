@@ -1,12 +1,17 @@
-const m = require('../../models/Stats')
+const stat = require('../../models/Stats')
 
-let roots = {
-        savHid:()=>m.find({}),
-        savePerClick:()=>m.find({}),
-        saveUnit:()=>m.find({}),
-        upgradeLvl:()=>m.find({}),
-    }
+const statRoots = {
 
-module.exports = roots;
+    Query: {
+
+        stats: async (parent, {_id}) => {
+            return Stat.findOne({_id})
+
+        }
+
+    },
+}
+
+module.exports = statRoots;
 
 
