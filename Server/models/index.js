@@ -1,10 +1,7 @@
-// const connect = require('./connections');
-// const save = require('./savTabls');
-//const stats = require('./Stats');
-//const saving = require('./SaveTables');
+const user = require('./User');
 const clickable = require('./Clickables');
 const stats = require('./Stats')
 
-module.exports = {clickable, stats};
+module.exports = {clickable, stats, user};
 
 
