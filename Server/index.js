@@ -17,8 +17,11 @@ mongoo.connect('mongodb://localhost/pie',{ useNewUrlParser: true, useUnifiedTopo
 app.use(expr.urlencoded({ extended: true }))
 app.use(expr.json())
 
-app.use(expr.static(path.join(__dirname, 'public')));
-app.use(expr.static(path.join(__dirname, 'public/control')));
+
+console.log(path.join(__dirname,"../tsclient/build/"));
+app.use(expr.static(path.join(__dirname, '../tsclient/build/')));
+// app.use(expr.static(path.join(__dirname, 'public')));
+// app.use(expr.static(path.join(__dirname, 'public/control')));
 
 
 app.use('/graphql', graphqlHTTP({
@@ -29,7 +32,7 @@ app.use('/graphql', graphqlHTTP({
 
 
 //Routing
-//app.use('/', def);
+app.use('/', def);
 
 //SERVER CREATION
 (async () => {
