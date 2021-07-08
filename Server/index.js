@@ -1,5 +1,5 @@
 const express = require('express')
-const mongoo = require('mongoose')
+// const mongoo = require('mongoose')
 const { ApolloServer, gql } = require('apollo-server-express');
 const path = require('path');
 //const gql=require('graphql-tag');
@@ -11,17 +11,17 @@ const db = require('./config/connection');
 const PORT = process.env.PORT || 4100;
 const app = express();
 
-console.log(typeDefs, resolvers);
+// console.log(typeDefs, resolvers);
 
 const server = new ApolloServer({
-    typeDefs: gql`${typeDefs}`,
+    typeDefs,
     resolvers,
     context: authMiddleware
 });
 
 server.applyMiddleware({ app });
 
-mongoo.connect('mongodb://localhost/react-si-clicker',{ useNewUrlParser: true, useUnifiedTopology: true })
+// mongoo.connect('mongodb://localhost/react-si-clicker',{ useNewUrlParser: true, useUnifiedTopology: true })
 
 app.use(express.urlencoded({ extended: true }))
 app.use(express.json())

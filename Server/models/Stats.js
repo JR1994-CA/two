@@ -32,5 +32,5 @@ const StatsSchema = new Schema(
     }
 );
 
-const Stats = model('StatsSchema', StatsSchema);
+const Stats = model('Stats', StatsSchema);
 module.exports = Stats;

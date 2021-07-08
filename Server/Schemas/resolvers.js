@@ -1,8 +1,8 @@
-const clickable = require('../../models/Clickables')
-const stat = require('../../models/Stats')
+const clickable = require('../models/Clickables')
+const Stats = require('../models/Stats')
 const { AuthenticationError } = require('apollo-server-express');
-const { User }  = require('../../models');
-const { signToken } = require('../../utils/auth');
+const { User }  = require('../models');
+const { signToken } = require('../utils/auth');
 
 const resolvers = {
 
@@ -38,8 +38,8 @@ const resolvers = {
         message: async (parent, { _id }) => {
             return User.findOne({ _id });
         },
-        stats: async (parent, {_id}) => {
-            const statData = await stat.findOne({_id})
+        Stats: async (parent, {_id}) => {
+            const statData = await Stats.findOne({_id})
                 .populate('savHid')
                 .populate('savePerClick')
                 .populate('saveUnit')
