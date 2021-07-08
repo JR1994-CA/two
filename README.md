@@ -46,7 +46,6 @@ for the interactive MERN-stack project for UC Berkeley's Full Stack web-develope
 * Mongoose
 * React
 * Nodejs
-pug - is a high performance template engine.
 
 
 
