@@ -1,13 +1,13 @@
-let {buildSchema} = require('graphql');
+const { gql } = require('apollo-server-express');
 
-const schemaStat = buildSchema(`
+const statTypeDefs = gql`
  
-  type Query {
-    savHid:Boolean,
-    savePerClick:Int,
-    saveUnit:Int,
-    upgradeLvl:Int,
-    test:Int
+  type Stats {
+      user: User,
+      savHid:Boolean,
+      savePerClick:Int,
+      saveUnit:Int,
+      upgradeLvl:Int,
   }
   type Mutation {
         make:Int
@@ -17,4 +17,4 @@ const schemaStat = buildSchema(`
 
 
 
-module.exports = schemaStat;
+module.exports = statTypeDefs;

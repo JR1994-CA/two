@@ -7,9 +7,20 @@ const app = expr();
 const ql = require("./GraphQl/Ql")
 const mongoo = require('mongoose')
 const roots = require('./GraphQl/Schemas')
+
+const { ApolloServer } = require('apollo-server-express');
+const db = require('./config/connection');
+const { statsschem, UserSchem } = require('./GraphQl/Schemas')
 const {graphql} = require('graphql')
 
 
+
+const server = new ApolloServer({
+    statschem,
+    UserSchem
+});
+
+server.applyMiddleware({ app });
 //app.engine('handlebars', hdbar());
 //app.set('view engine', 'handlebars');
 mongoo.connect('mongodb://localhost/pie',{ useNewUrlParser: true, useUnifiedTopology: true })
@@ -31,17 +42,17 @@ app.use('/graphql', graphqlHTTP({
 }));
 
 
+
 //Routing
 app.use('/', def);
 
-//SERVER CREATION
-(async () => {
-    //await sql.sync({ force: false });
-
-    app.listen(port, () => {
-        console.log(`listening on port ${port}`)
-    })
-})();
+db.once('open', () => {
+    app.listen(PORT, () => {
+        console.log(`API server running on port ${PORT}!`);
+        // log where we can go to test our GQL API
+        console.log(`Use GraphQL at http://localhost:${PORT}${server.graphqlPath}`);
+    });
+});
 
 
 

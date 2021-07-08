@@ -1,41 +1,51 @@
-const mongoose = require("mongoose")
-const bcrypt = require("bcryptjs")
+const { Schema, model } = require('mongoose');
+const bcrypt = require('bcrypt');
 
-const UserSchema = new mongoose.Schema({
-    username: String,
-    password: String
-})
-
-UserSchema.pre("save", function (next) {
-    const user = this
-
-    if (this.isModified("password") || this.isNew) {
-        bcrypt.genSalt(10, function (saltError, salt) {
-            if (saltError) {
-                return next(saltError)
-            } else {
-                bcrypt.hash(user.password, salt, function(hashError, hash) {
-                    if (hashError) {
-                        return next(hashError)
-                    }
-
-                    user.password = hash
-                    next()
-                })
-            }
-        })
-    } else {
-        return next()
-    }
-})
-
-UserSchema.methods.comparePassword = function(password, callback) {
-    bcrypt.compare(password, this.password, function(error, isMatch) {
-        if (error) {
-            return callback(error)
-        } else {
-            callback(null, isMatch)
+const userSchema = new Schema(
+    {
+        username: {
+            type: String,
+            required: true,
+            unique: true,
+            trim: true
+        },
+        email: {
+            type: String,
+            required: true,
+            unique: true,
+            match: [/.+@.+\..+/, 'Must match an email address!']
+        },
+        password: {
+            type: String,
+            required: true,
+            minlength: 5
         }
-    })
-}
-module.exports = mongoose.model("User", UserSchema)
+
+    },
+    {
+        toJSON: {
+            virtuals: true
+        }
+    }
+);
+
+// set up pre-save middleware to create password
+userSchema.pre('save', async function(next) {
+    if (this.isNew || this.isModified('password')) {
+        const saltRounds = 10;
+        this.password = await bcrypt.hash(this.password, saltRounds);
+    }
+
+    next();
+});
+
+// compare the incoming password with the hashed password
+userSchema.methods.isCorrectPassword = async function(password) {
+    return bcrypt.compare(password, this.password);
+};
+
+
+
+const User = model('User', userSchema);
+
+module.exports = User;
