@@ -7,9 +7,12 @@ const app = expr();
 const ql = require("./GraphQl/Ql")
 const mongoo = require('mongoose')
 const roots = require('./GraphQl/Schemas')
+
 const { ApolloServer } = require('apollo-server-express');
 const db = require('./config/connection');
 const { statsschem, UserSchem } = require('./GraphQl/Schemas')
+const {graphql} = require('graphql')
+
 
 
 const server = new ApolloServer({
@@ -25,18 +28,16 @@ mongoo.connect('mongodb://localhost/pie',{ useNewUrlParser: true, useUnifiedTopo
 app.use(expr.urlencoded({ extended: true }))
 app.use(expr.json())
 
-app.use(expr.static(path.join(__dirname, 'public')));
-app.use(expr.static(path.join(__dirname, 'public/control')));
+
+console.log(path.join(__dirname,"../tsclient/build/"));
+app.use(expr.static(path.join(__dirname, '../tsclient/build/')));
+// app.use(expr.static(path.join(__dirname, 'public')));
+// app.use(expr.static(path.join(__dirname, 'public/control')));
 
 
 app.use('/graphql', graphqlHTTP({
     schema: roots.sStat,
     rootValue: roots.rStat,
-    graphiql: true,
-}));
-app.use('/graphql2', graphqlHTTP({
-    schema: ql.schema,
-    rootValue: ql.root,
     graphiql: true,
 }));
 

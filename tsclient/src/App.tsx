@@ -4,7 +4,7 @@ import ContactComponent from './components/LoginSignup/Contact';
 import LoginComponent from "./components/LoginSignup/Login";
 import SignupComponent from "./components/LoginSignup/Signup";
 import {Switch,Route} from 'react-router-dom';
-
+import AboutComponent from './components/LoginSignup/About';
 
 function App() {
 
@@ -15,6 +15,7 @@ function App() {
                 <Route path='/SignUp' component={SignupComponent}/>
                 <Route path='/Login' component={LoginComponent}/>
                 <Route path='/Contact' component={ContactComponent}/>
+                <Route path='/About' component={AboutComponent}/>
                 <Route path='/' component={Main}/>
             </Switch>
         </Drawer>

@@ -1,4 +1,4 @@
-import pie from './Holding';
+import pie from './Init';
  class Something {
 
 
@@ -20,8 +20,9 @@ import pie from './Holding';
 }
 
  let uOrder = [
-    // new Something(0,1000,0,0,pie.fortyTwo),
-    new Something(-1000,-1000,-1000,-1000,pie.fortyTwo),
+    // new Something(-100000000,-100000000,-100000000,-100000000,pie.fortyTwo),
+    // new Something(-1000,-1000,-1000,-1000,pie.fortyTwo),
+     new Something(0,1000,0,0,pie.fortyTwo),
     new Something(0,1000,0,0,pie.chips),
     new Something(10000,10000,0,0,pie.phonebox),
     new Something(1000,10_000,0,0,pie.boards),

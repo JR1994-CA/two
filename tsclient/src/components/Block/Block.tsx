@@ -8,7 +8,6 @@ function Block(props: any) {
 
     let {data} = props;
     let [lQty, setLQty] = useState(0); //DONT USE DIRECTLY USE ChangeQty LOCALLY
-    let [mess,setMess]= useState('')
 
 
     let disp = `Transistors: ${data.costs.trans(data.upgradeLVl)}
@@ -21,8 +20,16 @@ function Block(props: any) {
     {
         data.changeQty(x);
         setLQty(data.qty);
-        console.log(x)
+        //console.log(x)
     }
+
+    function setQty_L(x:number)
+    {
+        data.setQty(x);
+        setLQty(data.qty);
+        //console.log(x)
+    }
+
 
     let inc = ()=> {
 
@@ -35,12 +42,6 @@ function Block(props: any) {
     }
 
     useEffect(inc);
-
-    let upButton= ()=>
-    {
-        data.perSec++
-        setMess(data.addLvl().mess);
-    }
 
     return (
 
@@ -62,17 +63,23 @@ function Block(props: any) {
                 <Grid item direction="column">
                     <div className="">click: {data.perClick}</div>
                     <div className="">
-                        <Button color="secondary" variant="outlined" aria-label="outlined secondary" onClick={() => {
-                            changeQty_L(1);
+                        {/*Click Button*/}
+                        <Button disabled={!data.checkCCost().did} color="secondary" variant="outlined" aria-label="outlined secondary" onClick={() => {
+                            data.bButton();
+                            setQty_L(data.qty);
 
-                        }}>Do Click</Button>
+                        }}>{data.getCMess().mess}</Button>
                     </div>
                     <div className="">
                         <Tooltip title={disp}>
-<span>
-    <Button disabled={!data.checkCost().did} color="secondary" variant="outlined"
-            aria-label="outlined secondary" onClick={data.uButton}>{data.getMess().mess}</Button>
-</span>
+                            <span>
+                                <Button disabled={!data.checkCost().did} color="secondary" variant="outlined" aria-label="outlined secondary" onClick={
+                                    ()=>{ data.uButton(); setQty_L(data.qty);}
+
+                                }>
+                                    {data.getUMess().mess}
+                                </Button>
+                            </span>
                         </Tooltip>
                     </div>
                 </Grid>
