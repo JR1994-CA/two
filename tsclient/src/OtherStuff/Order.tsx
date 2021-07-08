@@ -20,8 +20,9 @@ import pie from './Init';
 }
 
  let uOrder = [
-    new Something(-100000000,-100000000,-100000000,-100000000,pie.fortyTwo),
+    // new Something(-100000000,-100000000,-100000000,-100000000,pie.fortyTwo),
     // new Something(-1000,-1000,-1000,-1000,pie.fortyTwo),
+     new Something(0,1000,0,0,pie.fortyTwo),
     new Something(0,1000,0,0,pie.chips),
     new Something(10000,10000,0,0,pie.phonebox),
     new Something(1000,10_000,0,0,pie.boards),
@@ -29,16 +30,5 @@ import pie from './Init';
     new Something(30000,100000,100000,0,pie.cpus),
     new Something(300000,3000000,30000,300000,pie.robot)
 ];
-
-// let uOrder = [
-//     new Something(0,1000,0,0,pie.fortyTwo),
-//     // new Something(-1000,-1000,-1000,-1000,pie.fortyTwo),
-//     new Something(0,1000,0,0,pie.chips),
-//     new Something(10000,10000,0,0,pie.phonebox),
-//     new Something(1000,10_000,0,0,pie.boards),
-//     new Something(100000,100000,10000,0,pie.rowboat),
-//     new Something(30000,100000,100000,0,pie.cpus),
-//     new Something(300000,3000000,30000,300000,pie.robot)
-// ];
 
 export default uOrder;

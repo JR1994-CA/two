@@ -31,7 +31,7 @@ const useStyles = makeStyles((theme) => ({
 
 export function checkUnlocks() {
 
-    if (true||pie.trans.qty >= uOrder[pie.upLvl].trans && pie.boards.qty >= uOrder[pie.upLvl].boards && pie.chips.qty >= uOrder[pie.upLvl].cpus && pie.cpus.qty >= uOrder[pie.upLvl].cpus)
+    if (pie.trans.qty >= uOrder[pie.upLvl].trans && pie.boards.qty >= uOrder[pie.upLvl].boards && pie.chips.qty >= uOrder[pie.upLvl].cpus && pie.cpus.qty >= uOrder[pie.upLvl].cpus)
     {
 
         pie.chips.changeQty(-uOrder[pie.upLvl].chips);
