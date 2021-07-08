@@ -1,5 +1,7 @@
-const clickableRoots = require('./clickableRoots');
-const statRoot = require('./statRoot');
-const userRoot = require('./userRoot');
+// const clickableRoots = require('./clickableRoots');
+// const statRoot = require('./statRoot');
+// const userRoot = require('./userRoot');
 
-module.exports = { clickableRoots, statRoot, userRoot }
+const resolvers = require('./resolvers');
+
+module.exports = { resolvers }

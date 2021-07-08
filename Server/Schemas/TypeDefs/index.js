@@ -1,5 +1,7 @@
-const clickableTypeDef = require('./clickableTypeDef');
-const statTypeDef = require('./statTypeDefs')
-const userTypeDef = require('./userTypeDefs')
+// const clickableTypeDef = require('./clickableTypeDef');
+// const statTypeDef = require('./statTypeDefs')
+// const userTypeDef = require('./userTypeDefs')
 
-module.exports = { clickableTypeDef, statTypeDef, userTypeDef};
+const typeDefs = require('./typeDefs')
+
+module.exports = { typeDefs };

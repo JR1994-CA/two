@@ -11,9 +11,10 @@ const db = require('./config/connection');
 const PORT = process.env.PORT || 4100;
 const app = express();
 
+console.log(typeDefs, resolvers);
 
 const server = new ApolloServer({
-    typeDefs,
+    typeDefs: gql`${typeDefs}`,
     resolvers,
     context: authMiddleware
 });
