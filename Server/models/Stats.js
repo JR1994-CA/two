@@ -1,7 +1,8 @@
 const { Schema, model } = require('mongoose');
 
 
-const StatsSchema = new Schema(
+
+const statsSchema = new Schema(
     {
         savHid: {
             saveID: { type: String, maxlength: 15 },
@@ -27,10 +28,16 @@ const StatsSchema = new Schema(
             saveID: { type: String, maxlength: 15 },
             type: Number,
             default: 0
-        }
+        },
+        clickables: [
+            {
+                type: Schema.Types.ObjectId,
+                ref: 'Clickable'
+            }
+        ],
 
     }
 );
 
-const Stats = model('Stats', StatsSchema);
+const Stats = model('Stats', statsSchema);
 module.exports = Stats;

@@ -1,7 +1,6 @@
 const clickable = require('../models/Clickables')
-const Stats = require('../models/Stats')
 const { AuthenticationError } = require('apollo-server-express');
-const { User }  = require('../models');
+const { User, Stats }  = require('../models');
 const { signToken } = require('../utils/auth');
 
 const resolvers = {
@@ -37,27 +36,6 @@ const resolvers = {
         },
         message: async (parent, { _id }) => {
             return User.findOne({ _id });
-        },
-        Stats: async (parent, {_id}) => {
-            const statData = await Stats.findOne({_id})
-                .populate('savHid')
-                .populate('savePerClick')
-                .populate('saveUnit')
-                .populate('upgradeLvl')
-
-
-            return statData;
-        },
-        clickable: async() => {
-            return clickable.find()
-                .populate('tran')
-                .populate('comp')
-                .populate('Chip')
-                .populate('CPU')
-                .populate('clickmodifier')
-                .populate('cost')
-                .populate('mod')
-                .populate('curUpgrade')
         }
     },
     Mutation: {

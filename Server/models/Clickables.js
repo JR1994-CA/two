@@ -1,40 +1,14 @@
 const { Schema, model } = require('mongoose');
-const stats = require('./Stats');
-
-
-const TransistorSchema = new Schema({
-    name: {type: String, default: "transistor"},
-    count: { type: Number, default: 0},
-    id: { type: Number, default: 1},
-    isHide: false
-});
-
-const CompSchema = new Schema({
-    name: {type: String, default: "comp"},
-    count: { type: Number, default: 0},
-    id: { type: Number, default: 2,
-    }
-});
-
-const ChipSchema = new Schema({
-    name: {type: String, default: "chip"},
-    count: { type: Number, default: 0},
-    id: { type: Number, default: 3}
-});
-
-const CPUSchema = new Schema({
-    name: {type: String, default: "cpu"},
-    count: { type: Number, default: 0},
-    id: { type: Number, default: 4}
-});
+const User = require('./User');
 
 const ClickableSchema = new Schema(
     {
-        children: [
-            TransistorSchema,
-            CompSchema,
-            ChipSchema,
-            CPUSchema],
+
+
+        transistors: { type: Number, default: 0 },
+        comps: { type: Number, default: 0 },
+        chips: { type: Number, default: 0 },
+        cpus: { type: Number, default: 0 },
 
         clickModifier: { type: Number, default: 1 },
         cost: {
@@ -59,16 +33,9 @@ const ClickableSchema = new Schema(
 );
 
 const Clickable = model('Clickable', ClickableSchema);
-const Transistor = model('Transistor', TransistorSchema);
-const Comp = model('Comp', CompSchema);
-const Chip = model('Chip', ChipSchema);
-const CPU = model('CPU', CPUSchema);
+
 
 
 module.exports = {
-    Clickable,
-    Transistor,
-    Comp,
-    Chip,
-    CPU
+    Clickable
 };
