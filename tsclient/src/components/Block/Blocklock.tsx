@@ -1,6 +1,6 @@
 import React, {useState} from "react";
 import Block from "./index";
-import pie from "../../OtherStuff/Holding"
+import pie from "../../OtherStuff/Init"
 
 function Blocklock(props: any) {
 

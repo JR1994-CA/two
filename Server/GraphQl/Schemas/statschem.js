@@ -9,12 +9,10 @@ const statTypeDefs = gql`
       saveUnit:Int,
       upgradeLvl:Int,
   }
-  
   type Mutation {
-  
-  
-  }
-  
+        make:Int
+    }
+ 
 `);
 
 

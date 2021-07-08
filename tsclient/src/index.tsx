@@ -4,11 +4,14 @@ import './index.css';
 import App from './App';
 import reportWebVitals from './reportWebVitals';
 import {BrowserRouter as Router} from 'react-router-dom';
-
+import {ApolloProvider} from "@apollo/client";
+import client from "./apolloClient";
 ReactDOM.render(
-  <Router>
-    <App />
-  </Router>,
+    <ApolloProvider client={client}>
+        <Router>
+        <App />
+        </Router>
+    </ApolloProvider>,
 
   document.getElementById('root')
 );

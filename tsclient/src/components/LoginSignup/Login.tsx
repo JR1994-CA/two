@@ -45,6 +45,7 @@ const Login=(handleChange:any)=> {
                     <Avatar className={classes.blue}><LockOutlinedIcon/></Avatar>
                     <h2>Sign in</h2>
                 </Grid>
+                <form>
                 <TextField label={'Email'} placeholder={'Enter email'} fullWidth/>
                 <TextField label={'Password'} placeholder={'Enter password'} type="password" fullWidth/>
                 {/*<FormControlLabel*/}
@@ -67,6 +68,7 @@ const Login=(handleChange:any)=> {
                         Sign up
                     </Link>
                 </Typography>
+                </form>
             </Paper>
         </Grid>
     );
